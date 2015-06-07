@@ -36,6 +36,15 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="app.roundtable.nepal.activity.activity.ProfileViewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
 
     </application>
 

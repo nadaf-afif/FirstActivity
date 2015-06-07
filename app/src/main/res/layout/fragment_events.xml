@@ -5,7 +5,7 @@
     android:id="@+id/viewPager"
     >
 
-    <android.support.v4.view.PagerTitleStrip
+    <android.support.v4.view.PagerTabStrip
         android:id="@+id/pagerTitleStrip"
         android:layout_width="match_parent"
         android:layout_height="30dp"

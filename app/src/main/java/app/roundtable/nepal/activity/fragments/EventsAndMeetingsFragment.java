@@ -52,8 +52,6 @@ public class EventsAndMeetingsFragment extends Fragment {
 
     private void setUpViewPager(View view) {
 
-        PagerTitleStrip tabs = (PagerTitleStrip) view.findViewById(R.id.pagerTitleStrip);
-
         mViewPager = (ViewPager) view.findViewById(R.id.viewPager);
 
         PagerAdapter pagerAdapter = new PagerAdapter(getChildFragmentManager(),mFragments,mTitle);
