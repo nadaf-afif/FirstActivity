@@ -2,11 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.roundtable.nepal" >
 
+    <uses-permission android:name="ANDROID.PERMISSION.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="ANDROID.PERMISSION.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="ANDROID.PERMISSION.INTERNET"/>
+    <uses-permission android:name="ANDROID.PERMISSION.MEDIA_CONTENT_CONTROL"/>
+    <uses-permission android:name="ANDROID.PERMISSION.CAMERA"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        android:theme="@style/AppTheme" >
         <activity
             android:name="app.roundtable.nepal.activity.activity.FirstActivity"
             android:screenOrientation="portrait"
@@ -36,9 +42,81 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="app.roundtable.nepal.activity.activity.SubmitPhotosActivity"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.AboutUsActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.AddNewEventActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.AddNewMeetingActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.AddNewNewsActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.NewsDetailsActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.EventDetailsActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.MeetingDetailsActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
         <activity android:name="app.roundtable.nepal.activity.activity.ProfileViewActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".activity.activity.HomeActivity"
             >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>

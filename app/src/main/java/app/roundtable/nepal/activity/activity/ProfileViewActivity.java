@@ -2,21 +2,15 @@ package app.roundtable.nepal.activity.activity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
@@ -25,7 +19,6 @@ import java.util.List;
 import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.adapters.UserProfileAdapter;
 import app.roundtable.nepal.activity.databeans.ProfileData;
-import app.roundtable.nepal.activity.view.HidingScrollListener;
 
 
 /**
@@ -48,6 +41,8 @@ public class ProfileViewActivity extends AppCompatActivity {
 
     private ImageView mUserImageView;
     private int mutedColor;
+    Toolbar toolbar;
+    CollapsingToolbarLayout collapsingToolbarLayout;
     private List<ProfileData> mData= new ArrayList<ProfileData>();
 
     private String[] mLabels = new String[]{"Table Name : ","Date Of Birth : ","Email : ", "Mobile : ", "Blood Group : ", "City : ", "Company Name : ", "Company Address : ", "Office Contact: ", "Data Of Joinig : "};
@@ -57,14 +52,15 @@ public class ProfileViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_view);
 
-        final Toolbar toolbar= (Toolbar) findViewById(R.id.anim_toolbar);
+        toolbar  = (Toolbar) findViewById(R.id.anim_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Afif Nadaf");
-        final AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
 
-        final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setTitle("Afif Nadaf");
+
+
 
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
                 R.drawable.events_1);
@@ -79,6 +75,7 @@ public class ProfileViewActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycleListView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
 
         for (int i = 0; i<mValues.length;i++){
 
@@ -97,13 +94,17 @@ public class ProfileViewActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
+
+         super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.edit_menu, menu);
+        return true;
     }
 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
+       return super.onOptionsItemSelected(item);
+
     }
 
 

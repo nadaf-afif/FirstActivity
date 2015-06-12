@@ -1,5 +1,6 @@
 package app.roundtable.nepal.activity.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -9,8 +10,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import app.roundtable.nepal.R;
+import app.roundtable.nepal.activity.fragments.AboutRTNFragment;
 import app.roundtable.nepal.activity.fragments.EventsAndMeetingsFragment;
-import app.roundtable.nepal.activity.fragments.SearchMembersFragment;
+import app.roundtable.nepal.activity.fragments.FavoritesFragemet;
+import app.roundtable.nepal.activity.fragments.NewsListFragment;
+import app.roundtable.nepal.activity.fragments.RTNClubsFragment;
 import app.roundtable.nepal.activity.navigation.NavigationDrawerFragment;
 
 
@@ -56,8 +60,8 @@ public class HomeActivity extends ActionBarActivity {
         switch (position)
         {
             case  0 :
-                mFragment = new SearchMembersFragment();
-                setTitle("Search Members");
+                mFragment = new RTNClubsFragment();
+                setTitle("RTN Clubs");
                 break;
 
             case 1 :
@@ -68,10 +72,32 @@ public class HomeActivity extends ActionBarActivity {
                 break;
 
 
-            case 2 : break;
+            case 2 :
+                mFragment = new NewsListFragment();
+                setTitle("News");
+                break;
 
-            case 3 : break;
 
+
+            case 3 :
+                mFragment = new FavoritesFragemet();
+                setTitle("Favorites");
+
+                break;
+
+
+            case 4 :
+
+                Intent intent = new Intent(this, SubmitPhotosActivity.class);
+                startActivity(intent);
+                break;
+
+
+            case 5 :
+
+                mFragment = new AboutRTNFragment();
+                setTitle("About RTN");
+                break;
 
         }
 
@@ -83,5 +109,13 @@ public class HomeActivity extends ActionBarActivity {
     }
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if(resultCode == RESULT_OK)
+        {
+            mFragment.onActivityResult(requestCode,resultCode,data);
+        }
+    }
 }

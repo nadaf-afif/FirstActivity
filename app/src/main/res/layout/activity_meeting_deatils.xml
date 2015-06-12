@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/actionToolbar"
+        layout="@layout/action_toolbar_layout"/>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/actionToolbar"
+        android:padding="5dp"
+        android:layout_marginTop="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:id="@+id/meetingNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:text="@string/meeting_type"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:textColor="@color/name_background"
+                android:textSize="18sp"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                />
+
+
+
+            <TextView
+                android:id="@+id/venueTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:text="@string/venue"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:textColor="@color/name_background"
+                android:textSize="18sp"
+                android:background="@drawable/background_shadow"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_action_place"
+                android:drawablePadding="10dp"
+
+                />
+
+            <TextView
+                android:id="@+id/dateTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:text="@string/date"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:textColor="@color/name_background"
+                android:textSize="18sp"
+                android:background="@drawable/background_shadow"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/calendar_icon"
+                android:drawablePadding="10dp"
+
+                />
+
+
+
+
+            <TextView
+                android:id="@+id/timeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:text="@string/time"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:textColor="@color/name_background"
+                android:textSize="18sp"
+                android:background="@drawable/background_shadow"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_action_time"
+                android:drawablePadding="10dp"
+                />
+
+
+            <TextView
+                android:id="@+id/inviteesTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:text="@string/invitees"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:textColor="@color/name_background"
+                android:textSize="18sp"
+                android:background="@drawable/background_shadow"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_action_group"
+                android:drawablePadding="10dp"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                >
+
+
+                <Switch
+                    android:id="@+id/spouceAndChildrenSwitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/spouce_and_child"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/name_background"
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -13,6 +13,37 @@
     <string name="close">Close</string>
     <string name="enter_key_here">Enter key here</string>
     <string name="select_search_type">Select search type</string>
+    <string name="action_edit">Edit</string>
+    <string name="round_table_international_text">The first Round Table was formed in Norwich, England in 1927. The Founder, Louis Marchesi, was a young member of Norwich Rotary Club who felt a need existed for a club where the young businessmen of the town could gather on a regular basis. At their meetings they could exchange ideas, learn from the experiences of their colleagues and play a collective part in the civic life of Norwich. Within a year of inception, the membership of this Round Table had grown to 85 and interest was being shown in establishing Round Table elsewhere. From a very early stage, it was agreed that Round Table would be non-religious, non-political club and this has continued to this day. ROund Table now flourishes in the majority of European countries, throughout Africa, the Middle East, Asia, New Zealand and America. In fact Round Table is represented in every continent of the world.</string>
+    <string name="round_table_nepal_desc_text">Although Tabling was introduced to Nepal more than a decade ago, Round Table Nepal was formed in 1999. The first Table in Nepal was formed with the help of Sq. Leg Lalit Shah from a Table as far away as Madras, India with Tr. C.K Golchha as the charter chairman.
+
+During the decade long period before formation of RTN, there were five tables in Nepal. These tables were under the Area IV of Round Table India, which helped lay foundations of the tabling movement in Nepal.
+
+In 1999, Round Table India and Round Table Germany jointly sponsored the formation of independent association of Round Table Nepal.
+
+The various clubs in Nepal have undertaken large social service projects. As identified to be the most essential sector requiring attention for long-term development of the people, RTN has adopted a long-term social service theme of “Build the Nation Through Education”. \n \n Currently, Round Table Nepal has 21 Clubs under its umbrella with a membership strength of 300+ members.</string>
+    <string name="event_name">Event Name</string>
+    <string name="enter_event_name">Enter Event Name</string>
+    <string name="venue">Venue</string>
+    <string name="enter_event_venue">Enter event venue</string>
+    <string name="date">Date</string>
+    <string name="enter_date">click here</string>
+    <string name="time">Time</string>
+    <string name="click_here">Click here</string>
+    <string name="invitees">Invitees</string>
+    <string name="spouce_and_child">Spouce and Children</string>
+    <string name="add_event">Add Event</string>
+    <string name="meeting_type">Meeting Type</string>
+    <string name="add_meeting">Add Meeting</string>
+    <string name="confirm_message_text">Your request has been taken. This event will be confirmed and posted when reviewed by moderator.</string>
+    <string name="headline_text">HeadLine</string>
+    <string name="enter_news_headline">Enter News Headline</string>
+    <string name="concern_tables_text">Concern Tables</string>
+    <string name="news_deatils_text">News Details</string>
+    <string name="submit_news">Submit News</string>
+    <string name="add_news_text">Add News</string>
+    <string name="event_details_text">Event Details</string>
+    <string name="meeting_detail_text">Meeting Details</string>
 
     <array name="search_types">
         <item>select</item>

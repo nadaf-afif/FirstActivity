@@ -1,5 +1,6 @@
 package app.roundtable.nepal.activity.navigation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -11,12 +12,14 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.activity.HomeActivity;
+import app.roundtable.nepal.activity.activity.ProfileViewActivity;
 import app.roundtable.nepal.activity.databeans.RecyclerData;
 
 
@@ -26,6 +29,7 @@ public class NavigationDrawerFragment extends Fragment implements RoundTableMenu
     private DrawerLayout mDrawerLayout;
     private RecyclerView mRecyclerView;
     private RoundTableMenuAdapter mMenuAdapter;
+    private ImageView mDrawerImage;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,12 +44,22 @@ public class NavigationDrawerFragment extends Fragment implements RoundTableMenu
         View view = inflater.inflate(R.layout.fragment_navigation_drawer,container);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycleListView);
+        mDrawerImage = (ImageView)view.findViewById(R.id.drawerImage);
 
         mMenuAdapter = new RoundTableMenuAdapter(getActivity(),getData());
         mRecyclerView.setAdapter(mMenuAdapter);
 
         mMenuAdapter.setClickListener(this);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+
+        mDrawerImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ProfileViewActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
@@ -55,8 +69,8 @@ public class NavigationDrawerFragment extends Fragment implements RoundTableMenu
     public List<RecyclerData> getData(){
 
         List<RecyclerData> data = new ArrayList<RecyclerData>();
-        int[] icons = new int[]{R.drawable.ic_users, R.drawable.ic_events,R.drawable.ic_news,R.drawable.ic_favorites,R.drawable.ic_action_about, R.drawable.ic_action_about};
-        String[] title = new String[]{"Search Members", "Events", "News", "Favorites", "RTM", "About RTN"};
+        int[] icons = new int[]{R.drawable.ic_users, R.drawable.ic_events,R.drawable.ic_news,R.drawable.ic_favorites , R.drawable.ic_action_camera , R.drawable.ic_action_about};
+        String[] title = new String[]{"RTN Clubs", "Events", "News", "Favorites","Submit Photos",  "About RTN"};
 
         for (int i = 0;i<title.length ;i++){
 
