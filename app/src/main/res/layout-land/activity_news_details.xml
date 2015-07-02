@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/actionToolbar"
+        layout="@layout/action_toolbar_layout"/>
+
+    <ImageView
+        android:id="@+id/eventPhotoImageView"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/upload_place_holder"
+        android:layout_below="@+id/actionToolbar"
+        />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/eventPhotoImageView"
+        android:layout_below="@id/actionToolbar"
+        android:padding="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/newsHeadLineTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/headline_text"
+                android:background="@drawable/background_shadow"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:textColor="@color/name_background"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="This is a demo text for news details. this view contains all the details about the news that member entered.
+                This is under the scroll pannel so if the news content is bigger this box will also increase accordigly."
+                android:background="@drawable/background_shadow"
+                android:textSize="15sp"
+                android:padding="10dp"
+                android:textColor="@color/material_blue_grey_800"
+                android:layout_marginTop="10dp"
+                />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

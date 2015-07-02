@@ -3,38 +3,62 @@ package app.roundtable.nepal.activity.activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Set;
 
 import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.adapters.TableNameDialogAdapter;
+import app.roundtable.nepal.activity.asynktasks.AddEventAsyncTasks;
+import app.roundtable.nepal.activity.database.RTNTablesManager;
+import app.roundtable.nepal.activity.database.Tables;
+import app.roundtable.nepal.activity.databeans.TablesInfoBean;
 
 /**
  * Created by afif on 10/6/15.
  */
-public class AddNewEventActivity extends AppCompatActivity implements View.OnClickListener{
+public class AddNewEventActivity extends AppCompatActivity implements View.OnClickListener, Tables.RTNTables{
 
     private Toolbar mToolBar;
     private EditText mEventNameEditText, mVenueEdiText, mTimeEditText, mDateEditText, mInviteesEditText;
-    private Switch mSpouseAndChildrenSwitch;
+    private Switch mSpouseSwitch, mChildrenSwitch;
     private Button mAddEventButton;
     private int mYear, mMonth, mDay, mHour, mMinute;
+    private ImageView mEventImageView;
     private static int TIME_PICKER_DIALOG = 111, DATE_PICKER_DIALOG = 222;
     private String[] mTableName = new String[]{"Table 1","Table 2","Table 3","Table 4","Table 5","Table 6"};
+    public static final int PICK_CAMERA_IMAGE = 011, PICK_GALLERY_IMAGE = 911;
+    public  ArrayList<TablesInfoBean> tablesData = new ArrayList<>();
+    private Set<String > selectedId;
+    private String mEVentImagePath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +73,8 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
 
         initView();
         setCurrentCalender();
+        Cursor cursor = new RTNTablesManager(this).getTables();
+        tablesData = getObject(cursor);
 
     }
 
@@ -73,13 +99,16 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
         mDateEditText = (EditText)findViewById(R.id.dateEditText);
         mInviteesEditText = (EditText)findViewById(R.id.invitessEditText);
         mAddEventButton = (Button)findViewById(R.id.addeventButton);
-        mSpouseAndChildrenSwitch = (Switch)findViewById(R.id.spouceAndChildrenSwitch);
+        mSpouseSwitch = (Switch)findViewById(R.id.spouceSwitch);
+        mChildrenSwitch = (Switch) findViewById(R.id.childrenSwitch);
+        mEventImageView = (ImageView) findViewById(R.id.eventPhotoImageView);
 
 
         mTimeEditText.setOnClickListener(this);
         mDateEditText.setOnClickListener(this);
         mInviteesEditText.setOnClickListener(this);
         mAddEventButton.setOnClickListener(this);
+        mEventImageView.setOnClickListener(this);
 
     }
 
@@ -108,16 +137,65 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
 
 
             case R.id.addeventButton :
-                showConfirmationDialog();
+                validateData();
                 break;
 
+            case R.id.eventPhotoImageView:
+
+                chooseSourceDialog();
+
+                break;
 
         }
 
     }
 
+    private void validateData() {
 
-    private void showConfirmationDialog() {
+        String eventName = mEventNameEditText.getText().toString();
+        String venueName = mVenueEdiText.getText().toString();
+        String date = mDateEditText.getText().toString();
+        String time = mTimeEditText.getText().toString();
+        boolean isSpouse = mSpouseSwitch.isChecked();
+        boolean isChildren = mChildrenSwitch.isChecked();
+
+        if(eventName.equals("") || eventName.isEmpty()){
+            Toast.makeText(this,getString(R.string.enter_event_name),Toast.LENGTH_SHORT).show();
+        }else if(venueName.equals("") || venueName.isEmpty()){
+            Toast.makeText(this,getString(R.string.enter_event_venue),Toast.LENGTH_SHORT).show();
+        }else if(date.equals("") || date.isEmpty()){
+            Toast.makeText(this,getString(R.string.enter_date),Toast.LENGTH_SHORT).show();        Cursor cursor = new RTNTablesManager(this).getTables();
+
+        }else if(time.equals("") || time.isEmpty()){
+            Toast.makeText(this,getString(R.string.enter_time),Toast.LENGTH_SHORT).show();
+        }else if(selectedId.size() < 1){
+            Toast.makeText(this,getString(R.string.select_at_least_one_table),Toast.LENGTH_SHORT).show();
+        }else if (mEVentImagePath == null && mEVentImagePath.equals("")){
+
+            Toast.makeText(this,getString(R.string.please_select_event_photo),Toast.LENGTH_SHORT).show();
+
+        }else {
+
+            String invitees = selectedId.toString().substring(0, selectedId.toString().length()-1);
+            String spouse = (isSpouse ? "1" : "0");
+            String children = (isChildren ? "1" : "0");
+
+            executeAsyncTask(invitees, spouse, children, eventName, venueName, date, time, mEVentImagePath);
+
+        }
+
+
+    }
+
+    private void executeAsyncTask(String invitees, String spouse, String children, String eventName, String venueName, String date, String time, String mEVentImagePath) {
+
+        AddEventAsyncTasks asyncTasks = new AddEventAsyncTasks(this);
+        asyncTasks.execute(invitees,spouse,children,eventName,venueName,date,time, mEVentImagePath);
+
+    }
+
+
+    public void showConfirmationDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Request Accepted !");
@@ -126,27 +204,69 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
+                finish();
             }
         });
         builder.show();
 
     }
 
-
+    private TableNameDialogAdapter adapter;
 
     private void ShowTablesDialog() {
 
-        Dialog dialog  = new Dialog(this);
+        final Dialog dialog  = new Dialog(this);
         dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_tablenames);
 
         ListView mListView = (ListView)dialog.findViewById(R.id.tableNameListView);
         Button doneButton = (Button)dialog.findViewById(R.id.doneButton);
 
-        TableNameDialogAdapter adapter = new TableNameDialogAdapter(this,R.layout.list_item_table_names,mTableName);
+        adapter = new TableNameDialogAdapter(this,tablesData);
         mListView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
+
+        doneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialog.dismiss();
+                selectedId = adapter.selectedId;
+                tablesData = adapter.tableNames;
+                mInviteesEditText.setText(selectedId.size() + " Tables selected");
+            }
+        });
 
         dialog.show();
+
+    }
+
+    private ArrayList<TablesInfoBean> getObject(Cursor cursor) {
+
+
+        ArrayList<TablesInfoBean> tables = new ArrayList<>();
+        cursor.moveToFirst();
+        TablesInfoBean object1 = new TablesInfoBean();
+
+        object1.setTableName("select all");
+        object1.setTableId("0");
+        object1.setIsSelected(false);
+
+        tables.add(object1);
+
+        for (int i = 0; i<cursor.getCount(); i++){
+
+            cursor.moveToPosition(i);
+            TablesInfoBean object = new TablesInfoBean();
+
+            object.setIsSelected(false);
+            object.setTableId(cursor.getString(cursor.getColumnIndex(TABLE_ID)));
+            object.setTableName(cursor.getString(cursor.getColumnIndex(TABLE_DESCRIPTION)));
+            tables.add(object);
+        }
+
+        return tables;
 
     }
 
@@ -156,7 +276,7 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
 
-                mDateEditText.setText(day+"/"+month+"/"+year);
+                mDateEditText.setText(year+"-"+ (month+1) +"-"+ day);
             }
         },mYear, mMonth, mDay);
 
@@ -170,8 +290,13 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onTimeSet(TimePicker timePicker, int hour, int minute) {
 
-                   mTimeEditText.setText(hour+":"+minute);
-                }
+                  if(hour > 12 )
+                   mTimeEditText.setText(hour+"."+minute+ ".00");
+                 else
+                      mTimeEditText.setText(hour+"."+minute+ ".00");
+
+
+            }
         },mHour,mMinute,false);
 
         timePickerDialog.show();
@@ -180,4 +305,131 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
 
 
 
+    private void chooseSourceDialog() {
+
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setTitle("Choose Image From");
+
+
+        alertDialog.setNegativeButton("Camera", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                // call android default camera
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+                intent.putExtra(MediaStore.EXTRA_OUTPUT,
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI.toString());
+                // ******** code for crop image
+                intent.putExtra("crop", "true");
+                intent.putExtra("aspectX", 0);
+                intent.putExtra("aspectY", 0);
+                intent.putExtra("outputX", 200);
+                intent.putExtra("outputY", 150);
+
+                try {
+
+                    intent.putExtra("return-data", true);
+                    startActivityForResult(intent, PICK_CAMERA_IMAGE);
+
+                } catch (ActivityNotFoundException e) {
+                }
+
+
+            }
+        });
+
+
+        alertDialog.setPositiveButton("Gallery", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                intent.putExtra("crop", "true");
+                intent.putExtra("aspectX", 0);
+                intent.putExtra("aspectY", 0);
+                intent.putExtra("outputX", 200);
+                intent.putExtra("outputY", 150);
+
+                try {
+
+                    intent.putExtra("return-data", true);
+                    startActivityForResult(Intent.createChooser(intent,
+                            "Complete action using"), PICK_GALLERY_IMAGE);
+
+                } catch (ActivityNotFoundException e) {
+                }
+
+
+            }
+        });
+
+        alertDialog.show();
+
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK) {
+
+            // mUriPath = data.getData();
+
+            switch (requestCode) {
+
+
+                case PICK_CAMERA_IMAGE:
+
+
+                    Bundle bundle = data.getExtras();
+                    if (bundle != null) {
+                        Bitmap photo = bundle.getParcelable("data");
+                        mEventImageView.setImageBitmap(photo);
+                        saveFile(photo);
+                    }
+
+                    break;
+
+
+                case PICK_GALLERY_IMAGE:
+
+                    Bundle bundle2 = data.getExtras();
+                    if (bundle2 != null) {
+                        Bitmap photo = bundle2.getParcelable("data");
+                        mEventImageView.setImageBitmap(photo);
+
+                        saveFile(photo);
+                    }
+
+                    break;
+
+
+            }
+
+        }
+    }
+
+    private void saveFile(Bitmap photo) {
+
+        File file = new File(
+                Environment.getExternalStorageDirectory()
+                        + "/RTN/");
+        if (!file.isDirectory())
+            file.mkdir();
+        mEVentImagePath = Environment.getExternalStorageDirectory()
+                + "/RTN/event__"+ System.currentTimeMillis()+".png";
+        file = new File(mEVentImagePath);
+        try {
+            photo.compress(Bitmap.CompressFormat.PNG, 100,
+                    new FileOutputStream(file));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

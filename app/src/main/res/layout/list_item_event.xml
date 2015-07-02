@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:iosched="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/background_with_shadow"
+    android:layout_margin="5dp"
+    >
+
+
+    <app.roundtable.nepal.activity.widget.BezelImageView
+        android:id="@+id/eventPhotoImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        iosched:maskDrawable="@drawable/circle_mask"
+        />
+
+
+    <TextView
+        android:id="@+id/eventNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="event name"
+        android:layout_toRightOf="@+id/eventPhotoImageView"
+        android:layout_marginLeft="10dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/name_background"
+        android:maxLines="2"
+        />
+
+
+
+    <TextView
+        android:id="@+id/eventVenueNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/venue"
+        android:layout_toRightOf="@+id/eventPhotoImageView"
+        android:layout_below="@+id/eventNameTextView"
+        android:layout_marginLeft="10dp"
+        android:textSize="15dp"
+        android:layout_marginTop="5dp"
+        />
+
+
+    <TextView
+        android:id="@+id/eventDateTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/venue"
+        android:layout_toRightOf="@+id/eventPhotoImageView"
+        android:layout_below="@+id/eventVenueNameTextView"
+        android:layout_marginLeft="10dp"
+        android:textSize="15dp"
+        android:layout_marginTop="5dp"
+        />
+
+
+</RelativeLayout>

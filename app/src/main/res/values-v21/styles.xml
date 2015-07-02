@@ -14,11 +14,13 @@
 
 
 
-    <style name="Base.MyTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Base.MyTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:colorPrimary">@color/primary_color</item>
         <item name="android:colorPrimaryDark">@color/primary_color_dark</item>
         <item name="android:colorAccent">@color/accent_color</item>
         <item name="android:textColorPrimary">#ffffff</item>
+        <item name="android:colorControlNormal">#ffffff</item>
+        <item name="android:textColor">@color/text_primary_color</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

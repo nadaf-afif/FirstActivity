@@ -1,52 +1,64 @@
 package app.roundtable.nepal.activity.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 import app.roundtable.nepal.R;
+import app.roundtable.nepal.activity.databeans.TablesInfoBean;
 
 /**
  * Created by afif on 10/6/15.
  */
-public class TableNameDialogAdapter extends ArrayAdapter<String> {
+public class TableNameDialogAdapter extends BaseAdapter {
 
-    private String[] tableNames;
+    public ArrayList<TablesInfoBean> tableNames ;
     private Context mContext;
-    private ArrayList<Boolean> selected = new ArrayList<>();
+    public Set<String> selectedId = new TreeSet<>();
 
-    public TableNameDialogAdapter(Context context, int resource, String[] objects) {
-        super(context, resource, objects);
+    public TableNameDialogAdapter(Context context,  ArrayList<TablesInfoBean> objects) {
         mContext = context;
         tableNames = objects;
+
     }
 
     @Override
     public int getCount() {
-        return tableNames.length + 1;
+        return tableNames.size();
     }
 
     @Override
     public String getItem(int position) {
-        return tableNames[position];
+        return tableNames.get(position).getTableName();
+
     }
 
     @Override
-    public int getPosition(String item) {
-        return super.getPosition(item);
+    public long getItemId(int position) {
+        return position;
     }
 
+
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         ViewHolder holder = null;
+
         if(convertView == null){
 
             holder = new ViewHolder();
@@ -56,21 +68,73 @@ public class TableNameDialogAdapter extends ArrayAdapter<String> {
             holder.mtableName = (TextView) convertView.findViewById(R.id.tableNameTextView);
             holder.mCheckBox = (CheckBox)convertView.findViewById(R.id.tableCheckBox);
 
+
+
+
             convertView.setTag(holder);
+
+            final ViewHolder viewHolder = holder;
+            holder.mCheckBox.setOnClickListener(new View.OnClickListener() {
+
+
+                @Override
+                public void onClick(View v) {
+
+                    int tag = (int) v.getTag();
+                    boolean isChecked = viewHolder.mCheckBox.isChecked();
+
+                    if (tag > 0) {
+
+                        if (isChecked && tableNames.get(tag).isSelected()) {
+
+                            tableNames.get(tag).setIsSelected(false);
+                            selectedId.remove(tableNames.get(tag).getTableId());
+
+                        } else if (!tableNames.get(tag).isSelected()) {
+
+                            tableNames.get(tag).setIsSelected(true);
+                            selectedId.add(tableNames.get(tag).getTableId());
+                        }
+
+                    } else if (isChecked) {
+
+
+                        for (int j = 0; j < tableNames.size(); j++) {
+                            tableNames.get(j).setIsSelected(true);
+                            selectedId.add(tableNames.get(j).getTableId());
+                        }
+
+                        notifyDataSetChanged();
+
+                    } else {
+
+
+                        for (int j = 0; j < tableNames.size(); j++) {
+                            tableNames.get(j).setIsSelected(false);
+                            selectedId.remove(tableNames.get(j).getTableId());
+
+                        }
+
+                        notifyDataSetChanged();
+                    }
+
+                }
+
+
+            });
+
+
         }else{
 
             holder= (ViewHolder) convertView.getTag();
         }
 
+        holder.mCheckBox.setTag(position);
 
-        if(position == 0)
-        {
-            holder.mtableName.setText("Select All");
+        holder.mtableName.setText(tableNames.get(position).getTableName());
+        holder.mCheckBox.setChecked(tableNames.get(position).isSelected());
 
-        }else {
 
-            holder.mtableName.setText(tableNames[position-1]);
-        }
         return convertView;
     }
 

@@ -91,8 +91,8 @@ public class AddNewNewsActivity extends AppCompatActivity implements View.OnClic
         ListView mListView = (ListView)dialog.findViewById(R.id.tableNameListView);
         Button doneButton = (Button)dialog.findViewById(R.id.doneButton);
 
-        TableNameDialogAdapter adapter = new TableNameDialogAdapter(this,R.layout.list_item_table_names,mTableName);
-        mListView.setAdapter(adapter);
+       // TableNameDialogAdapter adapter = new TableNameDialogAdapter(this,R.layout.list_item_table_names,mTableName);
+       // mListView.setAdapter(adapter);
 
         dialog.show();
 

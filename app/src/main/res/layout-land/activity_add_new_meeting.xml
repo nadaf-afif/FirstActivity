@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/actionToolbar"
+        layout="@layout/action_toolbar_layout"/>
+
+    <ImageView
+        android:id="@+id/eventPhotoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/upload_place_holder"
+        android:layout_below="@+id/actionToolbar"
+        android:visibility="gone"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/eventPhotoImageView"
+        android:padding="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:text="@string/meeting_type"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/name_background"
+                    android:textSize="18sp"
+                    />
+
+                <EditText
+                    android:id="@+id/eventNameEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:hint="@string/enter_event_name"
+                    android:textColor="@color/material_blue_grey_800"
+                    />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:text="@string/venue"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/name_background"
+                    android:textSize="18sp"
+                    />
+
+                <EditText
+                    android:id="@+id/venueNameEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:hint="@string/enter_event_venue"
+                    android:textColor="@color/material_blue_grey_800"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:text="@string/date"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/name_background"
+                    android:textSize="18sp"
+                    />
+
+                <EditText
+                    android:id="@+id/dateEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:hint="@string/click_here"
+                    android:editable="false"
+                    android:focusableInTouchMode="false"
+                    android:textColor="@color/material_blue_grey_800"
+
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:text="@string/time"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/name_background"
+                    android:textSize="18sp"
+                    />
+
+                <EditText
+                    android:id="@+id/timeEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:hint="@string/click_here"
+                    android:editable="false"
+                    android:focusableInTouchMode="false"
+                    android:textColor="@color/material_blue_grey_800"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:text="@string/invitees"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/name_background"
+                    android:textSize="18sp"
+                    />
+
+                <EditText
+                    android:id="@+id/invitessEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:hint="@string/click_here"
+                    android:editable="false"
+                    android:focusableInTouchMode="false"
+                    android:textColor="@color/material_blue_grey_800"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                android:layout_marginTop="10dp">
+
+
+                <Switch
+                    android:id="@+id/spouceAndChildrenSwitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/spouce"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/name_background"
+                    />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/addMeetingButton"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:text="@string/add_meeting"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@color/accent_color"
+                android:textColor="@android:color/white"
+                />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

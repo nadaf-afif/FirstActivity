@@ -8,10 +8,11 @@
         layout="@layout/action_toolbar_layout"/>
 
     <ImageView
-        android:id="@+id/eventPhotoImageView"
+        android:id="@+id/newsPhotoImageView"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:background="@drawable/upload_place_holder"
+        android:src="@drawable/upload_place_holder"
+        android:background="@drawable/background_shadow"
         android:layout_below="@+id/actionToolbar"
         />
 
@@ -19,7 +20,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/eventPhotoImageView"
+        android:layout_below="@+id/newsPhotoImageView"
         android:padding="5dp"
         >
 
@@ -42,6 +43,7 @@
                 />
 
             <TextView
+                android:id="@+id/newsDesriptionTextView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="This is a demo text for news details. this view contains all the details about the news that member entered.

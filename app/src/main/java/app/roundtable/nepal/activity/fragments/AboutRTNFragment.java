@@ -11,13 +11,17 @@ import android.widget.TextView;
 
 import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.activity.AboutUsActivity;
+import app.roundtable.nepal.activity.activity.AimsAndObjectiveActivity;
+import app.roundtable.nepal.activity.activity.ContactDetailsActivity;
+import app.roundtable.nepal.activity.activity.ConveyersActivity;
+import app.roundtable.nepal.activity.activity.RTNSongsActivity;
 
 /**
  * Created by afif on 10/6/15.
  */
 public class AboutRTNFragment extends Fragment implements View.OnClickListener{
 
-    private TextView mAboutUsTextView, mAimsObjectiveTextView, mContactsTextView, mBoardMembersTextView;
+    private TextView mAboutUsTextView, mAimsObjectiveTextView, mContactsTextView, mBoardMembersTextView, RTNSongTextView;
 
 
     @Override
@@ -43,30 +47,56 @@ public class AboutRTNFragment extends Fragment implements View.OnClickListener{
         mAimsObjectiveTextView = (TextView) view.findViewById(R.id.aimsAndObjectiveTextView);
         mContactsTextView = (TextView) view.findViewById(R.id.contactsTextView);
         mBoardMembersTextView = (TextView)view.findViewById(R.id.boardMembersTextView);
+        RTNSongTextView = (TextView) view.findViewById(R.id.songTextView);
 
         mAboutUsTextView.setOnClickListener(this);
         mAimsObjectiveTextView.setOnClickListener(this);
         mContactsTextView.setOnClickListener(this);
         mBoardMembersTextView.setOnClickListener(this);
+        RTNSongTextView.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
 
+
+        Intent intent ;
+
         switch (view.getId()){
+
 
             case R.id.aboutRTVTextView :
 
-                Intent intent = new Intent(getActivity(), AboutUsActivity.class);
+                intent = new Intent(getActivity(), AboutUsActivity.class);
                 startActivity(intent);
                 break;
 
 
             case R.id.aimsAndObjectiveTextView :
 
+                intent = new Intent(getActivity(), AimsAndObjectiveActivity.class);
+                startActivity(intent);
+                break;
+
             case R.id.contactsTextView :
 
+                intent = new Intent(getActivity(), ContactDetailsActivity.class);
+                startActivity(intent);
+                break;
+
+
             case R.id.boardMembersTextView :
+
+                intent = new Intent(getActivity(), ConveyersActivity.class);
+                startActivity(intent);
+                break;
+
+
+            case R.id.songTextView :
+
+                intent = new Intent(getActivity(), RTNSongsActivity.class);
+                startActivity(intent);
+                break;
         }
 
     }

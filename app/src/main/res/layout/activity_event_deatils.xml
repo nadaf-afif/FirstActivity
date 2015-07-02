@@ -129,14 +129,40 @@
 
 
                 <Switch
-                    android:id="@+id/spouceAndChildrenSwitch"
+                    android:id="@+id/spouceSwitch"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/spouce_and_child"
+                    android:hint="@string/spouce"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/name_background"
                     />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                >
+
+
+                <Switch
+                    android:id="@+id/childrenSwitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/children"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/name_background"
+                    />
+
 
 
             </LinearLayout>

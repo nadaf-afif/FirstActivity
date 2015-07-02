@@ -33,7 +33,10 @@
             android:layout_marginTop="10dp"
             android:textSize="22sp"
             android:maxLength="50"
+            android:text="demo@demo.com"
             android:inputType="textEmailAddress"
+            android:background="@drawable/background_shadow"
+            android:textColor="@color/material_blue_grey_800"
             />
 
         <EditText
@@ -46,6 +49,9 @@
             android:textSize="22sp"
             android:inputType="textPassword"
             android:maxLength="15"
+            android:text=""
+            android:background="@drawable/background_shadow"
+            android:textColor="@color/material_blue_grey_800"
             />
 
 
@@ -58,18 +64,38 @@
             android:text="@string/login_text"
             android:layout_marginTop="30dp"
             android:textSize="25sp"
+            android:background="@color/accent_color"
+            android:textColor="@android:color/white"
             />
 
         <TextView
             android:id="@+id/getOTPTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Get OTP?"
+            android:text="@string/request_otp_text"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_below="@+id/loginButton"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
+            android:textColor="@color/name_background"
+            android:padding="5dp"
+            android:gravity="center"
+            />
+
+
+        <TextView
+            android:id="@+id/requestNewAccessTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/request_new_access"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/getOTPTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/name_background"
+            android:padding="5dp"
             />
 
     </RelativeLayout>

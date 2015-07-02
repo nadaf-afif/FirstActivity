@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/background_shadow"
+    >
+
+    <ImageView
+        android:id="@+id/avtarImageView"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/user_place_holder"
+        />
+    
+    
+    <TextView
+        android:id="@+id/userNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/avtarImageView"
+        android:text="User Name"
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/name_background"
+        />
+
+    <TextView
+        android:id="@+id/userEmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userNameTextView"
+        android:text="nadafafif@gmail.com"
+        android:layout_toRightOf="@+id/avtarImageView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="17dp"
+        android:textColor="@color/material_blue_grey_800"
+        android:drawableLeft="@drawable/ic_action_email"
+        android:gravity="center_vertical"
+        android:drawablePadding="10dp"
+        />
+
+
+    <TextView
+        android:id="@+id/userPhoneTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8888555666"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/userEmailTextView"
+        android:layout_toRightOf="@+id/avtarImageView"
+        android:textSize="17dp"
+        android:textColor="@color/material_blue_grey_800"
+        android:drawableLeft="@drawable/ic_action_call"
+        android:gravity="center_vertical"
+        android:drawablePadding="10dp"
+        />
+
+
+</RelativeLayout>

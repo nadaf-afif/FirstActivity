@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/actionToolbar"
+        layout="@layout/action_toolbar_layout"/>
+
+    <ImageView
+        android:id="@+id/newsPhotoImageView"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/upload_place_holder"
+        android:layout_below="@+id/actionToolbar"
+        />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/newsPhotoImageView"
+        android:layout_below="@+id/actionToolbar"
+        android:padding="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:text="@string/headline_text"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/name_background"
+                    android:textSize="18sp"
+                    />
+
+                <EditText
+                    android:id="@+id/newsHeadlineEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:hint="@string/enter_news_headline"
+                    android:textColor="@color/material_blue_grey_800"
+                    />
+
+            </LinearLayout>
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:text="@string/concern_tables_text"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/name_background"
+                    android:textSize="18sp"
+                    />
+
+                <EditText
+                    android:id="@+id/concernTablesEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:hint="@string/click_here"
+                    android:editable="false"
+                    android:focusableInTouchMode="false"
+                    android:textColor="@color/material_blue_grey_800"
+
+                    />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                >
+
+
+                <EditText
+                    android:id="@+id/newsDetailsEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:lines="6"
+                    android:hint="@string/news_deatils_text"
+                    android:gravity="left|top"
+                    android:textColor="@color/material_blue_grey_800"
+
+                    />
+
+
+            </LinearLayout>
+
+
+
+            <Button
+                android:id="@+id/submitNewsButton"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:text="@string/submit_news"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@color/accent_color"
+                android:textColor="@android:color/white"
+                />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

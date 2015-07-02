@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_shadow"
+    android:padding="5dp"
+    >
+
+    <ImageView
+        android:id="@+id/tableLogoImageView"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/splash_logo"
+        android:padding="3dp"
+        android:layout_centerHorizontal="true"
+        />`
+
+    <TextView
+        android:id="@+id/tableNameGridTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tableLogoImageView"
+        android:layout_marginTop="5dp"
+        android:background="@color/name_background"
+        android:textColor="@android:color/white"
+        android:text="Round Table Nepal"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:maxLines="2"
+        />
+
+
+</RelativeLayout>

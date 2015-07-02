@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <include layout="@layout/action_toolbar_layout"
+        android:id="@+id/actionToolbar"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_shadow"
+        android:gravity="center_vertical"
+        android:text="@string/contact_deatils_text"
+        android:textSize="18dp"
+        android:textColor="@color/name_background"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/actionToolbar"
+        android:padding="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        />
+
+</RelativeLayout>

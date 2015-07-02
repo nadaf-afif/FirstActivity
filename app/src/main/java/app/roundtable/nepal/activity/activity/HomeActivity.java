@@ -5,8 +5,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import app.roundtable.nepal.R;
@@ -21,7 +22,7 @@ import app.roundtable.nepal.activity.navigation.NavigationDrawerFragment;
 /**
  * Created by afif on 12/5/15.
  */
-public class HomeActivity extends ActionBarActivity {
+public class HomeActivity extends AppCompatActivity {
 
     private Toolbar mToolBar;
     private Fragment mFragment;
@@ -34,7 +35,6 @@ public class HomeActivity extends ActionBarActivity {
         mToolBar = (Toolbar) findViewById(R.id.action_bar);
 
         setSupportActionBar(mToolBar);
-        getSupportActionBar().setIcon(R.drawable.ic_launcher);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -45,11 +45,6 @@ public class HomeActivity extends ActionBarActivity {
 
     }
 
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
 
 
     public void displayTab(int position){
@@ -103,7 +98,7 @@ public class HomeActivity extends ActionBarActivity {
 
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.container,mFragment);
+        ft.replace(R.id.container, mFragment);
         ft.commit();
 
     }
@@ -118,4 +113,33 @@ public class HomeActivity extends ActionBarActivity {
             mFragment.onActivityResult(requestCode,resultCode,data);
         }
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+
+        getMenuInflater().inflate(R.menu.my,menu);
+
+        return true;
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        switch (item.getItemId()){
+
+            case R.id.action_search :
+
+                Intent intent = new Intent(this, SearchMembersActivity.class);
+                startActivity(intent);
+
+        }
+        return true;
+    }
+
+
+
 }
