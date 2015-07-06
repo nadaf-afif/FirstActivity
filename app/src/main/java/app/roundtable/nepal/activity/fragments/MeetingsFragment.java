@@ -77,11 +77,13 @@ public class MeetingsFragment extends Fragment implements DataLoader{
     @Override
     public void setFirstPageData(Cursor cursor) {
 
-        if (cursor.getCount() > 0) {
-            mAdapter = new MeetingsListAdapter(getActivity(), cursor);
-            mRecyclerView.setAdapter(mAdapter);
-        }else
-            onNoData();
+        if(isAdded()) {
+            if (cursor.getCount() > 0) {
+                mAdapter = new MeetingsListAdapter(getActivity(), cursor);
+                mRecyclerView.setAdapter(mAdapter);
+            } else
+                onNoData();
+        }
     }
 
     @Override

@@ -39,4 +39,10 @@ public class ApiUrls {
     // add new meeting API path
     public static final String ADD_NEW_MEETING_API_PATH = BASE_URL_PATH + "/api/meeting/create";
 
+    // add new news API path
+    public static final String ADD_NEWS_API_PATH = BASE_URL_PATH + "/api/news/create";
+
+    // get favorites list APi PAth
+    public static final String FAVORITES_LIST_API_PATH = BASE_URL_PATH + "/api/favorites/get_all";
+
 }

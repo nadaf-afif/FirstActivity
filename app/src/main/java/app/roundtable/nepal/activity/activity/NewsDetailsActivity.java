@@ -3,6 +3,8 @@ package app.roundtable.nepal.activity.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,7 +37,6 @@ public class NewsDetailsActivity extends AppCompatActivity{
         mToolBar = (Toolbar) findViewById(R.id.actionToolbar);
         setSupportActionBar(mToolBar);
         getSupportActionBar().setTitle(getString(R.string.news_deatils_text));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mHeadLineTextView = (TextView) findViewById(R.id.newsHeadLineTextView);
         mNewsDescriptionTextView = (TextView) findViewById(R.id.newsDesriptionTextView);
@@ -45,6 +46,7 @@ public class NewsDetailsActivity extends AppCompatActivity{
 
         setValues(bundle);
     }
+
 
     private void setValues(Bundle bundle) {
 

@@ -69,8 +69,8 @@ public class NavigationDrawerFragment extends Fragment implements RoundTableMenu
     public List<RecyclerData> getData(){
 
         List<RecyclerData> data = new ArrayList<RecyclerData>();
-        int[] icons = new int[]{R.drawable.ic_action_group_light, R.drawable.ic_action_event,R.drawable.ic_action_news,R.drawable.ic_action_favorite , R.drawable.ic_action_camera , R.drawable.ic_action_about};
-        String[] title = new String[]{"RTN Clubs", "Events", "News", "Favorites","Submit Photos",  "About RTN"};
+        int[] icons = new int[]{R.drawable.ic_action_group_light, R.drawable.ic_action_event,R.drawable.ic_action_news,R.drawable.ic_action_favorite ,R.drawable.ic_action_favorite, R.drawable.ic_action_camera , R.drawable.ic_action_about};
+        String[] title = new String[]{"RTN Clubs", "Events", "News", "Favorites","Privileges","Submit Photos",  "About RTN"};
 
         for (int i = 0;i<title.length ;i++){
 

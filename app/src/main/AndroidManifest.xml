@@ -8,6 +8,10 @@
     <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL"/>
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="ANDROID.PERMISSION.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="app.roundtable.nepal.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.SEND"/>
 
     <application
         android:allowBackup="true"
@@ -53,7 +57,6 @@
 
         <activity android:name="app.roundtable.nepal.activity.activity.AboutUsActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName=".activity.activity.HomeActivity"
             >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -62,7 +65,6 @@
 
         <activity android:name="app.roundtable.nepal.activity.activity.AddNewEventActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName=".activity.activity.HomeActivity"
             >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -71,7 +73,6 @@
 
         <activity android:name="app.roundtable.nepal.activity.activity.AddNewMeetingActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName=".activity.activity.HomeActivity"
             >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -80,7 +81,6 @@
 
         <activity android:name="app.roundtable.nepal.activity.activity.AddNewNewsActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName=".activity.activity.HomeActivity"
             >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -89,7 +89,6 @@
 
         <activity android:name="app.roundtable.nepal.activity.activity.NewsDetailsActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName=".activity.activity.HomeActivity"
             >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -98,7 +97,6 @@
 
         <activity android:name="app.roundtable.nepal.activity.activity.EventDetailsActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName=".activity.activity.HomeActivity"
             >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -107,7 +105,6 @@
 
         <activity android:name="app.roundtable.nepal.activity.activity.MeetingDetailsActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName=".activity.activity.HomeActivity"
             >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>

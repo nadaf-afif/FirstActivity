@@ -89,14 +89,42 @@ The various clubs in Nepal have undertaken large social service projects. As ide
     <string name="select_at_least_one_table">Please select tables</string>
     <string name="something_went_wrong">Oops , Something went wrong</string>
     <string name="please_select_event_photo">Select event photo</string>
+    <string name="enter_news_detail">Enter news deatils</string>
+    <string name="please_select_news_photo">please select news picture</string>
+    <string name="date_digit_data">123456789-0</string>
+    <string name="mobile_digit_data">1324567980(-)</string>
+    
+    <string name="gcm_server_api_key">AIzaSyAdcp_ExRygjsNZCJatSuRa5lq-zVKbaLQ</string>
+    <string name="enter_search_name">Enter name to search</string>
+    <string name="enter_search_mobile">Enter mobile number</string>
+    <string name="enter_blood_group">Enter blood group</string>
+    <string name="enter_city">Enter city</string>
+    <string name="enter_date_of_birth">Enter date of birth</string>
+    <string name="please_select_search_type">Please select search type</string>
+    <string name="enter_search_key">Please enter search key</string>
+    <string name="please_enter_key_length">Please enter at least 4 characters</string>
 
     <array name="search_types">
         <item>select</item>
         <item>Name</item>
-        <item>Phone Number</item>
+        <item>Mobile</item>
         <item>Email</item>
-        <item>Blood Group</item>
         <item>City</item>
+        <item>Date of Birth</item>
+        <item>Blood Group</item>
+
+    </array>
+
+    <array name="blood_group_array">
+        <item>select</item>
+        <item>A +ve</item>
+        <item>A -ve</item>
+        <item>AB +ve</item>
+        <item>AB -ve</item>
+        <item>B +ve</item>
+        <item>B -ve</item>
+        <item>O +ve</item>
+        <item>O -ve</item>
     </array>
 
 </resources>

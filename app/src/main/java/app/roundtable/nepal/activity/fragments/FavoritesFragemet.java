@@ -1,5 +1,8 @@
 package app.roundtable.nepal.activity.fragments;
 
+import android.database.Cursor;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,13 +15,19 @@ import android.view.ViewGroup;
 
 import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.adapters.FavoritesAdapter;
+import app.roundtable.nepal.activity.asynktasks.GetFavoritesAsyncTask;
+import app.roundtable.nepal.activity.interfaces.DataLoader;
+import app.roundtable.nepal.activity.network.NetworkManager;
 
 /**
  * Created by afif on 8/6/15.
  */
-public class FavoritesFragemet extends Fragment {
+public class FavoritesFragemet extends Fragment implements DataLoader{
 
+    public static String tag = FavoritesFragemet.class.getSimpleName();
     private RecyclerView mRecyclerView;
+    private GetFavoritesAsyncTask mAsyncTask;
+    private FavoritesAdapter mAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,11 +48,51 @@ public class FavoritesFragemet extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         mRecyclerView = (RecyclerView)view.findViewById(R.id.favoritesRecyclerView);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),3));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
+        getFirstPageData();
 
-        FavoritesAdapter adapter = new FavoritesAdapter(getActivity());
-        mRecyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void getFirstPageData() {
+
+        if(isAdded()){
+
+            if(NetworkManager.isConnectedToInternet(getActivity())){
+
+                mAsyncTask = new GetFavoritesAsyncTask(this, getActivity());
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
+                    mAsyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                else
+                    mAsyncTask.execute();
+
+            }else {
+
+                onNoInternet();
+            }
+
+        }
+
+    }
+
+    @Override
+    public void setFirstPageData(Cursor cursor) {
+        if(isAdded()){
+
+         mAdapter = new FavoritesAdapter(getActivity(),cursor);
+         mRecyclerView.setAdapter(mAdapter);
+        }
+    }
+
+    @Override
+    public void onNoInternet() {
+
+    }
+
+    @Override
+    public void onNoData() {
 
     }
 }

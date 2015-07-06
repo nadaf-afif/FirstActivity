@@ -10,4 +10,6 @@ public class Constants {
 
     public static final String CLOUD_API_KEY = "494532133989211";
     public static final String CLOUD_API_SECRET = "d_OaTlMmpuI457pTjJHT-FCbA5A";
+
+    public static final String SENDER_ID = "666414841570";
 }

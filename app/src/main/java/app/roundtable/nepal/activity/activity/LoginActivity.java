@@ -2,10 +2,12 @@ package app.roundtable.nepal.activity.activity;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -13,17 +15,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.apache.http.HttpStatus;
-import org.apache.http.NameValuePair;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.google.android.gms.iid.InstanceID;
 
-import java.util.List;
-
+import java.io.IOException;
 import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.asynktasks.GetOTPAsyncTasks;
 import app.roundtable.nepal.activity.asynktasks.LoginAsyncTask;
-import app.roundtable.nepal.activity.managers.LoginManager;
-import app.roundtable.nepal.activity.network.ApiClient;
 import app.roundtable.nepal.activity.network.NetworkManager;
+import app.roundtable.nepal.activity.util.ApplicationPreferences;
+import app.roundtable.nepal.activity.util.Constants;
 
 /**
  * Created by afif on 2/6/15.
@@ -35,6 +36,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
     private Button mLoginButton;
     private TextView mGetOTPTextView, mRequestNewAccessTextView;
     private LoginAsyncTask mAsyncTask;
+    private ApplicationPreferences mSharedPreferences;
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -42,6 +44,67 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         setContentView(R.layout.activity_login);
 
         initViews();
+
+        if(!mSharedPreferences.isDeviceRegistered())
+            getRegistrationId();
+
+
+    }
+
+
+
+    private void getRegistrationId() {
+
+
+        new AsyncTask<String, Void, String>(){
+
+            ProgressDialog mProgressDialog;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                mProgressDialog = new ProgressDialog(LoginActivity.this);
+                mProgressDialog.setMessage(getString(R.string.please_wait));
+                mProgressDialog.setCancelable(false);
+                mProgressDialog.show();
+            }
+
+            @Override
+            protected void onPostExecute(String registrationId) {
+                super.onPostExecute(registrationId);
+
+                if(mProgressDialog!=null && mProgressDialog.isShowing())
+                    mProgressDialog.dismiss();
+
+                Toast.makeText(LoginActivity.this, registrationId,Toast.LENGTH_SHORT).show();
+
+                if(registrationId!=null && !registrationId.equals("")) {
+                    mSharedPreferences.setGcmRegistrationId(registrationId);
+                    mSharedPreferences.setIsRegistered(true);
+                }
+            }
+
+            @Override
+            protected String doInBackground(String... params) {
+
+                String regId = null;
+
+                InstanceID instanceID = InstanceID.getInstance(LoginActivity.this);
+                try {
+                    regId = instanceID.getToken(Constants.SENDER_ID, GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                return regId;
+            }
+
+
+
+        }.execute();
+
+
 
     }
 
@@ -56,6 +119,8 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         mRequestNewAccessTextView.setOnClickListener(this);
         mLoginButton.setOnClickListener(this);
         mGetOTPTextView.setOnClickListener(this);
+
+        mSharedPreferences = new ApplicationPreferences(this);
     }
 
     @Override

@@ -21,12 +21,14 @@ import app.roundtable.nepal.activity.network.NetworkManager;
 /**
  * Created by afif on 8/6/15.
  */
-public class NewsListFragment extends Fragment implements DataLoader{
+public class NewsListFragment extends Fragment implements DataLoader, View.OnClickListener{
 
+    public static String tag = NewsListFragment.class.getSimpleName();
     private RecyclerView mRecyclerView;
     private FloatingActionButton mAddNewsFloatingButton;
     private NewsListAdapter mAdapter;
     private GetNewsListAsyncTask mAsyncTask;
+    private FloatingActionButton mFloatingActionButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,8 @@ public class NewsListFragment extends Fragment implements DataLoader{
         mAddNewsFloatingButton = (FloatingActionButton)view.findViewById(R.id.addNewsFloatingActionButton);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mFloatingActionButton = (FloatingActionButton) view.findViewById(R.id.addNewsFloatingActionButton);
+        mFloatingActionButton.setOnClickListener(this);
 
         getFirstPageData();
     }
@@ -87,6 +91,23 @@ public class NewsListFragment extends Fragment implements DataLoader{
 
     @Override
     public void onNoData() {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()){
+
+            case R.id.addNewsFloatingActionButton :
+
+                Intent intent = new Intent(getActivity(), AddNewNewsActivity.class);
+                startActivity(intent);
+
+                break;
+
+
+        }
 
     }
 }

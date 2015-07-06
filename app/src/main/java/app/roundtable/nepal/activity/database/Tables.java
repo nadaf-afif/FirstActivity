@@ -146,4 +146,26 @@ public class Tables {
     }
 
 
+    public interface Favorites{
+
+        public static final String FAVORITE_TABLE = "favorites";
+
+        public static final String BRAND_ID = "brand_id";
+        public static final String BRAND_NAME = "brand_name";
+        public static final String BRAND_LOGO_URL = "image_url";
+        public static final String BRAND_WEBSITE_URL = "website_url";
+
+
+        public static final String COLUMN = BRAND_ID + " text not null, "+
+                                            BRAND_NAME + " text not null, "+
+                                            BRAND_LOGO_URL + " text not null, "+
+                                            BRAND_WEBSITE_URL + " text not null";
+
+        public static final String FAVORITE_TABLE_SCHEME = "CREATE TABLE "+FAVORITE_TABLE + "("+COLUMN+")";
+
+
+    }
+
+
+
 }

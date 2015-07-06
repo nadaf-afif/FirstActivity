@@ -35,6 +35,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL(Tables.Events.EVENTS_SCHEMA);
         db.execSQL(Tables.News.NEWS_TABLE_SCHEMA);
         db.execSQL(Tables.Members.MEMBERS_TABLE_SCHEMA);
+        db.execSQL(Tables.Favorites.FAVORITE_TABLE_SCHEME);
     }
 
     @Override

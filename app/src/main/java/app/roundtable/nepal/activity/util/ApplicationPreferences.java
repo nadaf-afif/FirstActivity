@@ -11,12 +11,14 @@ import app.roundtable.nepal.R;
  */
 public class ApplicationPreferences {
 
+    private static final String NAVIGATION_INDEX = "index_tab";
     private Context mContext;
     private SharedPreferences mSharedPreferences;
 
 
     public static final String GCM_REGISTRATION_ID = "gcm_id";
     public static final String IS_LOGGED_IN = "is_login";
+    public static final String IS_REGISTERED = "device_registered";
 
     public ApplicationPreferences(Context mContext) {
         this.mContext = mContext;
@@ -27,7 +29,7 @@ public class ApplicationPreferences {
     public String getGcmRegistrationId(){
 
         //default id to be removed
-        return mSharedPreferences.getString(GCM_REGISTRATION_ID,"16487873dqqdfq65997");
+        return mSharedPreferences.getString(GCM_REGISTRATION_ID,"");
 
     }
 
@@ -41,9 +43,29 @@ public class ApplicationPreferences {
 
     public void setIsLoggedIn(boolean isLoggedIn){
 
-        mSharedPreferences.edit().putBoolean(IS_LOGGED_IN,isLoggedIn).apply();
+        mSharedPreferences.edit().putBoolean(IS_LOGGED_IN, isLoggedIn).commit();
     }
 
     public boolean IsLoggedIn(){ return mSharedPreferences.getBoolean(IS_LOGGED_IN, true); };
+
+    public boolean isDeviceRegistered() {
+        return mSharedPreferences.getBoolean(IS_REGISTERED, false);
+    }
+    
+    public void setIsRegistered(boolean value){
+
+        mSharedPreferences.edit().putBoolean(IS_REGISTERED,value).commit();
+    }
+
+
+    public int getNavigationTabIndex(){
+
+        return mSharedPreferences.getInt(NAVIGATION_INDEX,0);
+    }
+
+    public void setNavigationIndex( int value){
+
+        mSharedPreferences.edit().putInt(NAVIGATION_INDEX,value).commit();
+    }
 
 }

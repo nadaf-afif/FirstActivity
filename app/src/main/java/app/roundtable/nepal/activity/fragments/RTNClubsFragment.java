@@ -23,6 +23,7 @@ public class RTNClubsFragment extends Fragment implements DataLoader{
     private RecyclerView mTableNameGridView;
     private GetTablesAsyncTasks mAsyncTasks;
     private ClubTablesAdapter mAdapter;
+    public static final String tag = RTNClubsFragment.class.getSimpleName();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,13 +70,17 @@ public class RTNClubsFragment extends Fragment implements DataLoader{
     @Override
     public void setFirstPageData(Cursor cursor) {
 
-        mAdapter = new ClubTablesAdapter(getActivity(), cursor);
+        if(isAdded()) {
+            mAdapter = new ClubTablesAdapter(getActivity(), cursor);
 
-        mTableNameGridView.setAdapter(mAdapter);
+            mTableNameGridView.setAdapter(mAdapter);
+        }
     }
 
     @Override
     public void onNoInternet() {
+
+
 
     }
 

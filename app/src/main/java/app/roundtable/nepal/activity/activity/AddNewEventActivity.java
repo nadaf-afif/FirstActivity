@@ -54,7 +54,6 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
     private int mYear, mMonth, mDay, mHour, mMinute;
     private ImageView mEventImageView;
     private static int TIME_PICKER_DIALOG = 111, DATE_PICKER_DIALOG = 222;
-    private String[] mTableName = new String[]{"Table 1","Table 2","Table 3","Table 4","Table 5","Table 6"};
     public static final int PICK_CAMERA_IMAGE = 011, PICK_GALLERY_IMAGE = 911;
     public  ArrayList<TablesInfoBean> tablesData = new ArrayList<>();
     private Set<String > selectedId;

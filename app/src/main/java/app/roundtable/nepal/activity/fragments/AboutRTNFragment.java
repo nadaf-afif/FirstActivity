@@ -21,6 +21,7 @@ import app.roundtable.nepal.activity.activity.RTNSongsActivity;
  */
 public class AboutRTNFragment extends Fragment implements View.OnClickListener{
 
+    public static String tag = AboutRTNFragment.class.getSimpleName();
     private TextView mAboutUsTextView, mAimsObjectiveTextView, mContactsTextView, mBoardMembersTextView, RTNSongTextView;
 
 

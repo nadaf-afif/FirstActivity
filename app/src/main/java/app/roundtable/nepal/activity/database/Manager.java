@@ -3,11 +3,12 @@ package app.roundtable.nepal.activity.database;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import app.roundtable.nepal.activity.network.ApiClient;
+
 /**
  * Created by afif on 20/6/15.
  */
 public class Manager {
-
 
 
     public String getErrorMessage(String response) {

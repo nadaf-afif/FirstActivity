@@ -30,6 +30,7 @@ public class EventsAndMeetingsFragment extends Fragment {
     private FloatingActionButton mAddEventFloatingButton;
     private String mTitle[] = new String[]{"Events", "Meetings"};
     private ArrayList<Fragment> mFragments = new ArrayList<Fragment>();
+    public static final String tag = EventsAndMeetingsFragment.class.getSimpleName();
 
 
     @Override

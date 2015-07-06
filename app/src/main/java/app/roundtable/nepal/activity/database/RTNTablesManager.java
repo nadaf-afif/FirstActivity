@@ -79,7 +79,7 @@ public class RTNTablesManager extends Manager implements Tables.RTNTables{
 
     public Cursor getTables(){
 
-        Cursor cursor = mSqlSqLiteDatabase.rawQuery("SELECT rowid _id, * FROM "+RTN_TABLES_TABLE , null);
+        Cursor cursor = mSqlSqLiteDatabase.rawQuery("SELECT rowid _id, * FROM "+RTN_TABLES_TABLE , new String[]{});
 
         return cursor;
     }

@@ -9,10 +9,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 
 import app.roundtable.nepal.activity.network.ApiClient;
 import app.roundtable.nepal.activity.network.ApiUrls;
+import app.roundtable.nepal.activity.network.MultipartUtility;
 
 /**
  * Created by afif on 25/6/15.
@@ -72,4 +74,24 @@ public class NewsManager extends Manager implements Tables.News{
         return mSqlSqLiteDatabase.rawQuery("SELECT rowId _id, * FROM "+NEWS_TABLE, null);
     }
 
+    public String createNews(String[] params) throws IOException {
+
+        MultipartUtility builder = new MultipartUtility(ApiUrls.ADD_NEWS_API_PATH,"UTF-8");
+
+        String imagePath = params[3];
+
+        if(imagePath != null && !imagePath.equals("")){
+            File file = new File(imagePath);
+            builder.addFilePart("news_image", file);
+        }
+
+        builder.addFormField(NEWS_HEADLINE, params[0]);
+        builder.addFormField(NEWS_DESCRIPTION, params[1]);
+        builder.addFormField("concern_tables", params[2]);
+        builder.addFormField("member_id","5");
+
+        String response = builder.finish();
+
+        return response;
+    }
 }
