@@ -238,15 +238,8 @@
           </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
               <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
               <folding />
-=======
-              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
->>>>>>> iml changes
             </state>
           </provider>
         </entry>
@@ -255,15 +248,8 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/roundtable/nepal/activity/activity/SubmitPhotosActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
               <caret line="197" column="21" selection-start-line="197" selection-start-column="21" selection-end-line="197" selection-end-column="21" />
               <folding />
-=======
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
->>>>>>> iml changes
             </state>
           </provider>
         </entry>
@@ -272,15 +258,8 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/roundtable/nepal/activity/util/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
               <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
               <folding />
-=======
-              <caret line="52" column="50" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
->>>>>>> iml changes
             </state>
           </provider>
         </entry>
@@ -298,19 +277,9 @@
       <file leaf-file-name="strings.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
             <state vertical-scroll-proportion="0.07692308">
               <caret line="176" column="29" selection-start-line="176" selection-start-column="17" selection-end-line="176" selection-end-column="29" />
               <folding />
-=======
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1170#1171#0" expanded="false" />
-                <element signature="e#1220#1221#0" expanded="false" />
-              </folding>
->>>>>>> iml changes
             </state>
           </provider>
         </entry>
@@ -319,11 +288,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
               <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-=======
-              <caret line="71" column="66" selection-start-line="71" selection-start-column="66" selection-end-line="71" selection-end-column="66" />
->>>>>>> iml changes
               <folding />
             </state>
           </provider>
@@ -333,15 +298,8 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
               <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
               <folding />
-=======
-              <caret line="129" column="57" selection-start-line="129" selection-start-column="57" selection-end-line="129" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
->>>>>>> iml changes
             </state>
           </provider>
         </entry>
@@ -350,15 +308,8 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/roundtable/nepal/activity/activity/MyProfileViewActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
               <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
               <folding />
-=======
-              <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
->>>>>>> iml changes
             </state>
           </provider>
         </entry>
@@ -377,15 +328,8 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/roundtable/nepal/activity/database/EventsManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
               <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
               <folding />
-=======
-              <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
->>>>>>> iml changes
             </state>
           </provider>
         </entry>
@@ -3091,11 +3035,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/roundtable/nepal/activity/activity/AddNewEventActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
           <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
-=======
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
->>>>>>> iml changes
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -3200,18 +3140,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
           <folding>
-<<<<<<< HEAD
             <element signature="imports" expanded="false" />
-=======
-            <element signature="e#2661#2690#0" expanded="false" />
-            <element signature="e#5276#5312#0" expanded="false" />
-            <element signature="e#5436#5473#0" expanded="false" />
-            <element signature="e#5587#5617#0" expanded="false" />
-            <element signature="e#5795#5825#0" expanded="false" />
-            <element signature="e#5927#5972#0" expanded="false" />
-            <element signature="e#6108#6153#0" expanded="false" />
-            <element signature="e#7078#7118#0" expanded="false" />
->>>>>>> iml changes
           </folding>
         </state>
       </provider>
@@ -3227,88 +3156,46 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/roundtable/nepal/activity/network/ApiClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
           <caret line="83" column="50" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="50" />
           <folding />
-=======
-          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
->>>>>>> iml changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/roundtable/nepal/activity/adapters/MeetingsListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
         <state vertical-scroll-proportion="2.0689654">
           <caret line="72" column="67" selection-start-line="72" selection-start-column="67" selection-end-line="72" selection-end-column="67" />
-=======
-        <state vertical-scroll-proportion="0.0">
-          <caret line="129" column="57" selection-start-line="129" selection-start-column="57" selection-end-line="129" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
->>>>>>> iml changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/roundtable/nepal/activity/database/NewsManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
           <caret line="41" column="127" selection-start-line="41" selection-start-column="127" selection-end-line="41" selection-end-column="127" />
           <folding />
-=======
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
->>>>>>> iml changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/roundtable/nepal/activity/database/EventsManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
           <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
           <folding />
-=======
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
->>>>>>> iml changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
           <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
           <folding />
-=======
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1170#1171#0" expanded="false" />
-            <element signature="e#1220#1221#0" expanded="false" />
-          </folding>
->>>>>>> iml changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
           <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-=======
-          <caret line="71" column="66" selection-start-line="71" selection-start-column="66" selection-end-line="71" selection-end-column="66" />
->>>>>>> iml changes
           <folding />
         </state>
       </provider>
@@ -3335,15 +3222,8 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/roundtable/nepal/activity/activity/SubmitPhotosActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
           <caret line="197" column="21" selection-start-line="197" selection-start-column="21" selection-end-line="197" selection-end-column="21" />
           <folding />
-=======
-          <caret line="52" column="50" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
->>>>>>> iml changes
         </state>
       </provider>
     </entry>
@@ -3357,17 +3237,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
         <state vertical-scroll-proportion="0.42948717">
           <caret line="187" column="36" selection-start-line="187" selection-start-column="36" selection-end-line="187" selection-end-column="36" />
           <folding />
-=======
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
->>>>>>> iml changes
         </state>
       </provider>
     </entry>
