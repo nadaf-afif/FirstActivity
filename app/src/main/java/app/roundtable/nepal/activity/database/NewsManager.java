@@ -15,6 +15,7 @@ import java.io.IOException;
 import app.roundtable.nepal.activity.network.ApiClient;
 import app.roundtable.nepal.activity.network.ApiUrls;
 import app.roundtable.nepal.activity.network.MultipartUtility;
+import app.roundtable.nepal.activity.util.ApplicationPreferences;
 
 /**
  * Created by afif on 25/6/15.
@@ -25,12 +26,14 @@ public class NewsManager extends Manager implements Tables.News{
     private SQLiteDatabase mSqlSqLiteDatabase;
     private Context mContext;
     public ApiClient mApiClient;
+    private ApplicationPreferences mSharedPreferences;
 
     public NewsManager(Context context) {
         this.mContext = context;
         mDataHelper = new DataBaseHelper(mContext);
         mSqlSqLiteDatabase = mDataHelper.getSqLiteDatabase();
         mApiClient = new ApiClient();
+        mSharedPreferences = new ApplicationPreferences(mContext);
     }
 
 
@@ -88,7 +91,7 @@ public class NewsManager extends Manager implements Tables.News{
         builder.addFormField(NEWS_HEADLINE, params[0]);
         builder.addFormField(NEWS_DESCRIPTION, params[1]);
         builder.addFormField("concern_tables", params[2]);
-        builder.addFormField("member_id","5");
+        builder.addFormField("member_id",mSharedPreferences.getUserId());
 
         String response = builder.finish();
 

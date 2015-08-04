@@ -13,14 +13,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.activity.HomeActivity;
+import app.roundtable.nepal.activity.activity.MyProfileViewActivity;
 import app.roundtable.nepal.activity.activity.ProfileViewActivity;
 import app.roundtable.nepal.activity.databeans.RecyclerData;
+import app.roundtable.nepal.activity.network.ApiUrls;
+import app.roundtable.nepal.activity.util.ApplicationPreferences;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class NavigationDrawerFragment extends Fragment implements RoundTableMenuAdapter.ClickListener{
@@ -29,12 +36,15 @@ public class NavigationDrawerFragment extends Fragment implements RoundTableMenu
     private DrawerLayout mDrawerLayout;
     private RecyclerView mRecyclerView;
     private RoundTableMenuAdapter mMenuAdapter;
-    private ImageView mDrawerImage;
+    private CircleImageView mDrawerImage;
+    private RelativeLayout mProfileLayout;
+    private ApplicationPreferences mSharedPreferences;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        mSharedPreferences = new ApplicationPreferences(getActivity());
     }
 
     @Override
@@ -44,20 +54,34 @@ public class NavigationDrawerFragment extends Fragment implements RoundTableMenu
         View view = inflater.inflate(R.layout.fragment_navigation_drawer,container);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycleListView);
-        mDrawerImage = (ImageView)view.findViewById(R.id.drawerImage);
+        mDrawerImage = (CircleImageView)view.findViewById(R.id.drawerImage);
+        mProfileLayout = (RelativeLayout) view.findViewById(R.id.profileRL);
 
         mMenuAdapter = new RoundTableMenuAdapter(getActivity(),getData());
         mRecyclerView.setAdapter(mMenuAdapter);
 
         mMenuAdapter.setClickListener(this);
+
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+
+        String imagePath = ApiUrls.BASE_URL_PATH + mSharedPreferences.getUserProfileImage();
+
+        Picasso.with(getActivity()).load(imagePath).skipMemoryCache().placeholder(R.drawable.rtn_logo).into(mDrawerImage);
 
         mDrawerImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ProfileViewActivity.class);
+                Intent intent = new Intent(getActivity(), MyProfileViewActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        mProfileLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
             }
         });
 
@@ -65,12 +89,23 @@ public class NavigationDrawerFragment extends Fragment implements RoundTableMenu
     }
 
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if(mSharedPreferences.getProfileUpdated()) {
+            String imagePath = ApiUrls.BASE_URL_PATH + mSharedPreferences.getUserProfileImage();
+
+            Picasso.with(getActivity()).load(imagePath).skipMemoryCache().placeholder(R.drawable.rtn_logo).into(mDrawerImage);
+            mSharedPreferences.setProfileUpdated(false);
+        }
+    }
 
     public List<RecyclerData> getData(){
 
         List<RecyclerData> data = new ArrayList<RecyclerData>();
-        int[] icons = new int[]{R.drawable.ic_action_group_light, R.drawable.ic_action_event,R.drawable.ic_action_news,R.drawable.ic_action_favorite ,R.drawable.ic_action_favorite, R.drawable.ic_action_camera , R.drawable.ic_action_about};
-        String[] title = new String[]{"RTN Clubs", "Events", "News", "Favorites","Privileges","Submit Photos",  "About RTN"};
+        int[] icons = new int[]{R.drawable.ic_action_group_light, R.drawable.ic_action_event,R.drawable.ic_action_news,R.drawable.ic_action_favorite ,R.drawable.ic_action_favorite, R.drawable.ic_action_camera , R.drawable.conveners_icon , R.drawable.ic_action_about};
+        String[] title = new String[]{"RTN Clubs", "Events", "News", "Favorites","Privileges","Submit Photos", "Conveners" ,"About RTN"};
 
         for (int i = 0;i<title.length ;i++){
 

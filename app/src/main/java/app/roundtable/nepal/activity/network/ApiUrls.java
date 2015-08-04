@@ -5,7 +5,8 @@ package app.roundtable.nepal.activity.network;
  */
 public class ApiUrls {
 
-    public static final String BASE_URL_PATH = "http://roundtablenepal.esy.es";
+     //public static final String BASE_URL_PATH = "http://roundtablenepal.esy.es";
+     public static final String BASE_URL_PATH = "http://roundtablenepal.org/app";
 
 
     // login api
@@ -44,5 +45,20 @@ public class ApiUrls {
 
     // get favorites list APi PAth
     public static final String FAVORITES_LIST_API_PATH = BASE_URL_PATH + "/api/favorites/get_all";
+
+    // get conveners list API PATH
+    public static final String CONVENERS_LIST_API_PATH = BASE_URL_PATH + "/api/conveners/get_all";
+
+    // search member API PATH
+    public static final String SEARCH_MEMBER_API_PATH = BASE_URL_PATH + "/api/member/search";
+
+    // edit profile api path
+    public static final String EDIT_PROFILE_API_PATH = BASE_URL_PATH + "/api/member/edit_profile";
+
+    // update gallery upload to server
+    public static final String GALLERY_UPDATE_API_PATH = BASE_URL_PATH + "/api/gallery/post_update";
+
+    // update RSVP status from event
+    public static final String RSVP_UPDATE_API_PATH = BASE_URL_PATH + "/api/event/rsvp";
 
 }

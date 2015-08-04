@@ -64,7 +64,23 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/emptyListTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="no data"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+
+            />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/seachMemberRecyclerview"

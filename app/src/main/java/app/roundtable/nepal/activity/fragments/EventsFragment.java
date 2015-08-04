@@ -12,6 +12,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.activity.EventDetailsActivity;
@@ -30,6 +32,8 @@ public class EventsFragment extends Fragment implements DataLoader{
     private GetEventsAsyncTasks mAsyncTask;
     private EventsListAdapter mAdapter;
     public static final String tag = EventsFragment.class.getSimpleName();
+    private ProgressBar mProgressBar;
+    private TextView mEmptyTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,8 @@ public class EventsFragment extends Fragment implements DataLoader{
         super.onViewCreated(view, savedInstanceState);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.eventsRecyclerView);
+        mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        mEmptyTextView = (TextView) view.findViewById(R.id.emptyListTextView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         getFirstPageData();
@@ -87,6 +93,11 @@ public class EventsFragment extends Fragment implements DataLoader{
 
         if(isAdded()) {
             if (cursor.getCount() > 0) {
+
+                mEmptyTextView.setVisibility(View.GONE);
+                mProgressBar.setVisibility(View.GONE);
+                mRecyclerView.setVisibility(View.VISIBLE);
+
                 mAdapter = new EventsListAdapter(getActivity(), cursor);
                 mRecyclerView.setAdapter(mAdapter);
             } else {
@@ -97,11 +108,13 @@ public class EventsFragment extends Fragment implements DataLoader{
 
     @Override
     public void onNoInternet() {
-
+        mProgressBar.setVisibility(View.GONE);
+        mEmptyTextView.setText(getString(R.string.no_internet_connection));
     }
 
     @Override
     public void onNoData() {
-
+        mProgressBar.setVisibility(View.GONE);
+        mEmptyTextView.setText(getString(R.string.no_events_avaiable));
     }
 }

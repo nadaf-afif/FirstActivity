@@ -76,7 +76,6 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                 if(mProgressDialog!=null && mProgressDialog.isShowing())
                     mProgressDialog.dismiss();
 
-                Toast.makeText(LoginActivity.this, registrationId,Toast.LENGTH_SHORT).show();
 
                 if(registrationId!=null && !registrationId.equals("")) {
                     mSharedPreferences.setGcmRegistrationId(registrationId);

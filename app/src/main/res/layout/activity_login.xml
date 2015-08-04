@@ -33,7 +33,6 @@
             android:layout_marginTop="10dp"
             android:textSize="22sp"
             android:maxLength="50"
-            android:text="demo@demo.com"
             android:inputType="textEmailAddress"
             android:background="@drawable/background_shadow"
             android:textColor="@color/material_blue_grey_800"

@@ -14,6 +14,7 @@ import app.roundtable.nepal.activity.activity.AboutUsActivity;
 import app.roundtable.nepal.activity.activity.AimsAndObjectiveActivity;
 import app.roundtable.nepal.activity.activity.ContactDetailsActivity;
 import app.roundtable.nepal.activity.activity.ConveyersActivity;
+import app.roundtable.nepal.activity.activity.MeetingProcedureActivity;
 import app.roundtable.nepal.activity.activity.RTNSongsActivity;
 
 /**
@@ -22,7 +23,7 @@ import app.roundtable.nepal.activity.activity.RTNSongsActivity;
 public class AboutRTNFragment extends Fragment implements View.OnClickListener{
 
     public static String tag = AboutRTNFragment.class.getSimpleName();
-    private TextView mAboutUsTextView, mAimsObjectiveTextView, mContactsTextView, mBoardMembersTextView, RTNSongTextView;
+    private TextView mAboutUsTextView, mAimsObjectiveTextView, mContactsTextView, mBoardMembersTextView, RTNSongTextView, mMeetingProcedureTextView;
 
 
     @Override
@@ -49,12 +50,14 @@ public class AboutRTNFragment extends Fragment implements View.OnClickListener{
         mContactsTextView = (TextView) view.findViewById(R.id.contactsTextView);
         mBoardMembersTextView = (TextView)view.findViewById(R.id.boardMembersTextView);
         RTNSongTextView = (TextView) view.findViewById(R.id.songTextView);
+        mMeetingProcedureTextView = (TextView) view.findViewById(R.id.meetingProcedureTextView);
 
         mAboutUsTextView.setOnClickListener(this);
         mAimsObjectiveTextView.setOnClickListener(this);
         mContactsTextView.setOnClickListener(this);
         mBoardMembersTextView.setOnClickListener(this);
         RTNSongTextView.setOnClickListener(this);
+        mMeetingProcedureTextView.setOnClickListener(this);
     }
 
     @Override
@@ -96,6 +99,11 @@ public class AboutRTNFragment extends Fragment implements View.OnClickListener{
             case R.id.songTextView :
 
                 intent = new Intent(getActivity(), RTNSongsActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.meetingProcedureTextView :
+                intent = new Intent(getActivity() , MeetingProcedureActivity.class);
                 startActivity(intent);
                 break;
         }

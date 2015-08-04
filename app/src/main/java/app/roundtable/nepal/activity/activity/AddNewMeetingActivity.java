@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashSet;
 import java.util.Set;
 
 import app.roundtable.nepal.R;
@@ -41,7 +42,7 @@ public class AddNewMeetingActivity extends AppCompatActivity implements View.OnC
     private Button mAddEventButton;
     private int mYear, mMonth, mDay, mHour, mMinute;
     private static int TIME_PICKER_DIALOG = 111, DATE_PICKER_DIALOG = 222;
-    private Set<String > selectedId;
+    private Set<String > selectedId = new HashSet<>();
     public  ArrayList<TablesInfoBean> tablesData = new ArrayList<>();
     TableNameDialogAdapter adapter;
 
@@ -155,7 +156,7 @@ public class AddNewMeetingActivity extends AppCompatActivity implements View.OnC
         ListView mListView = (ListView)dialog.findViewById(R.id.tableNameListView);
         Button doneButton = (Button)dialog.findViewById(R.id.doneButton);
 
-        adapter = new TableNameDialogAdapter(this,tablesData);
+        adapter = new TableNameDialogAdapter(this,tablesData, selectedId);
         mListView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -164,7 +165,7 @@ public class AddNewMeetingActivity extends AppCompatActivity implements View.OnC
             public void onClick(View v) {
 
                 dialog.dismiss();
-                selectedId = adapter.selectedId;
+                selectedId = adapter.mSelectedId;
                 tablesData = adapter.tableNames;
                 mInviteesEditText.setText(selectedId.size() + " Tables selected");
 
@@ -254,7 +255,7 @@ public class AddNewMeetingActivity extends AppCompatActivity implements View.OnC
             Toast.makeText(this,getString(R.string.select_at_least_one_table),Toast.LENGTH_SHORT).show();
         }
 
-            String invitees = selectedId.toString().substring(0, selectedId.toString().length()-1);
+            String invitees = selectedId.toString().substring(1, selectedId.toString().length()-1);
             String spouse = (isSpouse ? "1" : "0");
             String children = (isChildren ? "1" : "0");
 

@@ -7,19 +7,11 @@
         android:id="@+id/actionToolbar"
         layout="@layout/action_toolbar_layout"/>
 
-    <ImageView
-        android:id="@+id/eventPhotoImageView"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:background="@drawable/upload_place_holder"
-        android:layout_below="@+id/actionToolbar"
-        android:visibility="gone"
-        />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/eventPhotoImageView"
+        android:layout_below="@+id/actionToolbar"
         android:padding="5dp"
         >
 
@@ -28,6 +20,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -210,10 +204,33 @@
 
 
                 <Switch
-                    android:id="@+id/spouceAndChildrenSwitch"
+                    android:id="@+id/spouceSwitch"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/spouce"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/name_background"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                android:layout_marginTop="10dp">
+
+
+                <Switch
+                    android:id="@+id/childrenSwitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/children"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/name_background"

@@ -10,6 +10,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 import app.roundtable.nepal.activity.database.MembersManager;
+import app.roundtable.nepal.activity.database.Tables;
 import app.roundtable.nepal.activity.interfaces.DataLoader;
 
 /**
@@ -28,7 +29,7 @@ public class GetMembersByTableAsyncTask extends AsyncTask<String , Cursor, Curso
     public GetMembersByTableAsyncTask(Context context, DataLoader dataLoader) {
         this.mContext = context;
         this.mDataLoader = dataLoader;
-        mManager = new MembersManager(mContext);
+        mManager = new MembersManager(mContext, Tables.Members.MEMBERS_TABLE);
     }
 
     @Override

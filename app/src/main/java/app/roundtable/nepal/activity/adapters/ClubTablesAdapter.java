@@ -57,6 +57,12 @@ public class ClubTablesAdapter extends RecyclerView.Adapter<ClubTablesAdapter.Vi
         mCursor.moveToPosition(position);
 
         holder.mTableName.setText(mCursor.getString(mCursor.getColumnIndex(TABLE_DESCRIPTION)));
+        String memberCount = mCursor.getString(mCursor.getColumnIndex(TABLE_MEMBERS_COUNT));
+
+        if(memberCount.equals("0"))
+            holder.mMemberCountTextView.setText( "No member found");
+        else
+            holder.mMemberCountTextView.setText( memberCount+" Members");
 
         Picasso.with(mContext).load(ApiUrls.BASE_URL_PATH + mCursor.getString(mCursor.getColumnIndex(TABLE_THUMB_URL))).into(holder.mTableLogo);
     }
@@ -70,13 +76,14 @@ public class ClubTablesAdapter extends RecyclerView.Adapter<ClubTablesAdapter.Vi
     class ViewHolder extends RecyclerView.ViewHolder{
 
         private ImageView mTableLogo;
-        private TextView mTableName;
+        private TextView mTableName, mMemberCountTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             mTableLogo = (ImageView) itemView.findViewById(R.id.tableLogoImageView);
             mTableName = (TextView) itemView.findViewById(R.id.tableNameGridTextView);
+            mMemberCountTextView = (TextView) itemView.findViewById(R.id.numberOfMembersTextView);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

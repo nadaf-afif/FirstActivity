@@ -73,7 +73,6 @@ public class EventsListAdapter extends RecyclerView.Adapter<EventsListAdapter.Ev
         public EventHolder(View itemView) {
             super(itemView);
 
-            mCursor.moveToPosition(getPosition());
             mEventPhotoImageView = (BezelImageView) itemView.findViewById(R.id.eventPhotoImageView);
             mEventNameTextView = (TextView) itemView.findViewById(R.id.eventNameTextView);
             mEventVenueTextView = (TextView) itemView.findViewById(R.id.eventVenueNameTextView);
@@ -82,7 +81,7 @@ public class EventsListAdapter extends RecyclerView.Adapter<EventsListAdapter.Ev
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    mCursor.moveToPosition(getPosition());
                     Intent intent = new Intent(mContext, EventDetailsActivity.class);
                     intent.putExtra(EVENT_ID, mCursor.getString(mCursor.getColumnIndex(EVENT_ID)));
                     mContext.startActivity(intent);

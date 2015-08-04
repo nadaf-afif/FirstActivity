@@ -87,7 +87,7 @@ public class TableMembersListActivity extends AppCompatActivity implements DataL
             mProgressBar.setVisibility(View.GONE);
             mRecyclerView.setVisibility(View.VISIBLE);
 
-            mAdapter = new TableMembersListAdapter(this, cursor);
+            mAdapter = new TableMembersListAdapter(this, cursor, Tables.Members.MEMBERS_TABLE, mTableName);
             mRecyclerView.setAdapter(mAdapter);
         }else
             onNoData();

@@ -19,7 +19,7 @@ public class Tables {
         public static final String TABLE_THUMB_URL = "table_thumb_url";
         public static final String TABLE_MEMBERS_COUNT = "table_members";
 
-        public static final String COLUMNS = TABLE_ID + " text not null, "+
+        public static final String COLUMNS = TABLE_ID + " text not null PRIMARY KEY, "+
                                              TABLE_NAME + " text not null, "+
                                             TABLE_CODE + " text not null, "+
                                             TABLE_DESCRIPTION + " text not null, "+
@@ -28,14 +28,13 @@ public class Tables {
                                             TABLE_MEMBERS_COUNT + " text not null";
 
         public static final String RTN_TABLE_SCHEMA = "CREATE TABLE "+RTN_TABLES_TABLE +"("+COLUMNS+")";
-
-
     }
 
 
     public interface Events{
 
         public static final String EVENTS_TABLE = "events_table";
+        public static final String MEETING_TABLE = "meeting_table";
 
         public static final String EVENT_ID = "event_id";
         public static final String EVENT_TYPE = "event_type";
@@ -50,8 +49,9 @@ public class Tables {
         public static final String EVENT_THUMB_IMAGE = "event_thumb_url";
         public static final String CREATED_AT = "created_on";
         public static final String MEMBER_CREATED = "member_created";
+        public static final String RSVP = "rsvp";
 
-        public static final String COLUMNS = EVENT_ID + " text not null, "+
+        public static final String COLUMNS = EVENT_ID + " text not null PRIMARY KEY, "+
                                             EVENT_TYPE + " text not null, "+
                                             EVENT_NAME + " text not null, "+
                                             EVENT_DATE + " text not null, "+
@@ -62,9 +62,12 @@ public class Tables {
                                             TABLE_COUNT + " text not null, "+
                                             EVENT_BIG_IMAGE + " text, " + EVENT_THUMB_IMAGE + " text, "+
                                             CREATED_AT + " text not null, "+
+                                            RSVP + " text, "+
                                             MEMBER_CREATED + " text";
 
         public static final String EVENTS_SCHEMA = "CREATE TABLE "+EVENTS_TABLE + "("+COLUMNS+")";
+        public static final String MEETING_SCHEMA = "CREATE TABLE "+MEETING_TABLE + "("+COLUMNS+")";
+
     }
 
 
@@ -81,7 +84,7 @@ public class Tables {
         public static final String NEWS_MEMBER_ID = "member_id";
         public static final String NEWS_DATE = "news_date";
 
-        public static final String COLUMN = NEWS_ID + " text not null, "+
+        public static final String COLUMN = NEWS_ID + " text not null PRIMARY KEY, "+
                                             NEWS_DESCRIPTION + " text not null, "+
                                             NEWS_HEADLINE + " text not null, "+
                                             NEWS_BIG_URL + " text not null, "+
@@ -97,6 +100,7 @@ public class Tables {
     public interface Members{
 
         public static final String MEMBERS_TABLE = "members_table";
+        public static final String SEARCH_MEMBERS = "search_members_table";
 
         public static final String MEMBER_ID = "member_id";
         public static final String MEMBER_TABLE_ID = "table_id";
@@ -118,9 +122,12 @@ public class Tables {
         public static final String RESIDENCE_CITY = "res_city";
         public static final String OFFICE_CITY = "office_city";
         public static final String STATE = "state";
+        public static final String TABLE_CODE = "table_code";
+        public static final String TABLE_NAME = "table_name";
+        public static final String COMPANY = "company";
+        public static final String ADDRESS = "address";
 
-
-        public static final String COLUMN = MEMBER_ID + " text not null, "+
+        public static final String COLUMN = MEMBER_ID + " text not null PRIMARY KEY, "+
                                             MEMBER_TABLE_ID + " text not null, "+
                                             MEMBER_FIRST_NAME + " text not null, "+
                                             MEMBER_LAST_NAME + " text not null, "+
@@ -139,9 +146,15 @@ public class Tables {
                                             DESIGNATION + " text, "+
                                             RESIDENCE_CITY + " text, "+
                                             OFFICE_CITY + " text, "+
+                                            TABLE_CODE + " text not null, "+
+                                            TABLE_NAME + " text not null, "+
+                                            COMPANY + " text, "+
+                                            ADDRESS + " text, "+
                                             STATE + " text";
 
         public static final String MEMBERS_TABLE_SCHEMA = "CREATE TABLE "+MEMBERS_TABLE +"(" + COLUMN + ")";
+
+        public static final String SEARCH_MEMBERS_TABLE_SCHEMA = "CREATE TABLE "+ SEARCH_MEMBERS +"("+COLUMN+")";
 
     }
 
@@ -156,7 +169,7 @@ public class Tables {
         public static final String BRAND_WEBSITE_URL = "website_url";
 
 
-        public static final String COLUMN = BRAND_ID + " text not null, "+
+        public static final String COLUMN = BRAND_ID + " text not null PRIMARY KEY, "+
                                             BRAND_NAME + " text not null, "+
                                             BRAND_LOGO_URL + " text not null, "+
                                             BRAND_WEBSITE_URL + " text not null";
@@ -166,6 +179,28 @@ public class Tables {
 
     }
 
+
+    public interface Conveners{
+
+        public static final String CONVENERS_TABLE = "conveners_table";
+
+        public static final String CONVENERS_ID= "convener_id";
+        public static final String DESIGNATION = "designation";
+        public static final String CONVENER_NAME = "name";
+        public static final String CONVENER_TABLE = "table_code";
+        public static final String CONVENER_MOBILE = "mobile";
+        public static final String CONVENER_EMAIL = "email";
+
+        public static final String COLUMNS = CONVENERS_ID + " text not null PRIMARY KEY, "+
+                                             CONVENER_NAME + " text not null, "+
+                                             DESIGNATION + " text not null, "+
+                                             CONVENER_TABLE + " text, "+
+                                             CONVENER_MOBILE + " text not null, "+
+                                             CONVENER_EMAIL + " text not null";
+
+        public static final String CONVENERS_TABLE_SCHEMA = "CREATE TABLE "+CONVENERS_TABLE + "("+COLUMNS+")";
+
+    }
 
 
 }

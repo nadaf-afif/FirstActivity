@@ -12,6 +12,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.adapters.FavoritesAdapter;
@@ -28,6 +30,8 @@ public class FavoritesFragemet extends Fragment implements DataLoader{
     private RecyclerView mRecyclerView;
     private GetFavoritesAsyncTask mAsyncTask;
     private FavoritesAdapter mAdapter;
+    private ProgressBar mProgressBar;
+    private TextView mEmptyTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,9 @@ public class FavoritesFragemet extends Fragment implements DataLoader{
         super.onViewCreated(view, savedInstanceState);
 
         mRecyclerView = (RecyclerView)view.findViewById(R.id.favoritesRecyclerView);
+
+        mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        mEmptyTextView = (TextView) view.findViewById(R.id.emptyListTextView);
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
         getFirstPageData();
@@ -81,18 +88,25 @@ public class FavoritesFragemet extends Fragment implements DataLoader{
     public void setFirstPageData(Cursor cursor) {
         if(isAdded()){
 
-         mAdapter = new FavoritesAdapter(getActivity(),cursor);
+            mEmptyTextView.setVisibility(View.GONE);
+            mProgressBar.setVisibility(View.GONE);
+            mRecyclerView.setVisibility(View.VISIBLE);
+
+            mAdapter = new FavoritesAdapter(getActivity(),cursor);
          mRecyclerView.setAdapter(mAdapter);
         }
     }
 
     @Override
     public void onNoInternet() {
-
+        mProgressBar.setVisibility(View.GONE);
+        mEmptyTextView.setText(getString(R.string.no_internet_connection));
     }
 
     @Override
     public void onNoData() {
 
+        mProgressBar.setVisibility(View.GONE);
+        mEmptyTextView.setText(getString(R.string.no_favourites_available));
     }
 }

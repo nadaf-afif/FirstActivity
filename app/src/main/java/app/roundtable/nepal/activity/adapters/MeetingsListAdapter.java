@@ -60,7 +60,6 @@ public class MeetingsListAdapter extends RecyclerView.Adapter<MeetingsListAdapte
         public MeetingHolder(View itemView) {
             super(itemView);
 
-            mCursor.moveToPosition(getPosition());
             mMeetingNameTextView = (TextView) itemView.findViewById(R.id.meetingNameTextView);
             mMeetingVenueTextView = (TextView) itemView.findViewById(R.id.meetingVenueNameTextView);
             mMeetingDateTimeTextView = (TextView) itemView.findViewById(R.id.meetingDateTimeTextView);
@@ -68,9 +67,11 @@ public class MeetingsListAdapter extends RecyclerView.Adapter<MeetingsListAdapte
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    int position = getPosition();
+                    mCursor.moveToPosition(position);
+                    String eventId = mCursor.getString(mCursor.getColumnIndex(EVENT_ID));
                     Intent intent = new Intent(mContext, MeetingDetailsActivity.class);
-                    intent.putExtra(EVENT_ID, mCursor.getString(mCursor.getColumnIndex(EVENT_ID)));
+                    intent.putExtra(EVENT_ID,eventId );
                     mContext.startActivity(intent);
 
                 }

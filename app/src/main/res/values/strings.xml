@@ -54,12 +54,12 @@ The various clubs in Nepal have undertaken large social service projects. As ide
     <string name="aim4">To promote the extension of the Association.</string>
     <string name="aims_and_objective">Aims And Objective</string>
     <string name="board_members_text">Board Members</string>
-    <string name="contact_deatils_text">Round Table Nepal \n\n3F-01 Sherpa Mall, Durbar Marg, \n\nKathmandu, Nepal. \n\nTel : 9818008800 \n\nFax : +977-1-4225474 \n\nemail : info@roundtablenepal.org \n\nwebsite : www.roundtablenepal.org</string>
+    <string name="contact_details_text">Round Table Nepal \n\n3F-01 Sherpa Mall, Durbar Marg, \n\nKathmandu, Nepal. \n\nTel : 9818008800 \n\nFax : +977-1-4225474 \n\nemail : info@roundtablenepal.org \n\nwebsite : www.roundtablenepal.org</string>
     <string name="contact_us_text">Contact Us</string>
     <string name="rtn_song_lyrics">If we could consider each other, A neighbor, a friend or a brother It would be a wonderful, wonderful world, It would be a wonderful world  \n\nIf each little kid had fresh milk each day, \n\nIf each old soul had some place to stay \n\nIf each working man had enough time to play, It would be a wonderful world.  \n\n** **  Chorus ** **   \n\nIf there was no poor and rich were content, If strangers were welcome wherever they went \nIf each of us knew what true brotherhood meant, It would be a wonderful world. \n\n** **  Chorus ** **  \n\nIf people all over the world trust one another, Not thinking about their race or their color \nIf they did agree to join hands altogether, It would be a wonderful world. \n\n** **  Chorus ** **  \n\nIf Tablers of Nepal can properly plan, To do for their country whatever they can \nIf FELLOWSHIP brings about SERVICE to man, It would be a wonderful world. \n\n** **  Chorus ** **  \n\nOh Boy! It would be a wonderful world.</string>
     <string name="request_otp_text">Request One Time Password ?</string>
     <string name="enter_registered_email_text">Enter Registered Email</string>
-    <string name="request_new_access">Request New Aceess ?</string>
+    <string name="request_new_access">Request New Access ?</string>
     <string name="request_access_title">Request Access</string>
     <string name="name_text">Enter Name</string>
     <string name="enter_email">Enter Email Address</string>
@@ -103,6 +103,76 @@ The various clubs in Nepal have undertaken large social service projects. As ide
     <string name="please_select_search_type">Please select search type</string>
     <string name="enter_search_key">Please enter search key</string>
     <string name="please_enter_key_length">Please enter at least 4 characters</string>
+    <string name="search_data">No search result</string>
+    <string name="name">Name</string>
+    <string name="first_name">First Name</string>
+    <string name="enter_first_name">Enter first name</string>
+    <string name="last_name">Last Name</string>
+    <string name="enter_last_name">Enter last name</string>
+    <string name="email_address">E-Mail Address</string>
+    <string name="enter_mobile_number">Enter mobile number</string>
+    <string name="office_phone">Office Phone</string>
+    <string name="enter_office_phone">Enter office phone</string>
+    <string name="enter_spouse_name">Enter spouse name</string>
+    <string name="anniversary_date">Anniversary Date</string>
+    <string name="residence_phone">Residence Phone</string>
+    <string name="enter_residence_phone">Enter residence phone</string>
+    <string name="enter_designation">Enter designation</string>
+    <string name="designation">Designation</string>
+    <string name="residence_city">Residence City</string>
+    <string name="enter_residence_city">Enter residence city</string>
+    <string name="office_city">Office City</string>
+    <string name="enter_office_city">Enter office city</string>
+    <string name="state">State</string>
+    <string name="enter_state">Enter state name</string>
+    <string name="update">Update</string>
+    <string name="date_is_not_valid">Selected date is not valid</string>
+    <string name="enter_valid_mobile">Enter valid mobile number</string>
+    <string name="enter_valid_phone_number">Enter valid phone number</string>
+    <string name="enter_spouse_dob">Enter spouse date of birth</string>
+    <string name="enter_annivesary_date">Enter anniversary date</string>
+    <string name="please_select_gender">Please select gender</string>
+    <string name="please_select_bloodgroup">Please select blood group</string>
+    <string name="photo_uploaded_success">Photo submitted successfully</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="maybe">MAY BE</string>
+    <string name="no_image_selected">No image selected</string>
+    <string name="no_events_avaiable">No events for you</string>
+    <string name="no_meeting">No meeting for you</string>
+    <string name="no_news_available">No news available</string>
+    <string name="no_favourites_available">No stores available</string>
+    <string name="meeting_procedure">Meeting Procedure</string>
+    <string name="meeting_procedure_details"> 1. Toast to the Sponsor Table. \n\n
+                                             2. Reading of Aims and Objects. \n\n
+                                             3. Apologies for absence. \n\n
+                                             4. Appointment of Sergeant at Arms \n\n
+                                             5. Welcome to guests and visiting Tables (if any).\n\n
+                                             6. Confirmation of minutes of previous meeting. \n\n
+                                             7. Matters arising therefrom not covered elsewhere. \n\n
+                                             8. Correspondence and Greetings. \n\n
+                                             9. Reports\n\n
+                                                \t\t Chairman \n\n
+                                                \t\t Secretary \n\n
+                                                \t\t Treasurer \n\n
+                                                \t\t Fund Raising Convener \n\n
+                                                \t\t Community Service Convener \n\n
+                                                \t\t Fellowship Convener \n\n
+                                                \t\t Rules Convener \n\n
+                                                \t\t Extension Convener \n\n
+                                                \t\t Editor and Publicity Convener \n\n
+                                                \t\t International Relations Officer\n\n
+                                            10. Any other matter. \n\n
+                                            11. Venue of next meeting. \n\n
+                                            12. Report of Sergeant at arms (fines and sunshine). \n\n
+                                            13. Vote of thanks. \n\n
+                                            14. Toast to RTN and RTI.</string>
+    <string name="company">Company</string>
+    <string name="enter_company_name">Enter company name</string>
+    <string name="address">Address</string>
+    <string name="enter_address">Enter address</string>
+    <string name="version_code">1.2</string>
+    <string name="loading">Loading</string>
 
     <array name="search_types">
         <item>select</item>
@@ -117,14 +187,20 @@ The various clubs in Nepal have undertaken large social service projects. As ide
 
     <array name="blood_group_array">
         <item>select</item>
-        <item>A +ve</item>
-        <item>A -ve</item>
-        <item>AB +ve</item>
-        <item>AB -ve</item>
-        <item>B +ve</item>
-        <item>B -ve</item>
-        <item>O +ve</item>
-        <item>O -ve</item>
+        <item>A+ve</item>
+        <item>A-ve</item>
+        <item>AB+ve</item>
+        <item>AB-ve</item>
+        <item>B+ve</item>
+        <item>B-ve</item>
+        <item>O+ve</item>
+        <item>O-ve</item>
+    </array>
+
+    <array name="gender_array">
+        <item>Select</item>
+        <item>Male</item>
+        <item>Female</item>
     </array>
 
 </resources>

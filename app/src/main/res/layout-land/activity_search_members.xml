@@ -8,12 +8,13 @@
     <include android:id="@+id/actionToolbar"
         layout="@layout/action_toolbar_layout"/>
 
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/actionToolbar"
         android:padding="10dp"
-
+        android:layout_below="@+id/actionToolbar"
         >
 
 
@@ -27,27 +28,70 @@
             android:padding="0dp"
             />
 
-        <EditText
+
+
+        <LinearLayout
+            android:id="@+id/searchKeyll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_key_here"
-            android:layout_weight="1"
-            android:id="@+id/searchKeyEditText"
-            android:imeOptions="actionSearch"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/background_shadow"
-            android:paddingLeft="5dp"
             android:layout_below="@+id/searchTypeSpinner"
-            android:textColor="@color/text_primary_color"
+            >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_key_here"
+                android:layout_weight="1"
+                android:id="@+id/searchKeyEditText"
+                android:imeOptions="actionSearch"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_shadow"
+                android:paddingLeft="5dp"
+                android:textColor="@color/text_primary_color"
+                android:visibility="visible"
+                />
+
+            <Spinner
+                android:id="@+id/bloodGroupSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/background_shadow"
+                android:padding="0dp"
+                android:layout_marginTop="5dp"
+                android:entries="@array/blood_group_array"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/emptyListTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="no data"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_below="@id/searchKeyll"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
             />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/seachMemberRecyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/searchKeyEditText"
+            android:layout_below="@+id/searchKeyll"
             android:layout_marginTop="10dp"
             />
     </RelativeLayout>
+
 
 </RelativeLayout>

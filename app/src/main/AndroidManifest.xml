@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="app.roundtable.nepal" >
+    package="app.roundtable.nepal"
+    android:versionCode="18074"
+    android:versionName="@string/version_code"
+
+    >
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -8,10 +12,13 @@
     <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL"/>
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="ANDROID.PERMISSION.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
     <uses-permission android:name="app.roundtable.nepal.permission.C2D_MESSAGE"/>
     <uses-permission android:name="com.google.android.c2dm.permission.SEND"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
 
     <application
         android:allowBackup="true"
@@ -41,6 +48,7 @@
         <activity android:name="app.roundtable.nepal.activity.activity.HomeActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
+            android:launchMode="singleTop"
             >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -49,128 +57,6 @@
 
         <activity android:name="app.roundtable.nepal.activity.activity.SubmitPhotosActivity"
             android:screenOrientation="portrait"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.AboutUsActivity"
-            android:screenOrientation="portrait"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.AddNewEventActivity"
-            android:screenOrientation="portrait"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.AddNewMeetingActivity"
-            android:screenOrientation="portrait"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.AddNewNewsActivity"
-            android:screenOrientation="portrait"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.NewsDetailsActivity"
-            android:screenOrientation="portrait"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.EventDetailsActivity"
-            android:screenOrientation="portrait"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.MeetingDetailsActivity"
-            android:screenOrientation="portrait"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.RequestAccessactivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".activity.activity.LoginActivity"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.TableMembersListActivity"
-            android:screenOrientation="portrait"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.AimsAndObjectiveActivity"
-            android:screenOrientation="portrait"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.ContactDetailsActivity"
-            android:screenOrientation="portrait"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.ConveyersActivity"
-            android:screenOrientation="portrait"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.RTNSongsActivity"
-            android:screenOrientation="portrait"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.SearchMembersActivity"
-            android:screenOrientation="portrait"
-            >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name="app.roundtable.nepal.activity.activity.ProfileViewActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
             android:parentActivityName=".activity.activity.HomeActivity"
             >
             <intent-filter>
@@ -178,6 +64,182 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="app.roundtable.nepal.activity.activity.AboutUsActivity"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.AddNewEventActivity"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            android:windowSoftInputMode="adjustPan"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.AddNewMeetingActivity"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            android:windowSoftInputMode="adjustPan"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.AddNewNewsActivity"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            android:windowSoftInputMode="adjustPan"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.NewsDetailsActivity"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.EventDetailsActivity"
+            android:exported="true"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.MeetingDetailsActivity"
+            android:exported="true"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.RequestAccessactivity"
+            android:parentActivityName=".activity.activity.LoginActivity"
+
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.TableMembersListActivity"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.AimsAndObjectiveActivity"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.ContactDetailsActivity"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.ConveyersActivity"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.RTNSongsActivity"
+            android:parentActivityName=".activity.activity.HomeActivity"
+
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.MeetingProcedureActivity"
+            android:parentActivityName=".activity.activity.HomeActivity"
+
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.SearchMembersActivity"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.ProfileViewActivity"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".activity.activity.TableMembersListActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.MyProfileViewActivity"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".activity.activity.HomeActivity"
+            android:launchMode="singleTop"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.EditProfileActivity"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".activity.activity.MyProfileViewActivity"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+
+        <receiver
+            android:name=".activity.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="app.desidime" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".activity.gcm.GcmIntentService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
 
     </application>
 

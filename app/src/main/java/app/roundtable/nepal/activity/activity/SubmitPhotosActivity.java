@@ -1,11 +1,14 @@
 package app.roundtable.nepal.activity.activity;
 
+import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,22 +18,35 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cloudinary.Cloudinary;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import app.roundtable.nepal.R;
+import app.roundtable.nepal.activity.network.ApiClient;
+import app.roundtable.nepal.activity.network.ApiUrls;
+import app.roundtable.nepal.activity.util.ApplicationPreferences;
 import app.roundtable.nepal.activity.util.Constants;
 
 /**
@@ -46,6 +62,7 @@ public class SubmitPhotosActivity extends AppCompatActivity implements View.OnCl
     public static final int PICK_CAMERA_IMAGE = 011, PICK_GALLERY_IMAGE = 911;
     private Uri mUriPath;
     private Cloudinary mCloudinary;
+    private String mImageDescription = "";
 
 
     @Override
@@ -104,7 +121,10 @@ public class SubmitPhotosActivity extends AppCompatActivity implements View.OnCl
             case R.id.uploadButton :
 
                 if (mUriPath != null)
-                   new UploadImageAsync().execute();
+                   uploadImageToCloud();
+                else
+                    Toast.makeText(SubmitPhotosActivity.this,getString(R.string.no_image_selected), Toast.LENGTH_SHORT).show();
+
 
                 break;
 
@@ -114,18 +134,88 @@ public class SubmitPhotosActivity extends AppCompatActivity implements View.OnCl
 
     private void uploadImageToCloud() {
 
-        File file = new File(getRealPathFromURI(mUriPath));
-        try {
 
-            FileInputStream inputStream = new FileInputStream(file);
-            JSONObject jsonObject = mCloudinary.uploader().upload(inputStream,Cloudinary.emptyMap());
-            Log.d("UPLOAD STATUS",jsonObject.toString());
+        new AsyncTask<String,String, String>(){
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            ProgressDialog progressDialog = new ProgressDialog(SubmitPhotosActivity.this);
+            ApiClient apiClient = new ApiClient();
+            ApplicationPreferences mSharedPreference = new ApplicationPreferences(SubmitPhotosActivity.this);
+            Boolean mSuccess = true;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                progressDialog.setMessage(getString(R.string.please_wait));
+                progressDialog.setCancelable(false);
+                progressDialog.show();
+            }
+
+            @Override
+            protected String doInBackground(String... params) {
+
+                String response = null;
+
+                File file = new File(getRealPathFromURI(mUriPath));
+                try {
+
+                    FileInputStream inputStream = new FileInputStream(file);
+                    JSONObject jsonObject = mCloudinary.uploader().upload(inputStream,Cloudinary.emptyMap());
+                    Log.d("UPLOAD STATUS", jsonObject.toString());
+
+                    List<NameValuePair> pairs = new ArrayList<NameValuePair>();
+                    pairs.add(new BasicNameValuePair("image_name", file.getName()));
+                    pairs.add(new BasicNameValuePair("image_desc", mImageDescription));
+                    pairs.add(new BasicNameValuePair("member_id", mSharedPreference.getUserId()));
+
+                    response = apiClient.executePostRequestWithHeader(pairs, ApiUrls.GALLERY_UPDATE_API_PATH);
+
+                    JSONObject responseObject = new JSONObject(response);
+                    String success = responseObject.getString("success");
+
+                    if(success.equals("false")){
+
+                        mSuccess = false;
+                    }
+
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    mSuccess = false;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    mSuccess = false;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    mSuccess = false;
+                }
+
+
+                return response;
+
+            }
+
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+
+                if(progressDialog!=null && progressDialog.isShowing())
+                    progressDialog.dismiss();
+
+
+                if(mSuccess)
+                    Toast.makeText(SubmitPhotosActivity.this,getString(R.string.photo_uploaded_success), Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(SubmitPhotosActivity.this,getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show();
+
+
+            }
+
+
+
+        }.execute();
+
+
 
     }
 
@@ -202,7 +292,6 @@ public class SubmitPhotosActivity extends AppCompatActivity implements View.OnCl
 
         if (resultCode == RESULT_OK) {
 
-            mUriPath = data.getData();
 
             switch (requestCode) {
 
@@ -216,19 +305,19 @@ public class SubmitPhotosActivity extends AppCompatActivity implements View.OnCl
                             Bitmap photo = bundle.getParcelable("data");
                             mBrowseImageView.setImageBitmap(photo);
                             mUploadButton.setVisibility(View.VISIBLE);
-                             mClickHereTV.setVisibility(View.INVISIBLE);
+                            mClickHereTV.setVisibility(View.INVISIBLE);
+                            mUriPath = getImageUri(this, photo);
+                            showDialogToAddDescrption();
 
                         }
 
 
-//                    Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-//                    mBrowseImageView.setImageBitmap(bitmap);
-//                    mUploadButton.setVisibility(View.VISIBLE);
-//                    mClickHereTV.setVisibility(View.INVISIBLE);
+
                     break;
 
 
                 case PICK_GALLERY_IMAGE:
+
 
                     Bundle bundle2 = data.getExtras();
                     if(bundle2!=null)
@@ -237,12 +326,11 @@ public class SubmitPhotosActivity extends AppCompatActivity implements View.OnCl
                         mBrowseImageView.setImageBitmap(photo);
                         mUploadButton.setVisibility(View.VISIBLE);
                         mClickHereTV.setVisibility(View.INVISIBLE);
+                        mUriPath = getImageUri(this, photo);
+                        showDialogToAddDescrption();
+
                     }
 
-//                    Uri imageuri = data.getData();
-//                    mBrowseImageView.setImageURI(imageuri);
-//                    mUploadButton.setVisibility(View.VISIBLE);
-//                    mClickHereTV.setVisibility(View.INVISIBLE);
                     break;
 
 
@@ -251,6 +339,29 @@ public class SubmitPhotosActivity extends AppCompatActivity implements View.OnCl
         }
     }
 
+    private void showDialogToAddDescrption() {
+
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("Add Photo Description");
+        final EditText descriptionET = new EditText(this);
+        descriptionET.setEms(15);
+        descriptionET.setTextColor(Color.DKGRAY);
+        LinearLayout.LayoutParams params =new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        descriptionET.setLayoutParams(params);
+        dialog.setView(descriptionET);
+
+        dialog.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                mImageDescription = descriptionET.getText().toString();
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+
+    }
 
 
     public String getRealPathFromURI(Uri contentUri) {
@@ -269,16 +380,11 @@ public class SubmitPhotosActivity extends AppCompatActivity implements View.OnCl
     }
 
 
-    private class UploadImageAsync extends AsyncTask<String, String, String>{
-
-
-        @Override
-        protected String doInBackground(String... params) {
-
-            uploadImageToCloud();
-
-            return null;
-        }
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "uploadImage_"+System.currentTimeMillis()  , null);
+        return Uri.parse(path);
     }
 
 }

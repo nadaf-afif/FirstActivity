@@ -11,6 +11,7 @@ import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.activity.AddNewEventActivity;
 import app.roundtable.nepal.activity.activity.AddNewMeetingActivity;
 import app.roundtable.nepal.activity.database.EventsManager;
+import app.roundtable.nepal.activity.database.Tables;
 
 /**
  * Created by afif on 3/7/15.
@@ -25,7 +26,7 @@ public class AddMeetingAsyncTask extends AsyncTask<String,String,String> {
 
     public AddMeetingAsyncTask(Context context) {
         this.mContext = context;
-        mManager = new EventsManager(mContext);
+        mManager = new EventsManager(mContext, Tables.Events.MEETING_TABLE);
     }
 
     @Override

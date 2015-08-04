@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:padding="5dp"
+    android:background="@drawable/background_shadow"
+    >
+
+    <TextView
+        android:id="@+id/designationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="designation"
+        android:textStyle="bold"
+        android:textColor="@color/name_background"
+        />
+
+
+    <TextView
+        android:id="@+id/convenerNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Danish Nadaf"
+        android:layout_below="@+id/designationTextView"
+        android:textColor="@color/primary_dark_material_dark"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/convenersEmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="danishnadaf@gmail.com"
+        android:layout_below="@+id/convenerNameTextView"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:drawableLeft="@drawable/ic_action_email"
+        android:drawablePadding="10dp"
+        android:layout_marginLeft="10dp"
+
+        />
+    <TextView
+        android:id="@+id/convenersMobileTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8793556591"
+        android:layout_below="@+id/convenersEmailTextView"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:drawableLeft="@drawable/ic_action_call"
+        android:drawablePadding="10dp"
+        android:layout_marginLeft="10dp"
+
+        />
+
+
+</RelativeLayout>

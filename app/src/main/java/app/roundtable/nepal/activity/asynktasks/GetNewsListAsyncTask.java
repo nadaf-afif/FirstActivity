@@ -48,6 +48,8 @@ public class GetNewsListAsyncTask extends AsyncTask<String, Cursor, Cursor> {
                 mManager.saveNewsInDatabase(dataObject);
 
                 cursor = mManager.getNewsCursor();
+            }else {
+                mSuccess = false;
             }
 
 
@@ -71,6 +73,8 @@ public class GetNewsListAsyncTask extends AsyncTask<String, Cursor, Cursor> {
         if (mSuccess )
         {
             mDataLoader.setFirstPageData(cursor);
+        }else {
+            mDataLoader.onNoData();
         }
     }
 }

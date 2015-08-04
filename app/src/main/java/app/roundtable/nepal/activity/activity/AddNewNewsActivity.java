@@ -6,10 +6,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +28,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 import app.roundtable.nepal.R;
@@ -48,7 +51,7 @@ public class AddNewNewsActivity extends AppCompatActivity implements View.OnClic
     private static int TIME_PICKER_DIALOG = 111, DATE_PICKER_DIALOG = 222;
     public static final int PICK_CAMERA_IMAGE = 011, PICK_GALLERY_IMAGE = 911;
     public ArrayList<TablesInfoBean> tablesData = new ArrayList<>();
-    private Set<String > selectedId;
+    private Set<String > selectedId = new HashSet<>();
     private TableNameDialogAdapter adapter;
     private String mNewsImagePath = "";
 
@@ -138,10 +141,13 @@ public class AddNewNewsActivity extends AppCompatActivity implements View.OnClic
 
         AddNewsAsyncTask asyncTask = new AddNewsAsyncTask(this);
 
+
+        String invitees = selectedId.toString();
+
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-            asyncTask.execute(newsHeadline,newsDetails,selectedId.toString(),mNewsImagePath);
+            asyncTask.execute(newsHeadline,newsDetails, invitees.substring(1,invitees.length()-1) ,mNewsImagePath);
         else
-            asyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, newsHeadline, newsDetails, selectedId.toString(),mNewsImagePath);
+            asyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, newsHeadline, newsDetails, invitees.substring(1,invitees.length()-1),mNewsImagePath);
 
 
     }
@@ -176,7 +182,7 @@ public class AddNewNewsActivity extends AppCompatActivity implements View.OnClic
         ListView mListView = (ListView)dialog.findViewById(R.id.tableNameListView);
         Button doneButton = (Button)dialog.findViewById(R.id.doneButton);
 
-        adapter = new TableNameDialogAdapter(this,tablesData);
+        adapter = new TableNameDialogAdapter(this,tablesData, selectedId);
         mListView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -186,7 +192,7 @@ public class AddNewNewsActivity extends AppCompatActivity implements View.OnClic
             public void onClick(View v) {
 
                 dialog.dismiss();
-                selectedId = adapter.selectedId;
+                selectedId = adapter.mSelectedId;
                 tablesData = adapter.tableNames;
                 mConcernTableEditText.setText(selectedId.size() + " Tables selected");
             }
@@ -359,6 +365,30 @@ public class AddNewNewsActivity extends AppCompatActivity implements View.OnClic
             e.printStackTrace();
         }
 
+    }
+
+
+
+    @Override
+    protected void onRestoreInstanceState(Bundle bundle) {
+        if(bundle.containsKey("event_photo"))
+        {
+            mNewsImagePath = bundle.getString("event_photo");
+            Bitmap bitmap = BitmapFactory.decodeFile(mNewsImagePath);
+
+            mNewsImageView.setImageBitmap(bitmap);
+           // selectedId = bundle.getString("selectedId");
+
+        }
+        super.onRestoreInstanceState(bundle);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+
+        outState.putString("event_photo", mNewsImagePath);
+       // outState.putString("selectedId", selectedId.toString());
+        super.onSaveInstanceState(outState);
     }
 
 }

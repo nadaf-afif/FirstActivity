@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -16,6 +17,7 @@ import java.util.Map;
 
 import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.fragments.AboutRTNFragment;
+import app.roundtable.nepal.activity.fragments.ConvenersFragments;
 import app.roundtable.nepal.activity.fragments.EventsAndMeetingsFragment;
 import app.roundtable.nepal.activity.fragments.FavoritesFragemet;
 import app.roundtable.nepal.activity.fragments.NewsListFragment;
@@ -23,6 +25,7 @@ import app.roundtable.nepal.activity.fragments.PrivilegesFragment;
 import app.roundtable.nepal.activity.fragments.RTNClubsFragment;
 import app.roundtable.nepal.activity.navigation.NavigationDrawerFragment;
 import app.roundtable.nepal.activity.util.ApplicationPreferences;
+import app.roundtable.nepal.activity.util.Constants;
 
 
 /**
@@ -40,7 +43,8 @@ public class HomeActivity extends AppCompatActivity {
     public static final int NAVIGATION_TAB_FAVORITES = 3;
     public static final int NAVIGATION_TAB_PRIVILEGES = 4;
     public static final int NAVIGATION_TAB_SUBMIT_PHOTOS = 5;
-    public static final int NAVIGATION_TAB_ABOUT_US = 6;
+    public static final int NAVIGATION_TAB_CONVENERS = 6;
+    public static final int NAVIGATION_TAB_ABOUT_US = 7;
 
     private ApplicationPreferences mSharedPreference;
 
@@ -59,16 +63,30 @@ public class HomeActivity extends AppCompatActivity {
         drawerFragment.setDrawerLayout(drawerLayout, mToolBar);
 
         mSharedPreference = new ApplicationPreferences(this);
+        Log.d("reg Id", mSharedPreference.getGcmRegistrationId());
 
         if (mTabFragmentsMap == null) {
             mTabFragmentsMap = new HashMap<Integer, Fragment>();
         }
 
-        displayTab(NAVIGATION_TAB_TABLES);
+        Bundle bundle = getIntent().getExtras();
+        if(bundle!=null && bundle.containsKey(Constants.selectedTab)){
+
+            int tabIndex = bundle.getInt(Constants.selectedTab);
+            displayTab(tabIndex);
+
+        }else
+            displayTab(NAVIGATION_TAB_TABLES);
 
     }
 
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+
+        displayTab(mSharedPreference.getNavigationTabIndex());
+    }
 
     public void displayTab(int position){
 
@@ -76,11 +94,12 @@ public class HomeActivity extends AppCompatActivity {
 
         switch (position)
         {
-            case  NAVIGATION_TAB_TABLES :
+
+           case  NAVIGATION_TAB_TABLES :
 
                 mFragment = fragmentManager.findFragmentByTag(RTNClubsFragment.tag);
                 mSharedPreference.setNavigationIndex(NAVIGATION_TAB_TABLES);
-                if(mFragment == null) {
+                if(mFragment == null || mTabFragmentsMap.get(position) ==null) {
                     mFragment = new RTNClubsFragment();
                     showNewFragment(NAVIGATION_TAB_TABLES,mFragment,RTNClubsFragment.tag);
                 }else {
@@ -93,7 +112,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 mFragment = fragmentManager.findFragmentByTag(EventsAndMeetingsFragment.tag);
                 mSharedPreference.setNavigationIndex(NAVIGATION_TAB_EVENTS);
-                if(mFragment == null) {
+                if(mFragment == null  || mTabFragmentsMap.get(position) ==null) {
                     mFragment = new EventsAndMeetingsFragment();
                     showNewFragment(NAVIGATION_TAB_EVENTS,mFragment,EventsAndMeetingsFragment.tag);
 
@@ -109,7 +128,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 mFragment = fragmentManager.findFragmentByTag(NewsListFragment.tag);
                 mSharedPreference.setNavigationIndex(NAVIGATION_TAB_NEWS);
-                if(mFragment == null) {
+                if(mFragment == null || mTabFragmentsMap.get(position) ==null) {
                     mFragment = new NewsListFragment();
                     showNewFragment(NAVIGATION_TAB_NEWS,mFragment,NewsListFragment.tag);
                 }else {
@@ -124,7 +143,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 mFragment = fragmentManager.findFragmentByTag(FavoritesFragemet.tag);
                 mSharedPreference.setNavigationIndex(NAVIGATION_TAB_FAVORITES);
-                if(mFragment == null) {
+                if(mFragment == null || mTabFragmentsMap.get(position) ==null) {
                     mFragment = new FavoritesFragemet();
                     showNewFragment(NAVIGATION_TAB_FAVORITES,mFragment,FavoritesFragemet.tag);
                 }else {
@@ -137,7 +156,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 mFragment = fragmentManager.findFragmentByTag(PrivilegesFragment.tag);
                 mSharedPreference.setNavigationIndex(NAVIGATION_TAB_PRIVILEGES);
-                if(mFragment == null) {
+                if(mFragment == null || mTabFragmentsMap.get(position) ==null) {
                     mFragment = new PrivilegesFragment();
                     showNewFragment(NAVIGATION_TAB_PRIVILEGES,mFragment,PrivilegesFragment.tag);
 
@@ -155,10 +174,24 @@ public class HomeActivity extends AppCompatActivity {
                 break;
 
 
+            case NAVIGATION_TAB_CONVENERS :
+
+                mFragment = fragmentManager.findFragmentByTag(ConvenersFragments.tag);
+                mSharedPreference.setNavigationIndex(NAVIGATION_TAB_CONVENERS);
+                if(mFragment == null  || mTabFragmentsMap.get(position) ==null) {
+                    mFragment = new ConvenersFragments();
+                    showNewFragment(NAVIGATION_TAB_CONVENERS,mFragment,ConvenersFragments.tag);
+                }else {
+                    showExistingFragment(mFragment,NAVIGATION_TAB_CONVENERS);
+                }
+                setTitle("Conveners");
+
+                break;
+
             case NAVIGATION_TAB_ABOUT_US :
                 mFragment = fragmentManager.findFragmentByTag(AboutRTNFragment.tag);
                 mSharedPreference.setNavigationIndex(NAVIGATION_TAB_ABOUT_US);
-                if(mFragment == null) {
+                if(mFragment == null  || mTabFragmentsMap.get(position) ==null) {
                     mFragment = new AboutRTNFragment();
                     showNewFragment(NAVIGATION_TAB_ABOUT_US,mFragment,AboutRTNFragment.tag);
                 }else {

@@ -37,6 +37,7 @@ public class NewsDetailsActivity extends AppCompatActivity{
         mToolBar = (Toolbar) findViewById(R.id.actionToolbar);
         setSupportActionBar(mToolBar);
         getSupportActionBar().setTitle(getString(R.string.news_deatils_text));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mHeadLineTextView = (TextView) findViewById(R.id.newsHeadLineTextView);
         mNewsDescriptionTextView = (TextView) findViewById(R.id.newsDesriptionTextView);

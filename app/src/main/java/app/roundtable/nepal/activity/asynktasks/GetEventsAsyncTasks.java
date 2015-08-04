@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 import app.roundtable.nepal.activity.database.EventsManager;
+import app.roundtable.nepal.activity.database.Tables;
 import app.roundtable.nepal.activity.fragments.MeetingsFragment;
 import app.roundtable.nepal.activity.interfaces.DataLoader;
 
@@ -26,7 +27,7 @@ public class GetEventsAsyncTasks extends AsyncTask<String, String , Cursor> {
 
     public GetEventsAsyncTasks(Context context, DataLoader dataLoader) {
         this.mContext = context;
-        mManager = new EventsManager(mContext);
+        mManager = new EventsManager(mContext, Tables.Events.EVENTS_TABLE);
         mDataLoader = dataLoader;
     }
 
@@ -49,9 +50,11 @@ public class GetEventsAsyncTasks extends AsyncTask<String, String , Cursor> {
 
                 JSONObject dataObject = jsonObject.getJSONObject("data");
                 mManager.saveEventsInDatabase(dataObject);
-                cursor = mManager.getEvents();
+                cursor = mManager.getCursor();
 
                 return cursor;
+            }else {
+                mSuccess = false;
             }
 
         } catch (IOException e) {
@@ -74,6 +77,9 @@ public class GetEventsAsyncTasks extends AsyncTask<String, String , Cursor> {
 
             mDataLoader.setFirstPageData(cursor);
 
+        }else {
+
+            mDataLoader.onNoData();
         }
 
     }

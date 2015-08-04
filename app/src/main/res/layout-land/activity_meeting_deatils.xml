@@ -10,11 +10,12 @@
 
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="600dp"
         android:layout_height="match_parent"
         android:layout_below="@+id/actionToolbar"
         android:padding="5dp"
         android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
         >
 
         <LinearLayout
@@ -123,13 +124,93 @@
 
 
                 <Switch
-                    android:id="@+id/spouceAndChildrenSwitch"
+                    android:id="@+id/spouceSwitch"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/spouce"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/name_background"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                >
+
+
+                <Switch
+                    android:id="@+id/childrenSwitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/children"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/name_background"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/background_with_shadow"
+                >
+
+                <TextView
+                    android:id="@+id/yesTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/yes"
+                    android:textSize="20sp"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/name_background"
+                    android:background="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/noTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/no"
+                    android:textSize="20sp"
+                    android:padding="5dp"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center"
+                    android:textColor="@color/name_background"
+                    android:background="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/maybeTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/maybe"
+                    android:textSize="20sp"
+                    android:padding="5dp"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center"
+                    android:textColor="@color/name_background"
+                    android:background="@android:color/white"
+                    android:textStyle="bold"
                     />
 
 

@@ -54,9 +54,10 @@ public class ProfileViewActivity extends AppCompatActivity implements Tables.Mem
     private MembersManager mManager;
     private Cursor mCursor;
     private RecyclerView mRecyclerView;
+    private String mTableName, mMemberTableName;
     private List<ProfileData> mData= new ArrayList<ProfileData>();
 
-    private String[] mLabels = new String[]{"Table Name : ","Date Of Birth : ","Email : ", "Mobile : ", "Blood Group : ", "City : ", "Gender : ", "Spouse Name : ", "Spouse Date of Birth : "};
+    private String[] mLabels = new String[]{"Table Name : ", "Mobile : ", "Email : ", "Company : ","Address : ", "City : ","Office Phone : ", "Blood Group : ", "Date Of Birth : ",  "Spouse Name : ", "Spouse DOB : ", "Anniversary : "};
     private String[] mValues ;
 
     @Override
@@ -69,7 +70,8 @@ public class ProfileViewActivity extends AppCompatActivity implements Tables.Mem
         if(bundle!=null){
 
             mMemberId = bundle.getString(MEMBER_ID);
-
+            mTableName = bundle.getString("table_name");
+            mMemberTableName = bundle.getString("tableName");
         }
 
         initViews();
@@ -88,11 +90,12 @@ public class ProfileViewActivity extends AppCompatActivity implements Tables.Mem
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setHasFixedSize(true);
 
-        mManager = new MembersManager(this);
+        mManager = new MembersManager(this, mTableName);
         mUserImageView = (ImageView) findViewById(R.id.userImageView);
 
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
                 R.drawable.splash_logo);
+
         Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
             @Override
             public void onGenerated(Palette palette) {
@@ -104,15 +107,23 @@ public class ProfileViewActivity extends AppCompatActivity implements Tables.Mem
         mCursor = mManager.getMemberDetail(mMemberId);
 
         mCursor.moveToFirst();
-        mValues = new String[]{ mCursor.getString(mCursor.getColumnIndex(MEMBER_ID)),
-                                mCursor.getString(mCursor.getColumnIndex(DATE_OF_BIRTH)),
-                                mCursor.getString(mCursor.getColumnIndex(EMAIL)),
+
+        if(mMemberTableName.equals(""))
+            mMemberTableName = mCursor.getString(mCursor.getColumnIndex(TABLE_CODE));
+
+
+        mValues = new String[]{ mMemberTableName,
                                 mCursor.getString(mCursor.getColumnIndex(MOBILE)),
-                                mCursor.getString(mCursor.getColumnIndex(BLOOD_GROUP)),
+                                mCursor.getString(mCursor.getColumnIndex(EMAIL)),
+                                mCursor.getString(mCursor.getColumnIndex(COMPANY)),
+                                mCursor.getString(mCursor.getColumnIndex(ADDRESS)),
                                 mCursor.getString(mCursor.getColumnIndex(RESIDENCE_CITY)),
-                                mCursor.getString(mCursor.getColumnIndex(GENDER)),
+                                mCursor.getString(mCursor.getColumnIndex(OFFICE_PHONE)),
+                                mCursor.getString(mCursor.getColumnIndex(BLOOD_GROUP)),
+                                mCursor.getString(mCursor.getColumnIndex(DATE_OF_BIRTH)),
                                 mCursor.getString(mCursor.getColumnIndex(SPOUSE_NAME)),
-                                mCursor.getString(mCursor.getColumnIndex(SPOUSE_DATE_OF_BIRTH)) };
+                                mCursor.getString(mCursor.getColumnIndex(SPOUSE_DATE_OF_BIRTH)),
+                                mCursor.getString(mCursor.getColumnIndex(ANNIVERSARY_DATE))  };
 
 
 
@@ -120,7 +131,7 @@ public class ProfileViewActivity extends AppCompatActivity implements Tables.Mem
         getSupportActionBar().setTitle(userName);
         collapsingToolbarLayout.setTitle(userName);
 
-        String imageUrl = ApiUrls.BASE_URL_PATH + mCursor.getString(mCursor.getColumnIndex(IMAGE_THUMB_URL));
+        String imageUrl = ApiUrls.BASE_URL_PATH + mCursor.getString(mCursor.getColumnIndex(IMAGE_BIG_URL));
 
         Picasso.with(this).load(imageUrl).into(mUserImageView);
 
@@ -137,22 +148,6 @@ public class ProfileViewActivity extends AppCompatActivity implements Tables.Mem
 
     }
 
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-         super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.edit_menu, menu);
-        return true;
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-       return super.onOptionsItemSelected(item);
-
-    }
 
 
 }

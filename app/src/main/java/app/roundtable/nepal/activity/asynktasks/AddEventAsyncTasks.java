@@ -10,6 +10,7 @@ import java.io.IOException;
 import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.activity.AddNewEventActivity;
 import app.roundtable.nepal.activity.database.EventsManager;
+import app.roundtable.nepal.activity.database.Tables;
 
 /**
  * Created by afif on 2/7/15.
@@ -24,7 +25,7 @@ public class AddEventAsyncTasks extends AsyncTask<String, String, String> {
 
     public AddEventAsyncTasks(Context context) {
         this.mContext = context;
-        mManager = new EventsManager(mContext);
+        mManager = new EventsManager(mContext, Tables.Events.EVENTS_TABLE);
     }
 
     @Override

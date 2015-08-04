@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -33,6 +34,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 import app.roundtable.nepal.R;
@@ -56,7 +58,7 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
     private static int TIME_PICKER_DIALOG = 111, DATE_PICKER_DIALOG = 222;
     public static final int PICK_CAMERA_IMAGE = 011, PICK_GALLERY_IMAGE = 911;
     public  ArrayList<TablesInfoBean> tablesData = new ArrayList<>();
-    private Set<String > selectedId;
+    private Set<String > selectedId = new HashSet<>();
     private String mEVentImagePath;
 
     @Override
@@ -89,6 +91,8 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
         mMinute = calendar.get(Calendar.MINUTE);
 
     }
+
+
 
     private void initView() {
 
@@ -167,15 +171,16 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
 
         }else if(time.equals("") || time.isEmpty()){
             Toast.makeText(this,getString(R.string.enter_time),Toast.LENGTH_SHORT).show();
-        }else if(selectedId.size() < 1){
-            Toast.makeText(this,getString(R.string.select_at_least_one_table),Toast.LENGTH_SHORT).show();
-        }else if (mEVentImagePath == null && mEVentImagePath.equals("")){
-
-            Toast.makeText(this,getString(R.string.please_select_event_photo),Toast.LENGTH_SHORT).show();
-
+        }else if(selectedId.size() < 1) {
+            Toast.makeText(this, getString(R.string.select_at_least_one_table), Toast.LENGTH_SHORT).show();
+//        }else if (mEVentImagePath == null || mEVentImagePath.equals("")){
+//
+//            Toast.makeText(this,getString(R.string.please_select_event_photo),Toast.LENGTH_SHORT).show();
+//
+//        }
         }else {
 
-            String invitees = selectedId.toString().substring(0, selectedId.toString().length()-1);
+            String invitees = selectedId.toString().substring(1, selectedId.toString().length()-1);
             String spouse = (isSpouse ? "1" : "0");
             String children = (isChildren ? "1" : "0");
 
@@ -189,7 +194,7 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
     private void executeAsyncTask(String invitees, String spouse, String children, String eventName, String venueName, String date, String time, String mEVentImagePath) {
 
         AddEventAsyncTasks asyncTasks = new AddEventAsyncTasks(this);
-        asyncTasks.execute(invitees,spouse,children,eventName,venueName,date,time, mEVentImagePath);
+        asyncTasks.execute(invitees, spouse, children, eventName, venueName, date, time, mEVentImagePath);
 
     }
 
@@ -221,7 +226,7 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
         ListView mListView = (ListView)dialog.findViewById(R.id.tableNameListView);
         Button doneButton = (Button)dialog.findViewById(R.id.doneButton);
 
-        adapter = new TableNameDialogAdapter(this,tablesData);
+        adapter = new TableNameDialogAdapter(this,tablesData, selectedId);
         mListView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -231,14 +236,28 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
             public void onClick(View v) {
 
                 dialog.dismiss();
-                selectedId = adapter.selectedId;
+                selectedId = adapter.mSelectedId;
                 tablesData = adapter.tableNames;
+                int selectedCount = getSelectedTables(tablesData);
                 mInviteesEditText.setText(selectedId.size() + " Tables selected");
             }
         });
 
         dialog.show();
 
+    }
+
+    private int getSelectedTables(ArrayList<TablesInfoBean> tablesData) {
+
+        int count = 0;
+
+        for (int i=0;i<tablesData.size();i++)
+        {
+            if(tablesData.get(i).isSelected())
+                count++;
+        }
+
+        return count;
     }
 
     private ArrayList<TablesInfoBean> getObject(Cursor cursor) {
@@ -430,5 +449,26 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
             e.printStackTrace();
         }
 
+    }
+
+
+    @Override
+    protected void onRestoreInstanceState(Bundle bundle) {
+        if(bundle.containsKey("event_photo"))
+        {
+            mEVentImagePath = bundle.getString("event_photo");
+            Bitmap bitmap = BitmapFactory.decodeFile(mEVentImagePath);
+
+            mEventImageView.setImageBitmap(bitmap);
+
+        }
+        super.onRestoreInstanceState(bundle);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+
+        outState.putString("event_photo", mEVentImagePath);
+        super.onSaveInstanceState(outState);
     }
 }

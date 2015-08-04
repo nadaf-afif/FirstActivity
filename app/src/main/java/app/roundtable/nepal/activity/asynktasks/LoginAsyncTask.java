@@ -51,8 +51,17 @@ public class LoginAsyncTask extends AsyncTask<String, String, String> {
         try {
             response = mManager.doEmailLogin(email,password);
 
+            JSONObject jsonObject = new JSONObject(response);
+            String success = jsonObject.getString("success");
+
+            if(success.equals("true"))
+                mManager.saveUserInfo(response);
+
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+
         }
 
         return response;

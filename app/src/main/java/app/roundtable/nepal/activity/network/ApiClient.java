@@ -31,6 +31,7 @@ import java.util.Map;
 
 import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.database.Tables;
+import app.roundtable.nepal.activity.util.ApplicationPreferences;
 
 /**
  * Created by afif on 20/6/15.
@@ -43,6 +44,7 @@ public class ApiClient {
 
     public static final String HEADER_API_KEY = "Api-Key";
     public static final String API_KEY = "1234";
+    public static final String MEMBER_ID = "Member-Id";
 
 
     public String executePostRequestWithHeader(List<NameValuePair> pairs, String apiUrl) throws IOException {
@@ -79,11 +81,30 @@ public class ApiClient {
         return response;
     }
 
+    public String executeHttpGetWithHeaderMemberId(String Url, String member_id) throws IOException {
+
+        String response = null;
+
+        HttpClient client = new DefaultHttpClient();
+        HttpGet httpGet = new HttpGet(Url);
+        httpGet.addHeader(HEADER_API_KEY, API_KEY);
+        httpGet.addHeader(MEMBER_ID, member_id);
+
+        HttpResponse httpResponse = client.execute(httpGet);
+
+        response = EntityUtils.toString(httpResponse.getEntity());
+        mResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
+
+        return response;
+    }
+
 
 
     public String executeMultipartUtilityWithHeader(String[] params, Context context, String url) throws IOException {
 
         String response = null;
+
+        ApplicationPreferences sharedPreference = new ApplicationPreferences(context);
 
         MultipartUtility builder = new MultipartUtility(url, "UTF-8");
 
@@ -103,7 +124,7 @@ public class ApiClient {
         builder.addFormField(Tables.Events.EVENT_VENUE, params[4]);
         builder.addFormField(Tables.Events.EVENT_DATE, params[5]);
         builder.addFormField(Tables.Events.EVENT_TIME, params[6]);
-        builder.addFormField("member_id", "5");
+        builder.addFormField("member_id", sharedPreference.getUserId());
 
 
         response = builder.finish();

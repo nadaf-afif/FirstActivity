@@ -5,20 +5,49 @@
     android:background="@color/navigation_color"
     tools:context="app.technokratzs.classroomconnect.app.roundtable.nepal.activity.navigation.NavigationDrawerFragment">
 
-
-    <ImageView
-        android:id="@+id/drawerImage"
+    <RelativeLayout
+        android:id="@+id/profileRL"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:src="@drawable/splash_logo"
-        android:background="@android:color/white"
-        />
+        android:background="@drawable/nepal_backgroung_image"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/drawerImage"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            app:border_width="1dp"
+            android:src="@drawable/user_place_holder"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            app:border_color="#dddddd"/>
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="nadafafif@gmail.com"-->
+            <!--android:layout_below="@+id/drawerImage"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:layout_marginLeft="25dp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:shadowDx="2"-->
+            <!--android:shadowDy="2"-->
+            <!--android:shadowColor="@color/material_blue_grey_800"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:textSize="18sp"-->
+            <!--/>-->
+
+
+    </RelativeLayout>
+
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycleListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/drawerImage"
+        android:layout_below="@+id/profileRL"
         >
 
     </android.support.v7.widget.RecyclerView>

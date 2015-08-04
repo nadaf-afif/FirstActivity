@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:weightSum="8"
     android:padding="10dp"
+    android:background="@color/bg_color"
+
     >
 
     <TextView
@@ -39,6 +41,39 @@
         />
 
     <TextView
+        android:id="@+id/songTextView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/rtn_song_text"
+        android:gravity="center_vertical"
+        android:background="@drawable/background_shadow"
+        android:textSize="20dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/name_background"
+        android:drawableRight="@drawable/right_arrow"
+        android:paddingRight="10dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/meetingProcedureTextView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/meeting_procedure"
+        android:gravity="center_vertical"
+        android:background="@drawable/background_shadow"
+        android:textSize="20dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/name_background"
+        android:drawableRight="@drawable/right_arrow"
+        android:paddingRight="10dp"
+        android:layout_marginTop="10dp"
+        />
+
+
+    <TextView
         android:id="@+id/boardMembersTextView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -55,21 +90,6 @@
         />
 
 
-    <TextView
-        android:id="@+id/songTextView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="@string/rtn_song_text"
-        android:gravity="center_vertical"
-        android:background="@drawable/background_shadow"
-        android:textSize="20dp"
-        android:paddingLeft="10dp"
-        android:textColor="@color/name_background"
-        android:drawableRight="@drawable/right_arrow"
-        android:paddingRight="10dp"
-        android:layout_marginTop="10dp"
-        />
 
     <TextView
         android:id="@+id/contactsTextView"

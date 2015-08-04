@@ -29,11 +29,12 @@ public class TableNameDialogAdapter extends BaseAdapter {
 
     public ArrayList<TablesInfoBean> tableNames ;
     private Context mContext;
-    public Set<String> selectedId = new TreeSet<>();
+    public Set<String> mSelectedId ;
 
-    public TableNameDialogAdapter(Context context,  ArrayList<TablesInfoBean> objects) {
+    public TableNameDialogAdapter(Context context, ArrayList<TablesInfoBean> objects, Set<String> selectedId) {
         mContext = context;
         tableNames = objects;
+        mSelectedId = selectedId;
 
     }
 
@@ -85,23 +86,28 @@ public class TableNameDialogAdapter extends BaseAdapter {
 
                     if (tag > 0) {
 
-                        if (isChecked && tableNames.get(tag).isSelected()) {
-
-                            tableNames.get(tag).setIsSelected(false);
-                            selectedId.remove(tableNames.get(tag).getTableId());
-
-                        } else if (!tableNames.get(tag).isSelected()) {
+                        if (isChecked ) {
 
                             tableNames.get(tag).setIsSelected(true);
-                            selectedId.add(tableNames.get(tag).getTableId());
+                            mSelectedId.add(tableNames.get(tag).getTableId());
+
+                        } else  {
+
+                            tableNames.get(tag).setIsSelected(false);
+                            mSelectedId.remove(tableNames.get(tag).getTableId());
+
                         }
 
                     } else if (isChecked) {
 
 
                         for (int j = 0; j < tableNames.size(); j++) {
+
                             tableNames.get(j).setIsSelected(true);
-                            selectedId.add(tableNames.get(j).getTableId());
+
+                            if (!tableNames.get(j).getTableId().equals("0")) {
+                                mSelectedId.add(tableNames.get(j).getTableId());
+                            }
                         }
 
                         notifyDataSetChanged();
@@ -110,8 +116,9 @@ public class TableNameDialogAdapter extends BaseAdapter {
 
 
                         for (int j = 0; j < tableNames.size(); j++) {
-                            tableNames.get(j).setIsSelected(false);
-                            selectedId.remove(tableNames.get(j).getTableId());
+
+                                tableNames.get(j).setIsSelected(false);
+                                mSelectedId.remove(tableNames.get(j).getTableId());
 
                         }
 

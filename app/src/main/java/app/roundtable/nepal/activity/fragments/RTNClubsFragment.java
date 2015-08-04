@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.adapters.ClubTablesAdapter;
@@ -24,6 +26,8 @@ public class RTNClubsFragment extends Fragment implements DataLoader{
     private GetTablesAsyncTasks mAsyncTasks;
     private ClubTablesAdapter mAdapter;
     public static final String tag = RTNClubsFragment.class.getSimpleName();
+    private ProgressBar mProgressBar;
+    private TextView mEmptyTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,8 @@ public class RTNClubsFragment extends Fragment implements DataLoader{
         super.onViewCreated(view, savedInstanceState);
 
         mTableNameGridView = (RecyclerView) view.findViewById(R.id.tableNamesGridRecyclerView);
+        mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        mEmptyTextView = (TextView) view.findViewById(R.id.emptyListTextView);
 
         mTableNameGridView.setLayoutManager(new GridLayoutManager(getActivity(),2));
 
@@ -56,7 +62,8 @@ public class RTNClubsFragment extends Fragment implements DataLoader{
         if(NetworkManager.isConnectedToInternet(getActivity())){
 
             executeAsyncTask();
-        }
+        }else
+            onNoInternet();
 
     }
 
@@ -71,6 +78,11 @@ public class RTNClubsFragment extends Fragment implements DataLoader{
     public void setFirstPageData(Cursor cursor) {
 
         if(isAdded()) {
+
+            mEmptyTextView.setVisibility(View.GONE);
+            mProgressBar.setVisibility(View.GONE);
+            mTableNameGridView.setVisibility(View.VISIBLE);
+
             mAdapter = new ClubTablesAdapter(getActivity(), cursor);
 
             mTableNameGridView.setAdapter(mAdapter);
@@ -80,13 +92,14 @@ public class RTNClubsFragment extends Fragment implements DataLoader{
     @Override
     public void onNoInternet() {
 
-
-
+        mProgressBar.setVisibility(View.GONE);
+        mEmptyTextView.setText(getString(R.string.no_internet_connection));
     }
 
     @Override
     public void onNoData() {
 
-
+        mProgressBar.setVisibility(View.GONE);
+        mEmptyTextView.setText(getString(R.string.no_members_found));
     }
 }

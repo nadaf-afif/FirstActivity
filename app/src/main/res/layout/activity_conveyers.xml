@@ -64,7 +64,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginTop="5dp"
-                        android:text="985102038"
+                        android:text="9851020384"
                         android:drawableLeft="@drawable/ic_action_call"
                         android:drawablePadding="10dp"
                         android:gravity="center_vertical"

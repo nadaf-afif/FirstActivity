@@ -5,11 +5,15 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import app.roundtable.nepal.activity.network.ApiClient;
 import app.roundtable.nepal.activity.network.ApiUrls;
@@ -23,12 +27,14 @@ public class MembersManager extends Manager implements Tables.Members{
     private DataBaseHelper mDatabaseBaseHelper;
     private SQLiteDatabase mSqLiteDatabase;
     private ApiClient mApiClient;
+    private String mTableName;
 
-    public MembersManager(Context context) {
+    public MembersManager(Context context, String tableName) {
         this.mContext = context;
         mDatabaseBaseHelper = new DataBaseHelper(mContext);
         mSqLiteDatabase = mDatabaseBaseHelper.getSqLiteDatabase();
         mApiClient = new ApiClient();
+        mTableName = tableName;
     }
 
 
@@ -36,6 +42,17 @@ public class MembersManager extends Manager implements Tables.Members{
     public String getMembersByTable(String tableId) throws IOException {
 
         String response = mApiClient.executeHttpGetWithHeader(ApiUrls.MEMBERS_BY_TABLE_API_PATH+tableId+"/get_members");
+
+        return response;
+    }
+
+
+    public String searchMember(String searchKey , String searchType) throws IOException {
+
+        List<NameValuePair> pairs = new ArrayList<>();
+        pairs.add(new BasicNameValuePair("searchBy", searchType));
+        pairs.add(new BasicNameValuePair("searchKey", searchKey));
+        String response = mApiClient.executePostRequestWithHeader(pairs, ApiUrls.SEARCH_MEMBER_API_PATH);
 
         return response;
     }
@@ -65,10 +82,15 @@ public class MembersManager extends Manager implements Tables.Members{
             contentValues.put(RESIDENCE_PHONE, dataObject.getString(RESIDENCE_PHONE));
             contentValues.put(OFFICE_PHONE, dataObject.getString(OFFICE_PHONE));
             contentValues.put(OFFICE_CITY, dataObject.getString(OFFICE_CITY));
+            contentValues.put(RESIDENCE_CITY, dataObject.getString(RESIDENCE_CITY));
             contentValues.put(STATE, dataObject.getString(STATE));
             contentValues.put(MEMBER_TABLE_ID, dataObject.getString(MEMBER_TABLE_ID));
+            contentValues.put(TABLE_CODE, dataObject.getString(TABLE_CODE));
+            contentValues.put(TABLE_NAME, dataObject.getString(TABLE_NAME));
+            contentValues.put(COMPANY, dataObject.getString(COMPANY));
+            contentValues.put(ADDRESS, dataObject.getString(ADDRESS));
 
-            mSqLiteDatabase.insert(MEMBERS_TABLE, null, contentValues);
+            mSqLiteDatabase.insert(mTableName, null, contentValues);
 
         }
 
@@ -78,19 +100,19 @@ public class MembersManager extends Manager implements Tables.Members{
     public void ClearTable ()
     {
 
-        mSqLiteDatabase.delete(MEMBERS_TABLE,null,null);
+        mSqLiteDatabase.delete(mTableName,null,null);
     }
 
 
     public Cursor getMembers(){
 
-        Cursor cursor = mSqLiteDatabase.rawQuery("SELECT rowId _id, * FROM "+MEMBERS_TABLE, null);
+        Cursor cursor = mSqLiteDatabase.rawQuery("SELECT rowId _id, * FROM "+mTableName, null);
         return  cursor;
     }
 
     public Cursor getMemberDetail(String memberId){
 
-        Cursor cursor = mSqLiteDatabase.rawQuery("SELECT rowId _id, * FROM "+MEMBERS_TABLE + " WHERE "+MEMBER_ID+"=?", new String[]{memberId});
+        Cursor cursor = mSqLiteDatabase.rawQuery("SELECT rowId _id, * FROM "+mTableName + " WHERE "+MEMBER_ID+"=?", new String[]{memberId});
 
         return cursor;
     }

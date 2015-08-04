@@ -6,14 +6,15 @@
     >
 
     <include layout="@layout/action_toolbar_layout"
-        android:id="@+id/actionToolbar"
+            android:id="@+id/actionToolbar"
         />
 
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_below="@id/actionToolbar"
+        android:layout_centerHorizontal="true"
         android:padding="10dp">
 
         <LinearLayout

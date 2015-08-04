@@ -17,6 +17,7 @@ import java.util.List;
 
 import app.roundtable.nepal.activity.network.ApiClient;
 import app.roundtable.nepal.activity.network.ApiUrls;
+import app.roundtable.nepal.activity.util.ApplicationPreferences;
 
 /**
  * Created by afif on 24/6/15.
@@ -27,20 +28,24 @@ public class EventsManager extends Manager implements Tables.Events{
     private DataBaseHelper mDataBaseHelper;
     private SQLiteDatabase mSqlSqLiteDatabase;
     private ApiClient mApiClient;
+    private ApplicationPreferences mSharedPreferences;
+    private String mTableName ;
 
 
-    public EventsManager(Context context) {
+    public EventsManager(Context context, String tableName) {
         this.mContext = context;
         mApiClient = new ApiClient();
         mDataBaseHelper = new DataBaseHelper(mContext);
         mSqlSqLiteDatabase = mDataBaseHelper.getSqLiteDatabase();
+        mSharedPreferences = new ApplicationPreferences(mContext);
+        mTableName = tableName;
     }
 
 
 
     public String getAllEvents() throws IOException {
 
-        String response = mApiClient.executeHttpGetWithHeader(ApiUrls.ALL_EVENTS_API_PATH);
+        String response = mApiClient.executeHttpGetWithHeaderMemberId(ApiUrls.ALL_EVENTS_API_PATH, mSharedPreferences.getUserId());
 
         return response;
 
@@ -48,7 +53,7 @@ public class EventsManager extends Manager implements Tables.Events{
 
     public String getAllMeetings() throws IOException {
 
-        String response = mApiClient.executeHttpGetWithHeader(ApiUrls.ALL_MEETINGS_API_PATH);
+        String response = mApiClient.executeHttpGetWithHeaderMemberId(ApiUrls.ALL_MEETINGS_API_PATH, mSharedPreferences.getUserId());
 
         return response;
     }
@@ -64,7 +69,7 @@ public class EventsManager extends Manager implements Tables.Events{
 
     public void clearTable (){
 
-        mSqlSqLiteDatabase.delete(EVENTS_TABLE, null, null);
+        mSqlSqLiteDatabase.delete(mTableName, null, null);
     }
 
 
@@ -90,28 +95,35 @@ public class EventsManager extends Manager implements Tables.Events{
             contentValues.put(IS_CHILDREN , jsonObject.getString(IS_CHILDREN));
             contentValues.put(IS_SPOUSE, jsonObject.getString(IS_SPOUSE));
             contentValues.put(TABLE_COUNT, jsonObject.getString(TABLE_COUNT));
+            contentValues.put(RSVP, jsonObject.getString(RSVP));
 
 
-            mSqlSqLiteDatabase.insert(EVENTS_TABLE, null, contentValues);
+            mSqlSqLiteDatabase.insert(mTableName, null, contentValues);
         }
     }
 
-    public Cursor getEvents() {
-
-        return mSqlSqLiteDatabase.rawQuery("SELECT rowId _id, * FROM "+EVENTS_TABLE+" where "+EVENT_TYPE + "=?", new String[]{"event"});
-    }
-
-    public Cursor getMeetings () {
-
-        return mSqlSqLiteDatabase.rawQuery("SELECT rowId _id, * FROM "+EVENTS_TABLE+" where "+EVENT_TYPE + "=?", new String[]{"meeting"});
-
-    }
-
+//    public Cursor getEvents() {
+//
+//        return mSqlSqLiteDatabase.rawQuery("SELECT rowId _id, * FROM "+mTableName+" where "+EVENT_TYPE + "=?", new String[]{"event"});
+//    }
+//
+//    public Cursor getMeetings () {
+//
+//        return mSqlSqLiteDatabase.rawQuery("SELECT rowId _id, * FROM "+mTableName+" where "+EVENT_TYPE + "=?", new String[]{"meeting"});
+//
+//    }
+//
     public Cursor getEventDetails (String eventId){
 
-        Cursor cursor = mSqlSqLiteDatabase.rawQuery("SELECT rowId _id, * FROM "+EVENTS_TABLE+ " where "+EVENT_ID+ "=?", new String[]{eventId});
+        Cursor cursor = mSqlSqLiteDatabase.rawQuery("SELECT rowId _id, * FROM "+mTableName+ " where "+EVENT_ID+ "=?", new String[]{eventId});
 
         return cursor;
+    }
+
+
+    public Cursor getCursor() {
+
+        return mSqlSqLiteDatabase.rawQuery("SELECT rowId _id, * FROM "+mTableName,null);
     }
 
     public String createNewMeeting(String[] params) throws IOException {
@@ -125,10 +137,30 @@ public class EventsManager extends Manager implements Tables.Events{
         pairs.add(new BasicNameValuePair(EVENT_VENUE,params[4]));
         pairs.add(new BasicNameValuePair(EVENT_DATE,params[5]));
         pairs.add(new BasicNameValuePair(EVENT_TIME,params[6]));
-        pairs.add(new BasicNameValuePair("member_id","5"));
+        pairs.add(new BasicNameValuePair("member_id",mSharedPreferences.getUserId()));
 
         String response = mApiClient.executePostRequestWithHeader(pairs, ApiUrls.ADD_NEW_MEETING_API_PATH);
 
         return response;
+    }
+
+    public String updateStatus(String eventId, String status) throws IOException {
+
+        List<NameValuePair> pairs = new ArrayList<>();
+        pairs.add(new BasicNameValuePair("event_id", eventId));
+        pairs.add(new BasicNameValuePair("response", status));
+        pairs.add(new BasicNameValuePair("member_id", mSharedPreferences.getUserId()));
+
+        String response = mApiClient.executePostRequestWithHeader(pairs,ApiUrls.RSVP_UPDATE_API_PATH);
+
+        return response;
+    }
+
+    public void updateLocalDB(String eventId, String status) {
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(RSVP,status);
+        mSqlSqLiteDatabase.update(mTableName,contentValues,EVENT_ID+"=?",new String[]{eventId});
+
     }
 }

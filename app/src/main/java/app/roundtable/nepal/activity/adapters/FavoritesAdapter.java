@@ -63,7 +63,6 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
 
         public FavoritesViewHolder(View itemView) {
             super(itemView);
-
             mMerchantImageView = (ImageView) itemView.findViewById(R.id.favoriteImageView);
             mMerchantTextView = (TextView)itemView.findViewById(R.id.merchantNameTextView);
 
