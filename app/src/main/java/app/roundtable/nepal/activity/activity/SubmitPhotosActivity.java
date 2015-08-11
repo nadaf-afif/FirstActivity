@@ -235,15 +235,11 @@ public class SubmitPhotosActivity extends AppCompatActivity implements View.OnCl
                 intent.putExtra(MediaStore.EXTRA_OUTPUT,
                         MediaStore.Images.Media.EXTERNAL_CONTENT_URI.toString());
                 // ******** code for crop image
-                intent.putExtra("crop", "true");
-                intent.putExtra("aspectX", 0);
-                intent.putExtra("aspectY", 0);
-                intent.putExtra("outputX", 200);
-                intent.putExtra("outputY", 150);
+
+                intent.putExtra("return-data", true);
 
                 try {
 
-                    intent.putExtra("return-data", true);
                     startActivityForResult(intent, PICK_CAMERA_IMAGE);
 
                 } catch (ActivityNotFoundException e) {
@@ -259,22 +255,20 @@ public class SubmitPhotosActivity extends AppCompatActivity implements View.OnCl
             public void onClick(DialogInterface dialogInterface, int i) {
 
 
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                intent.putExtra("crop", "true");
-                intent.putExtra("aspectX", 0);
-                intent.putExtra("aspectY", 0);
-                intent.putExtra("outputX", 200);
-                intent.putExtra("outputY", 150);
 
                 try {
-
-                    intent.putExtra("return-data", true);
-                    startActivityForResult(Intent.createChooser(intent,
-                            "Complete action using"), PICK_GALLERY_IMAGE);
-
-                } catch (ActivityNotFoundException e) {
+                    Intent intent = new Intent();
+                    intent.setType("image/*");
+                    intent.setAction(Intent.ACTION_GET_CONTENT);
+//                    intent.putExtra("crop", "true");
+//                    intent.putExtra("aspectX", 150);
+//                    intent.putExtra("aspectY", 100);
+//                    intent.putExtra("return-data", true);
+                    startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_GALLERY_IMAGE);
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "No application found",
+                            Toast.LENGTH_LONG).show();
+                    Log.e(e.getClass().getName(), e.getMessage(), e);
                 }
 
 
@@ -298,41 +292,73 @@ public class SubmitPhotosActivity extends AppCompatActivity implements View.OnCl
 
                 case PICK_CAMERA_IMAGE:
 
+                    if (resultCode == RESULT_OK) {
+                        Uri selectedImageUri = data.getData();
+                        String filePath = null;
 
-                    Bundle bundle = data.getExtras();
-                        if(bundle!=null)
-                        {
-                            Bitmap photo = bundle.getParcelable("data");
-                            mBrowseImageView.setImageBitmap(photo);
-                            mUploadButton.setVisibility(View.VISIBLE);
-                            mClickHereTV.setVisibility(View.INVISIBLE);
-                            mUriPath = getImageUri(this, photo);
-                            showDialogToAddDescrption();
+                        try {
+                            // OI FILE Manager
+                            String filemanagerstring = selectedImageUri.getPath();
 
+                            // MEDIA GALLERY
+                            String selectedImagePath = getRealPathFromURI(selectedImageUri);
+
+                            if (selectedImagePath != null) {
+                                filePath = selectedImagePath;
+                            } else if (filemanagerstring != null) {
+                                filePath = filemanagerstring;
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Unknown path",
+                                        Toast.LENGTH_LONG).show();
+                                Log.e("Bitmap", "Unknown path");
+                            }
+
+                            if (filePath != null) {
+                                decodeFile(filePath);
+                            }
+                        } catch (Exception e) {
+                            Toast.makeText(getApplicationContext(), "Internal error",
+                                    Toast.LENGTH_LONG).show();
+                            Log.e(e.getClass().getName(), e.getMessage(), e);
                         }
-
-
-
+                    }
                     break;
+
 
 
                 case PICK_GALLERY_IMAGE:
 
+                    if (resultCode == RESULT_OK) {
+                        Uri selectedImageUri = data.getData();
+                        String filePath = null;
 
-                    Bundle bundle2 = data.getExtras();
-                    if(bundle2!=null)
-                    {
-                        Bitmap photo = bundle2.getParcelable("data");
-                        mBrowseImageView.setImageBitmap(photo);
-                        mUploadButton.setVisibility(View.VISIBLE);
-                        mClickHereTV.setVisibility(View.INVISIBLE);
-                        mUriPath = getImageUri(this, photo);
-                        showDialogToAddDescrption();
+                        try {
+                            // OI FILE Manager
+                            String filemanagerstring = selectedImageUri.getPath();
 
+                            // MEDIA GALLERY
+                            String selectedImagePath = getRealPathFromURI(selectedImageUri);
+
+                            if (selectedImagePath != null) {
+                                filePath = selectedImagePath;
+                            } else if (filemanagerstring != null) {
+                                filePath = filemanagerstring;
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Unknown path",
+                                        Toast.LENGTH_LONG).show();
+                                Log.e("Bitmap", "Unknown path");
+                            }
+
+                            if (filePath != null) {
+                                decodeFile(filePath);
+                            }
+                        } catch (Exception e) {
+                            Toast.makeText(getApplicationContext(), "Internal error",
+                                    Toast.LENGTH_LONG).show();
+                            Log.e(e.getClass().getName(), e.getMessage(), e);
+                        }
                     }
-
                     break;
-
 
             }
 
@@ -382,9 +408,36 @@ public class SubmitPhotosActivity extends AppCompatActivity implements View.OnCl
 
     public Uri getImageUri(Context inContext, Bitmap inImage) {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        inImage.compress(Bitmap.CompressFormat.PNG, 100, bytes);
         String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "uploadImage_"+System.currentTimeMillis()  , null);
         return Uri.parse(path);
+    }
+
+
+    public void decodeFile(String filePath) {
+        // Decode image size
+        BitmapFactory.Options o = new BitmapFactory.Options();
+        o.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(filePath, o);
+
+        // The new size we want to scale to
+        final int REQUIRED_SIZE = 1024;
+
+        // Find the correct scale value. It should be the power of 2.
+        int width_tmp = o.outWidth, height_tmp = o.outHeight;
+        int scale = 1;
+
+        BitmapFactory.Options o2 = new BitmapFactory.Options();
+        o2.inSampleSize = scale;
+        Bitmap bitmap = BitmapFactory.decodeFile(filePath, o2);
+
+        mBrowseImageView.setImageBitmap(bitmap);
+
+        mUploadButton.setVisibility(View.VISIBLE);
+        mClickHereTV.setVisibility(View.INVISIBLE);
+        mUriPath = getImageUri(this, bitmap);
+        showDialogToAddDescrption();
+
     }
 
 }

@@ -129,9 +129,9 @@ public class MyProfileViewActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
+        super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.edit_menu, menu);
-        return super.onCreateOptionsMenu(menu);
+        return true;
 
     }
 

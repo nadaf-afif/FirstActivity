@@ -171,7 +171,7 @@ The various clubs in Nepal have undertaken large social service projects. As ide
     <string name="enter_company_name">Enter company name</string>
     <string name="address">Address</string>
     <string name="enter_address">Enter address</string>
-    <string name="version_code">1.2</string>
+    <string name="version_code">1.4</string>
     <string name="loading">Loading</string>
 
     <array name="search_types">

@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+       >
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar"
@@ -12,13 +12,12 @@
             android:layout_height="250dp"
             android:fitsSystemWindows="true"
             >
-`
+
 
             <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/collapsing_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fitsSystemWindows="true"
                 app:contentScrim="?attr/colorPrimary"
                 app:expandedTitleMarginEnd="64dp"
                 app:expandedTitleMarginStart="48dp"
@@ -41,8 +40,7 @@
                     app:layout_collapseMode="pin"
                     android:background="@android:color/transparent"
                     app:popupTheme="@style/AppTheme"
-                    android:theme="@style/AppTheme"
-                    android:clipToPadding="false"
+                    app:layout_scrollFlags="scroll|enterAlways"
                     />
 
             </android.support.design.widget.CollapsingToolbarLayout>

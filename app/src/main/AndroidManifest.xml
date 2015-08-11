@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.roundtable.nepal"
-    android:versionCode="18074"
+    android:versionCode="18076"
     android:versionName="@string/version_code"
 
     >
@@ -24,6 +24,7 @@
         android:allowBackup="true"
         android:icon="@drawable/app_logo"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="app.roundtable.nepal.activity.activity.FirstActivity"

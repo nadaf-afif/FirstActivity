@@ -39,7 +39,7 @@ public class NewsManager extends Manager implements Tables.News{
 
     public String getAllNews() throws IOException {
 
-        String response = mApiClient.executeHttpGetWithHeader(ApiUrls.ALL_NEWS_API_PATH);
+        String response = mApiClient.executeHttpGetWithHeaderMemberId(ApiUrls.ALL_NEWS_API_PATH, mSharedPreferences.getUserId());
 
         return response;
     }
