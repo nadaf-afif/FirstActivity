@@ -112,6 +112,7 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
         mInviteesEditText.setOnClickListener(this);
         mAddEventButton.setOnClickListener(this);
         mEventImageView.setOnClickListener(this);
+        mVenueEdiText.setOnClickListener(this);
 
     }
 
@@ -147,6 +148,12 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
 
                 chooseSourceDialog();
 
+                break;
+
+            case R.id.venueNameEditText :
+
+                Intent intent = new Intent(AddNewEventActivity.this, MapActivity.class);
+                startActivity(intent);
                 break;
 
         }
