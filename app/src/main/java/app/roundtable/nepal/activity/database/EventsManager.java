@@ -96,7 +96,11 @@ public class EventsManager extends Manager implements Tables.Events{
             contentValues.put(IS_SPOUSE, jsonObject.getString(IS_SPOUSE));
             contentValues.put(TABLE_COUNT, jsonObject.getString(TABLE_COUNT));
             contentValues.put(RSVP, jsonObject.getString(RSVP));
-
+            contentValues.put(EVENT_ADDRESS_LINE, jsonObject.getString(EVENT_ADDRESS_LINE));
+            contentValues.put(EVENT_LATITUDE, jsonObject.getString(EVENT_LATITUDE));
+            contentValues.put(EVENT_LONGITUDE, jsonObject.getString(EVENT_LONGITUDE));
+            contentValues.put(HOST, jsonObject.getString(HOST));
+            contentValues.put(SHOW_RSVP, jsonObject.getString(SHOW_RSVP));
 
             mSqlSqLiteDatabase.insert(mTableName, null, contentValues);
         }
@@ -137,6 +141,9 @@ public class EventsManager extends Manager implements Tables.Events{
         pairs.add(new BasicNameValuePair(EVENT_VENUE,params[4]));
         pairs.add(new BasicNameValuePair(EVENT_DATE,params[5]));
         pairs.add(new BasicNameValuePair(EVENT_TIME,params[6]));
+        pairs.add(new BasicNameValuePair(EVENT_ADDRESS_LINE, params[7]));
+        pairs.add(new BasicNameValuePair(EVENT_LATITUDE, params[8]));
+        pairs.add(new BasicNameValuePair(EVENT_LONGITUDE, params[9]));
         pairs.add(new BasicNameValuePair("member_id",mSharedPreferences.getUserId()));
 
         String response = mApiClient.executePostRequestWithHeader(pairs, ApiUrls.ADD_NEW_MEETING_API_PATH);

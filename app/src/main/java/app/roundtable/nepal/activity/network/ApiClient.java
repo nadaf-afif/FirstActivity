@@ -54,7 +54,6 @@ public class ApiClient {
         HttpClient client = new DefaultHttpClient();
         HttpPost post = new HttpPost(apiUrl);
         post.addHeader(HEADER_API_KEY,API_KEY);
-
         post.setEntity(new UrlEncodedFormEntity(pairs));
 
         HttpResponse httpResponse = client.execute(post);
@@ -98,6 +97,23 @@ public class ApiClient {
         return response;
     }
 
+    public String executePostRequestWithMemberIdHeader(List<NameValuePair> pairs, String apiUrl, String memberId) throws IOException {
+
+        String response = null;
+
+        HttpClient client = new DefaultHttpClient();
+        HttpPost post = new HttpPost(apiUrl);
+        post.addHeader(HEADER_API_KEY,API_KEY);
+        post.addHeader(MEMBER_ID,memberId);
+        post.setEntity(new UrlEncodedFormEntity(pairs));
+
+        HttpResponse httpResponse = client.execute(post);
+        mResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
+        response = EntityUtils.toString(httpResponse.getEntity());
+
+        return response;
+    }
+
 
 
     public String executeMultipartUtilityWithHeader(String[] params, Context context, String url) throws IOException {
@@ -124,6 +140,9 @@ public class ApiClient {
         builder.addFormField(Tables.Events.EVENT_VENUE, params[4]);
         builder.addFormField(Tables.Events.EVENT_DATE, params[5]);
         builder.addFormField(Tables.Events.EVENT_TIME, params[6]);
+        builder.addFormField(Tables.Events.EVENT_ADDRESS_LINE, params[8]);
+        builder.addFormField(Tables.Events.EVENT_LATITUDE, params[9]);
+        builder.addFormField(Tables.Events.EVENT_LONGITUDE, params[10]);
         builder.addFormField("member_id", sharedPreference.getUserId());
 
 

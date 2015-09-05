@@ -8,7 +8,6 @@ public class ApiUrls {
      //public static final String BASE_URL_PATH = "http://roundtablenepal.esy.es";
      public static final String BASE_URL_PATH = "http://roundtablenepal.org/app";
 
-
     // login api
     public static final String LOGIN_API_PATH = BASE_URL_PATH + "/api/login";
 
@@ -60,5 +59,11 @@ public class ApiUrls {
 
     // update RSVP status from event
     public static final String RSVP_UPDATE_API_PATH = BASE_URL_PATH + "/api/event/rsvp";
+
+    // get RSVP responses of members
+    public static final String RSVP_RESPONSE_API_PATH = BASE_URL_PATH + "/api/event/get_rsvp";
+
+    // get profile info
+    public static final String PROFILE_INFO_API = BASE_URL_PATH + "/api/member/get_profile";
 
 }

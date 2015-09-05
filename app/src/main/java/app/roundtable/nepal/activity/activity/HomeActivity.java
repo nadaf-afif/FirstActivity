@@ -45,6 +45,7 @@ public class HomeActivity extends AppCompatActivity {
     public static final int NAVIGATION_TAB_SUBMIT_PHOTOS = 5;
     public static final int NAVIGATION_TAB_CONVENERS = 6;
     public static final int NAVIGATION_TAB_ABOUT_US = 7;
+    private String mType ;
 
     private ApplicationPreferences mSharedPreference;
 
@@ -70,9 +71,15 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         Bundle bundle = getIntent().getExtras();
+
+
+        if (bundle!=null && bundle.containsKey(Constants.TYPE))
+            mType = bundle.getString(Constants.TYPE);
+
         if(bundle!=null && bundle.containsKey(Constants.selectedTab)){
 
             int tabIndex = bundle.getInt(Constants.selectedTab);
+
             displayTab(tabIndex);
 
         }else
@@ -110,13 +117,24 @@ public class HomeActivity extends AppCompatActivity {
 
             case NAVIGATION_TAB_EVENTS :
 
+
                 mFragment = fragmentManager.findFragmentByTag(EventsAndMeetingsFragment.tag);
                 mSharedPreference.setNavigationIndex(NAVIGATION_TAB_EVENTS);
                 if(mFragment == null  || mTabFragmentsMap.get(position) ==null) {
                     mFragment = new EventsAndMeetingsFragment();
+                    Bundle bundle = new Bundle();
+                    if(mType != null) {
+                        bundle.putString(Constants.TYPE,mType);
+                        mFragment.setArguments(bundle);
+                    }
                     showNewFragment(NAVIGATION_TAB_EVENTS,mFragment,EventsAndMeetingsFragment.tag);
 
                 }else {
+                    Bundle bundle = new Bundle();
+                    if(mType != null) {
+                        bundle.putString(Constants.TYPE,mType);
+                        mFragment.setArguments(bundle);
+                    }
                     showExistingFragment(mFragment, NAVIGATION_TAB_EVENTS);
                 }
 
@@ -220,7 +238,7 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
 
-        getMenuInflater().inflate(R.menu.my,menu);
+        getMenuInflater().inflate(R.menu.my, menu);
 
         return true;
     }

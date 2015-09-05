@@ -61,7 +61,7 @@ public class TableMembersListAdapter extends RecyclerView.Adapter<TableMembersLi
         holder.mPhoneNumberTextView.setText(mCursor.getString(mCursor.getColumnIndex(MOBILE)));
 
         String imageUrl = ApiUrls.BASE_URL_PATH + mCursor.getString(mCursor.getColumnIndex(IMAGE_THUMB_URL));
-        Picasso.with(mContext).load(imageUrl).into(holder.mAvatarImageView);
+        Picasso.with(mContext).load(imageUrl).skipMemoryCache().into(holder.mAvatarImageView);
     }
 
     @Override

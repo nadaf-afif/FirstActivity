@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -36,8 +37,9 @@ import app.roundtable.nepal.activity.databeans.TablesInfoBean;
  */
 public class AddNewMeetingActivity extends AppCompatActivity implements View.OnClickListener, Tables.RTNTables{
 
+    private static final int REQUEST_CODE_MAP = 696;
     private Toolbar mToolBar;
-    private EditText mEventNameEditText, mVenueEdiText, mTimeEditText, mDateEditText, mInviteesEditText;
+    private EditText mEventNameEditText, mVenueEdiText, mTimeEditText, mDateEditText, mInviteesEditText, mVenueAddressEditText;
     private Switch mSpouseSwitch, mChildrenSwitch;
     private Button mAddEventButton;
     private int mYear, mMonth, mDay, mHour, mMinute;
@@ -45,6 +47,8 @@ public class AddNewMeetingActivity extends AppCompatActivity implements View.OnC
     private Set<String > selectedId = new HashSet<>();
     public  ArrayList<TablesInfoBean> tablesData = new ArrayList<>();
     TableNameDialogAdapter adapter;
+    private double mLatitude;
+    private double mLongitude;
 
 
     @Override
@@ -89,12 +93,13 @@ public class AddNewMeetingActivity extends AppCompatActivity implements View.OnC
         mAddEventButton = (Button)findViewById(R.id.addMeetingButton);
         mSpouseSwitch = (Switch)findViewById(R.id.spouceSwitch);
         mChildrenSwitch = (Switch) findViewById(R.id.childrenSwitch);
-
+        mVenueAddressEditText = (EditText) findViewById(R.id.venueAddressEditText);
 
         mTimeEditText.setOnClickListener(this);
         mDateEditText.setOnClickListener(this);
         mInviteesEditText.setOnClickListener(this);
         mAddEventButton.setOnClickListener(this);
+        mVenueEdiText.setOnClickListener(this);
 
     }
 
@@ -125,6 +130,11 @@ public class AddNewMeetingActivity extends AppCompatActivity implements View.OnC
 
                 validateData();
 
+                break;
+
+            case  R.id.venueNameEditText:
+                Intent intent = new Intent(AddNewMeetingActivity.this, MapActivity.class);
+                startActivityForResult(intent,REQUEST_CODE_MAP);
                 break;
 
         }
@@ -236,6 +246,7 @@ public class AddNewMeetingActivity extends AppCompatActivity implements View.OnC
     private void validateData() {
 
         String eventName = mEventNameEditText.getText().toString();
+        String venueAddressName = mVenueAddressEditText.getText().toString();
         String venueName = mVenueEdiText.getText().toString();
         String date = mDateEditText.getText().toString();
         String time = mTimeEditText.getText().toString();
@@ -244,7 +255,7 @@ public class AddNewMeetingActivity extends AppCompatActivity implements View.OnC
 
         if(eventName.equals("") || eventName.isEmpty()){
             Toast.makeText(this, getString(R.string.enter_event_name), Toast.LENGTH_SHORT).show();
-        }else if(venueName.equals("") || venueName.isEmpty()){
+        }else if(venueAddressName.equals("") || venueAddressName.isEmpty()){
             Toast.makeText(this,getString(R.string.enter_event_venue),Toast.LENGTH_SHORT).show();
         }else if(date.equals("") || date.isEmpty()){
             Toast.makeText(this,getString(R.string.enter_date),Toast.LENGTH_SHORT).show();        Cursor cursor = new RTNTablesManager(this).getTables();
@@ -259,18 +270,35 @@ public class AddNewMeetingActivity extends AppCompatActivity implements View.OnC
             String spouse = (isSpouse ? "1" : "0");
             String children = (isChildren ? "1" : "0");
 
-            executeAsyncTask(invitees, spouse, children, eventName, venueName, date, time);
+            executeAsyncTask(invitees, spouse, children, eventName, venueAddressName, venueName, date, time, mLatitude, mLongitude);
 
         }
 
-    private void executeAsyncTask(String invitees, String spouse, String children, String eventName, String venueName, String date, String time) {
+    private void executeAsyncTask(String invitees, String spouse, String children, String eventName, String venueAddress, String venueName, String date, String time, double latitude, double longitude) {
 
         AddMeetingAsyncTask mAsyncTask = new AddMeetingAsyncTask(this);
-        mAsyncTask.execute(invitees,spouse,children,eventName,venueName,date,time);
+        mAsyncTask.execute(invitees,spouse,children,eventName,venueName,date,time, venueAddress, latitude+"", longitude+"");
 
     }
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if(resultCode == RESULT_OK) {
 
+            switch (requestCode) {
+                case REQUEST_CODE_MAP:
+
+                    Bundle bundle3 = data.getExtras();
+                    mLatitude = bundle3.getDouble("latitude");
+                    mLongitude = bundle3.getDouble("longitude");
+                    String address = bundle3.getString("venueName");
+                    mVenueEdiText.setText(address);
+
+                    break;
+            }
+        }
+    }
 }

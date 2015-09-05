@@ -24,4 +24,5 @@ public class Constants {
     public static final int TABLE_NOTIFICATION = 687785;
     public static final String REQUEST_CODE = "request_code";
     public static final String selectedTab = "selected_tab";
+    public static final String TYPE = "Type";
 }

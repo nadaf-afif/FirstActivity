@@ -200,6 +200,37 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="5dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/city"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/name_background"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/residenceCityEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_city"
+                    android:textColor="@color/material_blue_grey_800"
+                    android:background="@drawable/background_shadow"
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    />
+
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -295,7 +326,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
+             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -461,163 +492,135 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="5dp"
-                >
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/residence_phone"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/name_background"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="10dp"
-                    />
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="5dp"-->
+                <!-->-->
 
-                <EditText
-                    android:id="@+id/residencePhoneEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/enter_residence_phone"
-                    android:textColor="@color/material_blue_grey_800"
-                    android:background="@drawable/background_shadow"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:inputType="phone"
-                    />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/residence_phone"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:textColor="@color/name_background"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--/>-->
 
-            </LinearLayout>
+                <!--<EditText-->
+                    <!--android:id="@+id/residencePhoneEditText"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="@string/enter_residence_phone"-->
+                    <!--android:textColor="@color/material_blue_grey_800"-->
+                    <!--android:background="@drawable/background_shadow"-->
+                    <!--android:paddingLeft="10dp"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:inputType="phone"-->
+                    <!--/>-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="5dp"
-                >
+            <!--</LinearLayout>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/designation"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/name_background"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="10dp"
-                    />
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="5dp"-->
+                <!-->-->
 
-                <EditText
-                    android:id="@+id/designationEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/enter_designation"
-                    android:textColor="@color/material_blue_grey_800"
-                    android:background="@drawable/background_shadow"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/designation"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:textColor="@color/name_background"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--/>-->
 
-            </LinearLayout>
+                <!--<EditText-->
+                    <!--android:id="@+id/designationEditText"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="@string/enter_designation"-->
+                    <!--android:textColor="@color/material_blue_grey_800"-->
+                    <!--android:background="@drawable/background_shadow"-->
+                    <!--android:paddingLeft="10dp"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--/>-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="5dp"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/residence_city"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/name_background"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="10dp"
-                    />
-
-                <EditText
-                    android:id="@+id/residenceCityEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/enter_residence_city"
-                    android:textColor="@color/material_blue_grey_800"
-                    android:background="@drawable/background_shadow"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    />
-
-            </LinearLayout>
+            <!--</LinearLayout>-->
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="5dp"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/office_city"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/name_background"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="10dp"
-                    />
-
-                <EditText
-                    android:id="@+id/officeCityEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/enter_office_city"
-                    android:textColor="@color/material_blue_grey_800"
-                    android:background="@drawable/background_shadow"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    />
-
-            </LinearLayout>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="5dp"
-                >
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="5dp"-->
+                <!-->-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/state"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/name_background"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="10dp"
-                    />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/office_city"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:textColor="@color/name_background"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--/>-->
 
-                <EditText
-                    android:id="@+id/stateEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/enter_state"
-                    android:textColor="@color/material_blue_grey_800"
-                    android:background="@drawable/background_shadow"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    />
+                <!--<EditText-->
+                    <!--android:id="@+id/officeCityEditText"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="@string/enter_office_city"-->
+                    <!--android:textColor="@color/material_blue_grey_800"-->
+                    <!--android:background="@drawable/background_shadow"-->
+                    <!--android:paddingLeft="10dp"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--/>-->
 
-            </LinearLayout>
+            <!--</LinearLayout>-->
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="5dp"-->
+                <!-->-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/state"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:textColor="@color/name_background"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--/>-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/stateEditText"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="@string/enter_state"-->
+                    <!--android:textColor="@color/material_blue_grey_800"-->
+                    <!--android:background="@drawable/background_shadow"-->
+                    <!--android:paddingLeft="10dp"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--/>-->
+
+            <!--</LinearLayout>-->
 
 
 

@@ -50,16 +50,17 @@ import app.roundtable.nepal.activity.databeans.TablesInfoBean;
 public class AddNewEventActivity extends AppCompatActivity implements View.OnClickListener, Tables.RTNTables{
 
     private Toolbar mToolBar;
-    private EditText mEventNameEditText, mVenueEdiText, mTimeEditText, mDateEditText, mInviteesEditText;
+    private EditText mEventNameEditText, mVenueEdiText, mTimeEditText, mDateEditText, mInviteesEditText, mVenueAddressDetail;
     private Switch mSpouseSwitch, mChildrenSwitch;
     private Button mAddEventButton;
     private int mYear, mMonth, mDay, mHour, mMinute;
     private ImageView mEventImageView;
     private static int TIME_PICKER_DIALOG = 111, DATE_PICKER_DIALOG = 222;
-    public static final int PICK_CAMERA_IMAGE = 011, PICK_GALLERY_IMAGE = 911;
+    public static final int PICK_CAMERA_IMAGE = 011, PICK_GALLERY_IMAGE = 911, REQUEST_CODE_MAP = 696;
     public  ArrayList<TablesInfoBean> tablesData = new ArrayList<>();
     private Set<String > selectedId = new HashSet<>();
     private String mEVentImagePath;
+    private double mLatitude, mLongitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +106,7 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
         mSpouseSwitch = (Switch)findViewById(R.id.spouceSwitch);
         mChildrenSwitch = (Switch) findViewById(R.id.childrenSwitch);
         mEventImageView = (ImageView) findViewById(R.id.eventPhotoImageView);
+        mVenueAddressDetail = (EditText) findViewById(R.id.venueAddressEditText);
 
 
         mTimeEditText.setOnClickListener(this);
@@ -153,7 +155,7 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
             case R.id.venueNameEditText :
 
                 Intent intent = new Intent(AddNewEventActivity.this, MapActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,REQUEST_CODE_MAP);
                 break;
 
         }
@@ -163,15 +165,16 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
     private void validateData() {
 
         String eventName = mEventNameEditText.getText().toString();
-        String venueName = mVenueEdiText.getText().toString();
+        String venueAddressDetail = mVenueAddressDetail.getText().toString();
         String date = mDateEditText.getText().toString();
         String time = mTimeEditText.getText().toString();
         boolean isSpouse = mSpouseSwitch.isChecked();
         boolean isChildren = mChildrenSwitch.isChecked();
+        String venueLocation = mVenueEdiText.getText().toString();
 
         if(eventName.equals("") || eventName.isEmpty()){
             Toast.makeText(this,getString(R.string.enter_event_name),Toast.LENGTH_SHORT).show();
-        }else if(venueName.equals("") || venueName.isEmpty()){
+        }else if(venueAddressDetail.equals("") || venueAddressDetail.isEmpty()){
             Toast.makeText(this,getString(R.string.enter_event_venue),Toast.LENGTH_SHORT).show();
         }else if(date.equals("") || date.isEmpty()){
             Toast.makeText(this,getString(R.string.enter_date),Toast.LENGTH_SHORT).show();        Cursor cursor = new RTNTablesManager(this).getTables();
@@ -191,17 +194,17 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
             String spouse = (isSpouse ? "1" : "0");
             String children = (isChildren ? "1" : "0");
 
-            executeAsyncTask(invitees, spouse, children, eventName, venueName, date, time, mEVentImagePath);
+            executeAsyncTask(invitees, spouse, children, eventName, venueAddressDetail, date, time, mEVentImagePath, venueLocation, mLatitude, mLongitude);
 
         }
 
 
     }
 
-    private void executeAsyncTask(String invitees, String spouse, String children, String eventName, String venueName, String date, String time, String mEVentImagePath) {
+    private void executeAsyncTask(String invitees, String spouse, String children, String eventName, String venueAddressDetail, String date, String time, String mEVentImagePath, String venueLocation, double latitude, double longitude) {
 
         AddEventAsyncTasks asyncTasks = new AddEventAsyncTasks(this);
-        asyncTasks.execute(invitees, spouse, children, eventName, venueName, date, time, mEVentImagePath);
+        asyncTasks.execute(invitees, spouse, children, eventName, venueAddressDetail, date, time, mEVentImagePath, venueLocation, latitude+"", longitude+"");
 
     }
 
@@ -434,6 +437,16 @@ public class AddNewEventActivity extends AppCompatActivity implements View.OnCli
                     break;
 
 
+
+                case REQUEST_CODE_MAP :
+
+                    Bundle bundle3 = data.getExtras();
+                    mLatitude = bundle3.getDouble("latitude");
+                    mLongitude = bundle3.getDouble("longitude");
+                    String address = bundle3.getString("venueName");
+                    mVenueEdiText.setText(address);
+
+                    break;
             }
 
         }

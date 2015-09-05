@@ -37,23 +37,23 @@ public class GcmIntentService  extends GcmListenerService {
 
             if (type.equals("event")) {
 
-                showNotification(title, description, HomeActivity.NAVIGATION_TAB_EVENTS, Constants.EVENT_NOTIFICATION);
+                showNotification(title, description, HomeActivity.NAVIGATION_TAB_EVENTS, Constants.EVENT_NOTIFICATION, type);
 
             } else if (type.equals("meeting")) {
 
-                showNotification(title, description, HomeActivity.NAVIGATION_TAB_EVENTS, Constants.MEETING_NOTIFICATION);
+                showNotification(title, description, HomeActivity.NAVIGATION_TAB_EVENTS, Constants.MEETING_NOTIFICATION, type);
 
             } else if (type.equals("favorites")) {
 
-                showNotification(title, description, HomeActivity.NAVIGATION_TAB_FAVORITES, Constants.FAVOURITES_NOTIFICATION);
+                showNotification(title, description, HomeActivity.NAVIGATION_TAB_FAVORITES, Constants.FAVOURITES_NOTIFICATION, type);
 
             } else if (type.equals("news")) {
 
-                showNotification(title, description, HomeActivity.NAVIGATION_TAB_NEWS, Constants.NEWS_NOTIFICATION);
+                showNotification(title, description, HomeActivity.NAVIGATION_TAB_NEWS, Constants.NEWS_NOTIFICATION, type);
 
             } else if (type.equals("table")) {
 
-                showNotification(title, description, HomeActivity.NAVIGATION_TAB_TABLES, Constants.TABLE_NOTIFICATION);
+                showNotification(title, description, HomeActivity.NAVIGATION_TAB_TABLES, Constants.TABLE_NOTIFICATION, type);
 
             }
         }
@@ -61,7 +61,7 @@ public class GcmIntentService  extends GcmListenerService {
 
     }
 
-    private void showNotification(String title, String description, int tabIndex, int requestCode) {
+    private void showNotification(String title, String description, int tabIndex, int requestCode, String type) {
 
 
 
@@ -74,6 +74,7 @@ public class GcmIntentService  extends GcmListenerService {
         Bundle bundle = new Bundle();
         bundle.putInt(Constants.selectedTab, tabIndex);
         bundle.putInt(Constants.REQUEST_CODE, requestCode);
+        bundle.putString(Constants.TYPE, type);
         notificationIntent.putExtras(bundle);
         notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 

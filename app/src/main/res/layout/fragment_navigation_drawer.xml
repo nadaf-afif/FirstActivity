@@ -23,22 +23,6 @@
             android:layout_marginLeft="25dp"
             app:border_color="#dddddd"/>
 
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="nadafafif@gmail.com"-->
-            <!--android:layout_below="@+id/drawerImage"-->
-            <!--android:layout_marginTop="5dp"-->
-            <!--android:layout_marginLeft="25dp"-->
-            <!--android:textStyle="bold"-->
-            <!--android:shadowDx="2"-->
-            <!--android:shadowDy="2"-->
-            <!--android:shadowColor="@color/material_blue_grey_800"-->
-            <!--android:textColor="@android:color/white"-->
-            <!--android:textSize="18sp"-->
-            <!--/>-->
-
-
     </RelativeLayout>
 
 

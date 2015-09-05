@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import app.roundtable.nepal.R;
 import app.roundtable.nepal.activity.activity.AddNewEventActivity;
 import app.roundtable.nepal.activity.activity.AddNewMeetingActivity;
 import app.roundtable.nepal.activity.adapters.PagerAdapter;
+import app.roundtable.nepal.activity.util.Constants;
 
 /**
  * Created by afif on 4/6/15.
@@ -31,11 +33,17 @@ public class EventsAndMeetingsFragment extends Fragment {
     private String mTitle[] = new String[]{"Events", "Meetings"};
     private ArrayList<Fragment> mFragments = new ArrayList<Fragment>();
     public static final String tag = EventsAndMeetingsFragment.class.getSimpleName();
-
+    private String mType;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Bundle bundle = getArguments();
+        if(bundle!=null && bundle.containsKey(Constants.TYPE)){
+            mType = bundle.getString(Constants.TYPE);
+            Log.d(EventsAndMeetingsFragment.class.getSimpleName(),mType);
+        }
     }
 
     @Nullable
@@ -77,6 +85,9 @@ public class EventsAndMeetingsFragment extends Fragment {
         mViewPager.setAdapter(pagerAdapter);
 
         mViewPager.setOffscreenPageLimit(2);
+
+        if(mType!=null && mType.equals("meeting"))
+            mViewPager.setCurrentItem(2);
 
     }
 

@@ -214,8 +214,7 @@
         <activity android:name="app.roundtable.nepal.activity.activity.MyProfileViewActivity"
             android:theme="@style/AppTheme"
             android:parentActivityName=".activity.activity.HomeActivity"
-            android:launchMode="singleTop"
-            >
+            android:launchMode="singleTop">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
@@ -231,6 +230,14 @@
         </activity>
 
         <activity android:name="app.roundtable.nepal.activity.activity.MapActivity"
+            android:theme="@style/AppTheme"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.roundtable.nepal.activity.activity.ShowLocationActivity"
             android:theme="@style/AppTheme"
             >
             <intent-filter>

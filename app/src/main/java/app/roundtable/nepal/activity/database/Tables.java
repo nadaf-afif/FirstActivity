@@ -50,6 +50,11 @@ public class Tables {
         public static final String CREATED_AT = "created_on";
         public static final String MEMBER_CREATED = "member_created";
         public static final String RSVP = "rsvp";
+        String HOST = "event_host";
+        String SHOW_RSVP = "show_rsvp";
+        String EVENT_ADDRESS_LINE = "venue_location";
+        String EVENT_LATITUDE = "lat";
+        String EVENT_LONGITUDE = "lng";
 
         public static final String COLUMNS = EVENT_ID + " text not null PRIMARY KEY, "+
                                             EVENT_TYPE + " text not null, "+
@@ -63,6 +68,11 @@ public class Tables {
                                             EVENT_BIG_IMAGE + " text, " + EVENT_THUMB_IMAGE + " text, "+
                                             CREATED_AT + " text not null, "+
                                             RSVP + " text, "+
+                                            EVENT_ADDRESS_LINE+ " text, "+
+                                            EVENT_LATITUDE+" text, "+
+                                            EVENT_LONGITUDE+" text, "+
+                                            HOST + " text, "+
+                                            SHOW_RSVP + " text, "+
                                             MEMBER_CREATED + " text";
 
         public static final String EVENTS_SCHEMA = "CREATE TABLE "+EVENTS_TABLE + "("+COLUMNS+")";

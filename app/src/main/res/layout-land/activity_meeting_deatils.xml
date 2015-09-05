@@ -26,6 +26,22 @@
 
 
             <TextView
+                android:id="@+id/hostName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="@string/host"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:textColor="@color/name_background"
+                android:textSize="18sp"
+                android:background="@drawable/background_shadow"
+                android:drawablePadding="10dp"
+                android:paddingLeft="10dp"
+
+                />
+
+            <TextView
                 android:id="@+id/meetingNameTextView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -37,6 +53,7 @@
                 android:textSize="18sp"
                 android:background="@drawable/background_shadow"
                 android:padding="5dp"
+                android:layout_marginTop="10dp"
                 />
 
 
@@ -112,53 +129,79 @@
                 />
 
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:weightSum="10"
+                android:background="@drawable/background_shadow"
+                android:padding="5dp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/spouseTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/spouce"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:paddingLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/name_background"
+                    />
+
+
+                <TextView
+                    android:id="@+id/spouseInvitedTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="invited"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/primary_color"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
                 android:background="@drawable/background_shadow"
                 android:padding="5dp"
                 android:layout_marginTop="10dp"
                 >
 
-
-                <Switch
-                    android:id="@+id/spouceSwitch"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:hint="@string/spouce"
+                    android:text="@string/children"
                     android:textSize="18sp"
+                    android:paddingLeft="5dp"
+                    android:gravity="center_vertical"
                     android:textStyle="bold"
                     android:textColor="@color/name_background"
                     />
 
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:weightSum="10"
-                android:background="@drawable/background_shadow"
-                android:padding="5dp"
-                android:layout_marginTop="10dp"
-                >
-
-
-                <Switch
-                    android:id="@+id/childrenSwitch"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/childrenInvitedTextView"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:hint="@string/children"
+                    android:text="invited"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/name_background"
+                    android:paddingLeft="5dp"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="5dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/primary_color"
                     />
 
-
-            </LinearLayout>
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

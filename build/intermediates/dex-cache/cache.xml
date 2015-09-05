@@ -2,41 +2,6 @@
 <items version="2" >
 
     <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bfca85af4c6f5904f8f0658cfe0ab39315dbd154.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-0fe3f01f5e54d5635e7a5e2ffec7da0848667f78.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bb254a8130afb5b8ada211c5e5262f9b08bc5184.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d405025c600055237c171a0bbabaa49d69696573">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-1967dd2aeeb80c64035693bf884295291b7433c9.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-2eecd1acd503f706d89a212314c0bb5c44d32f0d.jar" />
-    </item>
-    <item
         jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -44,11 +9,18 @@
         <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-9cecfd4fd342d411d663a5d3d86decd57ba1c482.jar" />
     </item>
     <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/jars/classes.jar"
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.5.0/jars/classes.jar"
         jumboMode="false"
-        revision="21.1.1"
-        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-cbdaa383d663bf1f38472d8571bb4d886ddfeb05.jar" />
+        revision="22.0.1"
+        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-e3da23b6812ad6b924d53daee0e86b2ed7cce283.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/palette-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="060b30a619b8d3ba053e1d7dc08b3fdf0dd81530">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-b96d987fe49378067831f68fd4567190e599d8e1.jar" />
     </item>
     <item
         jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.5.0/jars/classes.jar"
@@ -65,46 +37,11 @@
         <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-b6d070bb8de4a6ff0d36398854640a085f80a731.jar" />
     </item>
     <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.0.0"
-        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bb254a8130afb5b8ada211c5e5262f9b08bc5184.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/palette-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="060b30a619b8d3ba053e1d7dc08b3fdf0dd81530">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-b96d987fe49378067831f68fd4567190e599d8e1.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-e3da23b6812ad6b924d53daee0e86b2ed7cce283.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.1"
-        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-e0ad37ee9bc0773b6ee5e8d004ea6a9ac06e3b98.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-29ad3930cb93659f9c361e3bfc84f88a64963741.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/palette-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="060b30a619b8d3ba053e1d7dc08b3fdf0dd81530">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-b96d987fe49378067831f68fd4567190e599d8e1.jar" />
+        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bfca85af4c6f5904f8f0658cfe0ab39315dbd154.jar" />
     </item>
     <item
         jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
@@ -114,123 +51,67 @@
         <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-2eecd1acd503f706d89a212314c0bb5c44d32f0d.jar" />
     </item>
     <item
-        jar="/home/afif/Downloads/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-a3cc2fbaa47b0b6a364077710ba5a8dbf27e1ab6.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bdcdf9714758819bf01ee73f6960d66a7f19332e.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-0fe3f01f5e54d5635e7a5e2ffec7da0848667f78.jar" />
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bb254a8130afb5b8ada211c5e5262f9b08bc5184.jar" />
     </item>
     <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.5.0/jars/classes.jar"
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-ef24327589faae37c191c6c3bfd0f098c319e3b2.jar" />
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-2eecd1acd503f706d89a212314c0bb5c44d32f0d.jar" />
     </item>
     <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/jars/classes.jar"
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-8ae343deb7a867b8a0e48473a92d7cca616d5cdd.jar" />
+        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-e406502bb2a5caf6649b1eb7c5c080c0051792fc.jar" />
     </item>
     <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/jars/classes.jar"
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.1"
-        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-8ae343deb7a867b8a0e48473a92d7cca616d5cdd.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-9d06c11a3080905a61eced6c445a9bd3ac78625f.jar" />
+        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3cf345b12b41ae8cbe0245dd4f6866ceee49a2d8.jar" />
     </item>
     <item
         jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/1.3.0/jars/classes.jar"
         jumboMode="false"
-        revision="22.0.1"
+        revision="21.1.1"
         sha1="ac6948cce36f694f3eb3d73a135e298dc4b3527a">
         <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3c45561bbf20b484460ed86a182e567780480ad9.jar" />
     </item>
     <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/libs/cloudinaryandroid-1.0.2.jar"
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.1"
-        sha1="4ac4e68bbc166dd6db53c424c73c095b31c4486d">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/cloudinaryandroid-1.0.2-e54455b4953f7b4cf65d064865a1172569121460.jar" />
+        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-cbdaa383d663bf1f38472d8571bb4d886ddfeb05.jar" />
     </item>
     <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.5.0/jars/classes.jar"
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-cdc55909092152a6e037140ecab2e587ce8dd8e1.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3c23b16534169b42bc7c7279ef34bbdc71b1af6e.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.1"
-        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3a211a083b2e7bd1f9b43beaba90fc0416c8f939.jar" />
-    </item>
-    <item
-        jar="/home/afif/Downloads/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-a3cc2fbaa47b0b6a364077710ba5a8dbf27e1ab6.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="a78183f30e769a98ab4820794f597763088d3065">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-536ef6044ab1470848c24f5d74552725d90b900a.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bcf1643b9e871186c0153656616ae116d428186d.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3a211a083b2e7bd1f9b43beaba90fc0416c8f939.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-d4989413a5ef6233d302970633480d91f908efae.jar" />
-    </item>
-    <item
-        jar="/home/afif/Downloads/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-a3cc2fbaa47b0b6a364077710ba5a8dbf27e1ab6.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-29ad3930cb93659f9c361e3bfc84f88a64963741.jar" />
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-0fe3f01f5e54d5635e7a5e2ffec7da0848667f78.jar" />
     </item>
     <item
         jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.5.0/jars/classes.jar"
@@ -240,32 +121,179 @@
         <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-9736ec7c994314c7fe66a6abf2dcba860a28c5fb.jar" />
     </item>
     <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bdcdf9714758819bf01ee73f6960d66a7f19332e.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.5.0/jars/classes.jar"
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.1"
-        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-e3da23b6812ad6b924d53daee0e86b2ed7cce283.jar" />
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-536ef6044ab1470848c24f5d74552725d90b900a.jar" />
     </item>
     <item
         jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.5.0/jars/classes.jar"
         jumboMode="false"
-        revision="21.1.1"
+        revision="22.0.1"
         sha1="d405025c600055237c171a0bbabaa49d69696573">
         <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-1967dd2aeeb80c64035693bf884295291b7433c9.jar" />
     </item>
     <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.5.0/jars/classes.jar"
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-b6d070bb8de4a6ff0d36398854640a085f80a731.jar" />
+        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-935e867fcd43c2beb39cb9af482674790e7dcefa.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bcf1643b9e871186c0153656616ae116d428186d.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bb254a8130afb5b8ada211c5e5262f9b08bc5184.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-e0ad37ee9bc0773b6ee5e8d004ea6a9ac06e3b98.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="21.0.0"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-2eecd1acd503f706d89a212314c0bb5c44d32f0d.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/palette-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="060b30a619b8d3ba053e1d7dc08b3fdf0dd81530">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-b96d987fe49378067831f68fd4567190e599d8e1.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-e0ad37ee9bc0773b6ee5e8d004ea6a9ac06e3b98.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bdcdf9714758819bf01ee73f6960d66a7f19332e.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3c23b16534169b42bc7c7279ef34bbdc71b1af6e.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-cdc55909092152a6e037140ecab2e587ce8dd8e1.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-9d06c11a3080905a61eced6c445a9bd3ac78625f.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-e2bc12a31937e920b26e6cd5f7694acf7e6df9e6.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/palette-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.0.0"
+        sha1="060b30a619b8d3ba053e1d7dc08b3fdf0dd81530">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-b96d987fe49378067831f68fd4567190e599d8e1.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-536ef6044ab1470848c24f5d74552725d90b900a.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-9736ec7c994314c7fe66a6abf2dcba860a28c5fb.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/libs/picasso-2.3.2.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/picasso-2.3.2-dc84d142ec0f5cb1e50173fbeffa6ad684139c8c.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.0.0"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bb254a8130afb5b8ada211c5e5262f9b08bc5184.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-935e867fcd43c2beb39cb9af482674790e7dcefa.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/libs/cloudinaryandroid-1.0.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4ac4e68bbc166dd6db53c424c73c095b31c4486d">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/cloudinaryandroid-1.0.2-e54455b4953f7b4cf65d064865a1172569121460.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/libs/android-query-0.25.9.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="fff82e4e1e56b60d6eb1d5487dbd3d3b526b635f">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/android-query-0.25.9-b5f9145bf6ff3f444c1bbd5cab14e28ef324796e.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bcf1643b9e871186c0153656616ae116d428186d.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bcf1643b9e871186c0153656616ae116d428186d.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-e406502bb2a5caf6649b1eb7c5c080c0051792fc.jar" />
     </item>
     <item
         jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.5.0/jars/classes.jar"
@@ -275,11 +303,11 @@
         <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-885d93ca93c2fc7837fba74d2ebff84e9395ab99.jar" />
     </item>
     <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/jars/classes.jar"
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-cbdaa383d663bf1f38472d8571bb4d886ddfeb05.jar" />
+        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-b6d070bb8de4a6ff0d36398854640a085f80a731.jar" />
     </item>
     <item
         jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.5.0/jars/classes.jar"
@@ -303,235 +331,11 @@
         <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-0fe3f01f5e54d5635e7a5e2ffec7da0848667f78.jar" />
     </item>
     <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-935e867fcd43c2beb39cb9af482674790e7dcefa.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bcf1643b9e871186c0153656616ae116d428186d.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-e406502bb2a5caf6649b1eb7c5c080c0051792fc.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bcf1643b9e871186c0153656616ae116d428186d.jar" />
-    </item>
-    <item
         jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
         jumboMode="false"
-        revision="22.0.1"
+        revision="20.0.0"
         sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
         <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bdcdf9714758819bf01ee73f6960d66a7f19332e.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3cf345b12b41ae8cbe0245dd4f6866ceee49a2d8.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-d4989413a5ef6233d302970633480d91f908efae.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a78183f30e769a98ab4820794f597763088d3065">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-536ef6044ab1470848c24f5d74552725d90b900a.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-9736ec7c994314c7fe66a6abf2dcba860a28c5fb.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3c23b16534169b42bc7c7279ef34bbdc71b1af6e.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-cdc55909092152a6e037140ecab2e587ce8dd8e1.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/libs/picasso-2.3.2.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/picasso-2.3.2-dc84d142ec0f5cb1e50173fbeffa6ad684139c8c.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-ef24327589faae37c191c6c3bfd0f098c319e3b2.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="21.0.0"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-2eecd1acd503f706d89a212314c0bb5c44d32f0d.jar" />
-    </item>
-    <item
-        jar="/home/afif/Downloads/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="21.0.0"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-a3cc2fbaa47b0b6a364077710ba5a8dbf27e1ab6.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/libs/cloudinaryandroid-1.0.2.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4ac4e68bbc166dd6db53c424c73c095b31c4486d">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/cloudinaryandroid-1.0.2-e54455b4953f7b4cf65d064865a1172569121460.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bb254a8130afb5b8ada211c5e5262f9b08bc5184.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/libs/picasso-2.3.2.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/picasso-2.3.2-dc84d142ec0f5cb1e50173fbeffa6ad684139c8c.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-935e867fcd43c2beb39cb9af482674790e7dcefa.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="ac6948cce36f694f3eb3d73a135e298dc4b3527a">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3c45561bbf20b484460ed86a182e567780480ad9.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.0.0"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-0fe3f01f5e54d5635e7a5e2ffec7da0848667f78.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/libs/android-query-0.25.9.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="fff82e4e1e56b60d6eb1d5487dbd3d3b526b635f">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/android-query-0.25.9-b5f9145bf6ff3f444c1bbd5cab14e28ef324796e.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-9d06c11a3080905a61eced6c445a9bd3ac78625f.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bb254a8130afb5b8ada211c5e5262f9b08bc5184.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/palette-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.0.0"
-        sha1="060b30a619b8d3ba053e1d7dc08b3fdf0dd81530">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-b96d987fe49378067831f68fd4567190e599d8e1.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/libs/internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-e2bc12a31937e920b26e6cd5f7694acf7e6df9e6.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/libs/internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-e2bc12a31937e920b26e6cd5f7694acf7e6df9e6.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-e0ad37ee9bc0773b6ee5e8d004ea6a9ac06e3b98.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/palette-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="060b30a619b8d3ba053e1d7dc08b3fdf0dd81530">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-b96d987fe49378067831f68fd4567190e599d8e1.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-e406502bb2a5caf6649b1eb7c5c080c0051792fc.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/libs/android-query-0.25.9.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="fff82e4e1e56b60d6eb1d5487dbd3d3b526b635f">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/android-query-0.25.9-b5f9145bf6ff3f444c1bbd5cab14e28ef324796e.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3cf345b12b41ae8cbe0245dd4f6866ceee49a2d8.jar" />
-    </item>
-    <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-2eecd1acd503f706d89a212314c0bb5c44d32f0d.jar" />
     </item>
     <item
         jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.5.0/jars/classes.jar"
@@ -541,18 +345,214 @@
         <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bfca85af4c6f5904f8f0658cfe0ab39315dbd154.jar" />
     </item>
     <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.5.0/jars/classes.jar"
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.5.0/jars/classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-cdc55909092152a6e037140ecab2e587ce8dd8e1.jar" />
+        revision="21.1.1"
+        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-e3da23b6812ad6b924d53daee0e86b2ed7cce283.jar" />
     </item>
     <item
-        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/classes.jar"
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/libs/cloudinaryandroid-1.0.2.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4ac4e68bbc166dd6db53c424c73c095b31c4486d">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/cloudinaryandroid-1.0.2-e54455b4953f7b4cf65d064865a1172569121460.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-9d06c11a3080905a61eced6c445a9bd3ac78625f.jar" />
+    </item>
+    <item
+        jar="/home/afif/Downloads/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
-        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3c23b16534169b42bc7c7279ef34bbdc71b1af6e.jar" />
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-a3cc2fbaa47b0b6a364077710ba5a8dbf27e1ab6.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-2eecd1acd503f706d89a212314c0bb5c44d32f0d.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-29ad3930cb93659f9c361e3bfc84f88a64963741.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-e2bc12a31937e920b26e6cd5f7694acf7e6df9e6.jar" />
+    </item>
+    <item
+        jar="/home/afif/Downloads/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-a3cc2fbaa47b0b6a364077710ba5a8dbf27e1ab6.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3a211a083b2e7bd1f9b43beaba90fc0416c8f939.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-8ae343deb7a867b8a0e48473a92d7cca616d5cdd.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/libs/picasso-2.3.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/picasso-2.3.2-dc84d142ec0f5cb1e50173fbeffa6ad684139c8c.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/libs/android-query-0.25.9.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fff82e4e1e56b60d6eb1d5487dbd3d3b526b635f">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/android-query-0.25.9-b5f9145bf6ff3f444c1bbd5cab14e28ef324796e.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.0.0"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-0fe3f01f5e54d5635e7a5e2ffec7da0848667f78.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-d4989413a5ef6233d302970633480d91f908efae.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bb254a8130afb5b8ada211c5e5262f9b08bc5184.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/palette-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="060b30a619b8d3ba053e1d7dc08b3fdf0dd81530">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-b96d987fe49378067831f68fd4567190e599d8e1.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-ef24327589faae37c191c6c3bfd0f098c319e3b2.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-bdcdf9714758819bf01ee73f6960d66a7f19332e.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-ef24327589faae37c191c6c3bfd0f098c319e3b2.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-d4989413a5ef6233d302970633480d91f908efae.jar" />
+    </item>
+    <item
+        jar="/home/afif/Downloads/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="21.0.0"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-a3cc2fbaa47b0b6a364077710ba5a8dbf27e1ab6.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-8ae343deb7a867b8a0e48473a92d7cca616d5cdd.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-cbdaa383d663bf1f38472d8571bb4d886ddfeb05.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ac6948cce36f694f3eb3d73a135e298dc4b3527a">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3c45561bbf20b484460ed86a182e567780480ad9.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-29ad3930cb93659f9c361e3bfc84f88a64963741.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-0fe3f01f5e54d5635e7a5e2ffec7da0848667f78.jar" />
+    </item>
+    <item
+        jar="/home/afif/Downloads/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-a3cc2fbaa47b0b6a364077710ba5a8dbf27e1ab6.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3cf345b12b41ae8cbe0245dd4f6866ceee49a2d8.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-3a211a083b2e7bd1f9b43beaba90fc0416c8f939.jar" />
+    </item>
+    <item
+        jar="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="d405025c600055237c171a0bbabaa49d69696573">
+        <dex dex="/home/afif/Documents/ConChat Docs/FirstActivity/app/build/intermediates/pre-dexed/debug/classes-1967dd2aeeb80c64035693bf884295291b7433c9.jar" />
     </item>
 
 </items>

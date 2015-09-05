@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AbsSpinner;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -51,9 +52,9 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     private CircleImageView mUserProfileImageView;
     private Button mUpdateButton;
     private EditText mFirstNameEditText, mLastNameEditText, mEmailEditText, mMobileEditText, mOfficePhoneEditText, mSpouseNameEditText,
-                     mDateOfBirthEditText, mSpouseDateOfBirthEditText, mResidenceCityEditText, mDesignationEditText, mResidencePhoneEditText,
-                     mAnniversaryEditText, mStateEditText, mOfficeCityEditText, mAddressEdiText, mCompanyEditText;
-    private Spinner mBloodGroupSpinner, mGenderSpinner;
+                     mDateOfBirthEditText, mSpouseDateOfBirthEditText, mResidenceCityEditText,
+                     mAnniversaryEditText, mAddressEdiText, mCompanyEditText;
+    private Spinner mBloodGroupSpinner;
     private Toolbar mToolBar;
     public static final int PICK_CAMERA_IMAGE = 011, PICK_GALLERY_IMAGE = 911;
     private String mUserImagePath;
@@ -61,6 +62,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     private String mToday = null;
     private int mSelectedGender = 0, mSelectedBloodGroup = 0;
     private EditProfileAsyncTask mAsynTask;
+    private Spinner mGenderSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,15 +91,15 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         mEmailEditText.setText(mSharedPreferences.getUserEmail());
         mMobileEditText.setText(mSharedPreferences.getMobile());
         mOfficePhoneEditText.setText(mSharedPreferences.getOfficePhone());
-        mOfficeCityEditText.setText(mSharedPreferences.getOfficeCity());
+        //mOfficeCityEditText.setText(mSharedPreferences.getOfficeCity());
         mSpouseNameEditText.setText(mSharedPreferences.getSpouseName());
         mSpouseDateOfBirthEditText.setText(mSharedPreferences.getSpouseDOB());
         mDateOfBirthEditText.setText(mSharedPreferences.getSpouseDOB());
         mResidenceCityEditText.setText(mSharedPreferences.getResidenceCity());
-        mResidencePhoneEditText.setText(mSharedPreferences.getUserResidencePhone());
-        mDesignationEditText.setText(mSharedPreferences.getUserDesignation());
+        //mResidencePhoneEditText.setText(mSharedPreferences.getUserResidencePhone());
+        //mDesignationEditText.setText(mSharedPreferences.getUserDesignation());
         mAnniversaryEditText.setText(mSharedPreferences.getAnniversaryDate());
-        mStateEditText.setText(mSharedPreferences.getUserState());
+        //mStateEditText.setText(mSharedPreferences.getUserState());
         mCompanyEditText.setText(mSharedPreferences.getCompany());
         mAddressEdiText.setText(mSharedPreferences.getAddress());
 
@@ -131,15 +133,15 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         mEmailEditText= (EditText) findViewById(R.id.emailAddressEditText);
         mMobileEditText = (EditText) findViewById(R.id.mobileNumberEditText);
         mOfficePhoneEditText = (EditText) findViewById(R.id.officePhoneEditText);
-        mOfficeCityEditText = (EditText) findViewById(R.id.officeCityEditText);
+        //mOfficeCityEditText = (EditText) findViewById(R.id.officeCityEditText);
         mSpouseNameEditText = (EditText) findViewById(R.id.userSpouseNameEditText);
         mSpouseDateOfBirthEditText = (EditText) findViewById(R.id.spouseDateOfBirthEditText);
         mDateOfBirthEditText = (EditText) findViewById(R.id.dateOfBirthEditText);
         mResidenceCityEditText = (EditText) findViewById(R.id.residenceCityEditText);
-        mDesignationEditText = (EditText) findViewById(R.id.designationEditText);
-        mResidencePhoneEditText = (EditText) findViewById(R.id.residencePhoneEditText);
+        //mDesignationEditText = (EditText) findViewById(R.id.designationEditText);
+        //mResidencePhoneEditText = (EditText) findViewById(R.id.residencePhoneEditText);
         mAnniversaryEditText = (EditText) findViewById(R.id.anniversaryEditText);
-        mStateEditText = (EditText) findViewById(R.id.stateEditText);
+        //mStateEditText = (EditText) findViewById(R.id.stateEditText);
         mCompanyEditText = (EditText)findViewById(R.id.companyEditText);
         mAddressEdiText = (EditText) findViewById(R.id.addressEditText);
 
@@ -330,11 +332,11 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         String spouseName = mSpouseNameEditText.getText().toString();
         String spouseDateOfBirth = mSpouseDateOfBirthEditText.getText().toString();
         String annivesaryDate =mAnniversaryEditText.getText().toString();
-        String residencePhone= mResidencePhoneEditText.getText().toString();
-        String designation = mDesignationEditText.getText().toString();
+        //String residencePhone= mResidencePhoneEditText.getText().toString();
+        //String designation = mDesignationEditText.getText().toString();
         String residenceCity = mResidenceCityEditText.getText().toString();
-        String OfficeCity = mOfficeCityEditText.getText().toString();
-        String state = mStateEditText.getText().toString();
+        //String OfficeCity = mOfficeCityEditText.getText().toString();
+        //String state = mStateEditText.getText().toString();
         String company = mCompanyEditText.getText().toString();
         String address = mAddressEdiText.getText().toString();
 
@@ -363,8 +365,8 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
             showToastMessage(getString(R.string.please_select_gender));
         }else {
 
-            String[] params = new String[]{mUserImagePath, firstName, lastName, emailAddress, gender, bloodGroup, mobile, spouseName, date_of_birth,
-                            spouseDateOfBirth,annivesaryDate, residencePhone,officePhone, designation , residenceCity , OfficeCity, state, company, address};
+            String[] params = new String[]{mUserImagePath, firstName, lastName, emailAddress, bloodGroup, mobile, spouseName, date_of_birth,
+                            spouseDateOfBirth,annivesaryDate, officePhone,  residenceCity , company, address, gender};
 
 
             executeAsyncTask(params);
@@ -435,7 +437,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
 
         switch (parent.getId()){
 
-            case R.id.genderSpinner : mSelectedGender = position; break;
+           // case R.id.genderSpinner : mSelectedGender = position; break;
 
             case R.id.bloodGroupSpinner : mSelectedBloodGroup = position; break;
         }
