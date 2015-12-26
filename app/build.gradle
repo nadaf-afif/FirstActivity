@@ -5,7 +5,7 @@ android {
     buildToolsVersion '22.0.1'
 
     defaultConfig {
-        applicationId "app.roundtable.nepal"
+        applicationId "roundtable.nepal.app"
         minSdkVersion 16
         targetSdkVersion 21
 

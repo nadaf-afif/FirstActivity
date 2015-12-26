@@ -8,6 +8,7 @@ import android.widget.Toast;
 import org.apache.http.NameValuePair;
 import org.json.JSONException;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -80,10 +81,34 @@ public class EditProfileAsyncTask extends AsyncTask<String, String, String> {
 
         if(mSuccess){
             Toast.makeText(mContext, "Profile updated successfully", Toast.LENGTH_SHORT).show();
+            deleteCache(mContext);
         }else {
             Toast.makeText(mContext, mContext.getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show();
 
         }
 
+    }
+
+
+    public static void deleteCache(Context context) {
+        try {
+            File dir = context.getCacheDir();
+            if (dir != null && dir.isDirectory()) {
+                deleteDir(dir);
+            }
+        } catch (Exception e) {}
+    }
+
+    public static boolean deleteDir(File dir) {
+        if (dir != null && dir.isDirectory()) {
+            String[] children = dir.list();
+            for (int i = 0; i < children.length; i++) {
+                boolean success = deleteDir(new File(dir, children[i]));
+                if (!success) {
+                    return false;
+                }
+            }
+        }
+        return dir.delete();
     }
 }

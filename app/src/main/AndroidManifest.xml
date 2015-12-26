@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.roundtable.nepal"
-    android:versionCode="18076"
+    android:versionCode="18077"
     android:versionName="@string/version_code"
 
     >
@@ -19,6 +19,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
 
     <uses-feature android:name="android.hardware.camera" android:required="false"/>
 
@@ -271,6 +272,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBGtLvgUW1NFerWtG1lRx5npjGd0XMwyDk"/>
+        <!-- AIzaSyBG7VQElJNzGG9oPjvyKaarEtEDNXgKSpc -->
+
+
 
     </application>
 

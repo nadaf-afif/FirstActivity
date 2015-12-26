@@ -203,9 +203,13 @@ public class SubmitPhotosActivity extends AppCompatActivity implements View.OnCl
                     progressDialog.dismiss();
 
 
-                if(mSuccess)
-                    Toast.makeText(SubmitPhotosActivity.this,getString(R.string.photo_uploaded_success), Toast.LENGTH_SHORT).show();
-                else
+                if(mSuccess) {
+                    Toast.makeText(SubmitPhotosActivity.this, getString(R.string.photo_uploaded_success), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SubmitPhotosActivity.this,SubmitPhotosActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+                }else
                     Toast.makeText(SubmitPhotosActivity.this,getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show();
 
 

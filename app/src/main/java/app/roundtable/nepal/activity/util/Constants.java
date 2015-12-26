@@ -15,7 +15,7 @@ public class Constants {
     //public static final String CLOUD_API_SECRET = "d_OaTlMmpuI457pTjJHT-FCbA5A";
     public static final String CLOUD_API_SECRET = "2vaFV_1MyOMrQmmg8LP4XTlHPX8";
 
-    public static final String SENDER_ID = "125282881833";
+    public static final String SENDER_ID = "125282881833"; //494455394809
 
     public static final int MEETING_NOTIFICATION = 687786;
     public static final int EVENT_NOTIFICATION = 687787;
